@@ -1,7 +1,9 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once "../header.php";
 require_once "../inc/class.student.inc";
-require_once "../inc/class.univ3.inc";
+require_once "../inc/class.univ4.inc";
 require_once "menu.php";
 access_ctrl(15);
 
@@ -73,8 +75,8 @@ elseif($form=="univ"){
   AND {$dbprefix}evaluations.semester='$semester' AND {$dbprefix}evaluations.student in ($students) 
   GROUP BY {$dbprefix}evaluations.timestamp,{$dbprefix}evaluations.student;");
 
-  $u=new univ3();
-  $u->fetchVeryAll();
+  $u=new univ4();
+  $u->fetchAllStudents();
   $univ=$u->elements;
 
   if($db->result){

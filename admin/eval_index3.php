@@ -1,9 +1,11 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once "../header.php";
 require_once "../inc/class.ciph.inc";
 require_once "../inc/class.eval.inc";
 require_once "../inc/class.reidhall.inc";
-require_once "../inc/class.univ.inc";
+require_once "../inc/class.univ4.inc";
 require_once "menu.php";
 access_ctrl(22);
 
@@ -30,15 +32,26 @@ foreach($students as $s){
   $c->count2($s['id']);
   $nbCiph=$c->nb;
 
-  $u=new univ();
-  $u->count2($s['id']);
-  $nbUniv=$u->nb;
+  $u=new univ4();
+  $u->student=$s['id'];
+  $u->fetchAll();
+  $nbUniv=count($u->elements);
 
   $class=$class=="tr1"?"tr2":"tr1";
-  echo "<tr class='$class'><td>{$s['lastname']}</td><td>{$s['firstname']}</td><td>{$e[$s['id']]['program']}</td>
-    <td>{$e[$s['id']]['ReidHall']} / $nbVWPP</td><td>{$e[$s['id']]['univ']} / $nbUniv</td>
-    <td>{$e[$s['id']]['CIPH']} / $nbCiph</td>
-    <td>{$e[$s['id']]['tutorats']}</td><td>{$e[$s['id']]['intership']}</td></tr>\n";
+  $classProgram=$e[$s['id']]['program']>0?"green bold":"red bold";
+  $classVWPP=$e[$s['id']]['ReidHall']==$nbVWPP?"green bold":null;
+  $classUniv=$e[$s['id']]['univ']==$nbUniv?"green bold":null;
+  $classCiph=$e[$s['id']]['CIPH']==$nbCiph?"green bold":null;
+  $classTutorats=$e[$s['id']]['tutorats']>0?"green bold":"red bold";
+  $classIntership=$e[$s['id']]['intership']>0?"green bold":null;
+
+  echo "<tr class='$class'><td>{$s['lastname']}</td><td>{$s['firstname']}</td>
+    <td class='$classProgram'>{$e[$s['id']]['program']}</td>
+    <td class='$classVWPP'>{$e[$s['id']]['ReidHall']} / $nbVWPP</td>
+    <td class='$classUniv'>{$e[$s['id']]['univ']} / $nbUniv</td>
+    <td class='$classCiph'>{$e[$s['id']]['CIPH']} / $nbCiph</td>
+    <td class='$classTutorats'>{$e[$s['id']]['tutorats']}</td>
+    <td class='$classIntership'>{$e[$s['id']]['intership']}</td></tr>\n";
 }
 
 echo "</table>\n";

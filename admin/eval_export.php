@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once "../inc/eval.questions.inc";
 require_once "../inc/config.php";
 require_once "../inc/class.eval.inc";
@@ -27,7 +29,7 @@ else
 	}
 
 for($i=0;$i<count($questions);$i++){		// plus necessaire avec la fonction eval::fetchAll (ne pas supprimer pour le moment)
-  $questions[$i]=html_entity_decode($questions[$i],ENT_QUOTES,"UTF-8");
+  $questions[$i]=utf8_decode(html_entity_decode($questions[$i],ENT_QUOTES,"UTF-8"));
   $questions[$i]=str_replace(array("\n","\r","\t")," ",$questions[$i]);
 }
 $lines=Array();
@@ -42,7 +44,7 @@ foreach($result as $elem){
 	$elem[$i]=join($tmp," ; ");
       }
     }						// plus necessaire avec la fonction eval::fetchAll (ne pas supprimer pour le moment)
-    $tmp=html_entity_decode($elem[$i],ENT_QUOTES,"UTF-8");
+    $tmp=utf8_decode(html_entity_decode($elem[$i],ENT_QUOTES,"UTF-8"));
     $cells[]=str_replace(array("\n","\r","\t")," ",$tmp);
    }
   $lines[]=join($cells,$separate);

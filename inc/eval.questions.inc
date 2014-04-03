@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 //	Program questions
 $quest["program"]=array();
 $quest["program"][]="1. Main benefits";
@@ -97,7 +99,6 @@ $quest["ReidHall"][]="Student name";
 //	University
 $quest["univ"]=array();
 $quest["univ"][]="Name of couse";
-$quest["univ"][]="UFR";
 $quest["univ"][]="Course Code";
 $quest["univ"][]="Institution";
 $quest["univ"][]="Course Format";

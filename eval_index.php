@@ -1,9 +1,9 @@
 <?php
-// Last change : 2013-04-25, Jérôme Combes
+// Last update : 2014-04-04, Jérôme Combes
 
 require_once "inc/class.eval.inc";
 require_once "inc/class.tutorat.inc";
-require_once "inc/class.univ3.inc";
+require_once "inc/class.univ4.inc";
 require_once "inc/class.stage.inc";
 
 require_once "header.php";
@@ -58,13 +58,13 @@ if($db->result){
 
 
 // Univ courses
-$u=new univ3();
+$u=new univ4();
 $u->fetchAll();
 foreach($u->elements as $elem){
   $db2=new db();
-  $db2->select("evaluations","*","courseId='{$elem['cm']['id']}' AND form='univ' AND student='$std_id' AND semester='$semester'");
+  $db2->select("evaluations","*","courseId='{$elem['id']}' AND form='univ' AND student='$std_id' AND semester='$semester'");
   $closed=$db2->result[0]['closed'];
-  $univCourses[]=array("id"=>$elem['cm']['id'],"cm_name"=>$elem['cm']['nom'],"cm_prof"=>$elem['cm']['prof'],"closed"=>$closed);
+  $univCourses[]=array("id"=>$elem['id'],"name"=>$elem['nom'],"prof"=>$elem['prof'],"closed"=>$closed);
 }
 
 
@@ -139,7 +139,7 @@ if($univCourses){
       if($showClosed or !$closed){
         echo "<a href='{$folder}eval_index2.php?form=univ&amp;courseId={$elem['id']}'>\n";
       }
-      echo "University Course Evaluation : {$elem['cm_name']}, {$elem['cm_prof']} $closed";
+      echo "University Course Evaluation : {$elem['name']}, {$elem['prof']} $closed";
       if($showClosed or !$closed){ echo "</a>"; }
       echo "</li>\n";
     }

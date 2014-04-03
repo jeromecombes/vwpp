@@ -1,5 +1,7 @@
 <?php
 /*
+Last update : 2014-04-04, Jérôme Combes
+
 This script needs :
 - $isForm : true or false : display form or text
 - $std_id : int (student id)
@@ -9,10 +11,10 @@ This script needs :
 - $data : array("question (int)"=> "response (text)");
 */
 
-require_once "class.univ3.inc";
+require_once "class.univ4.inc";
 
-$u=new univ3();
-$u->fetchCMById($courseId);
+$u=new univ4();
+$u->fetch($courseId);
 
 $data[1]=$u->elements['nom'];
 $data[2]=$u->elements['ufr'];

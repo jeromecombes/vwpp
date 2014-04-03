@@ -1,4 +1,5 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
 
 class evaluation{
     var $semester;
@@ -43,7 +44,7 @@ class evaluation{
     require_once "class.ciph.inc";
     require_once "class.reidhall.inc";
     require_once "class.student.inc";
-    require_once "class.univ.inc";
+    require_once "class.univ4.inc";
 
     $s=new student();
     $s->getByUniv($university);
@@ -107,9 +108,9 @@ class evaluation{
 	    break;
 
 	  case "univ" :
-	    $u=new univ();
+	    $u=new univ4();
 	    $u->fetch($elem['courseId']);
-	    $data=array($u->element['cm_name'],$u->element['ufr'],$u->element['cm_code'],$u->element['university']);
+	    $data=array($u->elements['nom'],$u->elements['code'],$u->elements['institution']);
 	    for($i=0;$i<count($data);$i++){
 	      $tab["{$elem['timestamp']}_{$elem['student']}"][$i+1]=$data[$i];
 	      $data[$i]=str_replace(array("\n","\r","\t")," ",$data[$i]);

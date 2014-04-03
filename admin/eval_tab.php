@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once "../header.php";
 require_once "menu.php";
 require_once "../inc/eval.questions.inc";
