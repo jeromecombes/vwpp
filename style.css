@@ -1,0 +1,376 @@
+
+body{
+  background: #EEEEEE;
+  font-family:Verdana;
+  font-size:11pt;
+  background:#FFFFFF;
+}
+
+table {
+  width:1170px;
+}
+
+
+#login_form {
+  width:930px;
+}
+
+#loginTitle {
+  font-weight:bold;
+  font-size:20pt;
+  text-align:left;
+  }
+
+#loginSlogan {
+  text-align:right;
+  font-weight:bold;
+  font-style:italic;
+  font-size:12pt;
+  color:grey;
+
+}
+
+#login1{
+  background:#CFE396;
+  margin:-10px -10px -10px -10px;
+  height:900px;
+}
+
+#login2{
+  background:#FFFFFF;
+  width:980px;
+  height:800px;
+  padding: 35px 0 0 0;
+  position:relative;
+  top: 20px;
+}
+
+#content {
+  position:absolute;
+  top:60px;
+  left:30px;
+  width: 1200px;
+/*  font-size:11pt;*/
+}
+
+
+#myTab{
+  border-left: solid 1px black ;
+  border-top: solid 1px black ;
+  border-right: solid 1px black ;
+  border-bottom: solid 1px black ;
+}
+
+#myTab td,#myTab2 td, #content td{
+  padding:0 10px 0 10px;
+}
+
+#home{
+  width:1180px;
+  text-align:justify;
+}
+
+#map{
+  text-align: center;
+  margin: 30px 0 30px 0;
+}
+
+
+input[type=radio],input[type=checkbox]{
+  margin-bottom:10px;
+}
+
+input[type=text],input[type=password]{
+  margin-bottom:5px;
+  width:98%;
+}
+
+h3 {
+  margin-left: 0px;
+}
+
+h4 {
+  margin-left: 10px;
+}
+
+tr {
+  vertical-align:top;
+}
+
+td {
+ /* text-align:justify;*/
+}
+
+textarea {
+  width:100%;
+  height:150px;
+  margin-bottom:25px;
+}
+
+#information_0 ,#information_1{
+  position: absolute;
+  top: 40px;
+  left: 40%;
+  z-index: 5;
+  text-align:center;
+  font-size: 14pt;
+  font-weight:bold;
+  padding: 4px 10px 4px 10px;
+}
+
+#information_0{		/*	Success		*/
+  color:green;
+  background: #b3f4b3;
+  border-top:solid 2px green;
+  border-right:solid 2px green;
+  border-bottom:solid 2px green;
+  border-left:solid 2px green;
+}
+
+#information_1{		/*	Error	*/
+  color:red;
+  background: #f4dfdf;
+  border-top:solid 2px red;
+  border-right:solid 2px red;
+  border-bottom:solid 2px red;
+  border-left:solid 2px red;
+}
+
+.response {
+  margin: 5px 0 20px 0;
+  color:blue;
+  font-weight:bold;
+  text-align:justify;
+}
+
+font.response {
+  margin: 0 0 0 5px;
+}
+
+.response2 {
+  margin: 0 0 5px 0;
+  color:blue;
+  font-weight:bold;
+  text-align:justify;
+}
+
+.th{
+  font-weight:bold;
+  background:#AAAAAA;
+}
+
+.tr1{
+  background:#FFFFFF;
+}
+
+.tr2{
+  background:#DDDDDD;
+}
+
+
+fieldset{
+  background:#DDDDDD;
+}
+
+.fieldset {
+  padding: 10px 30px 10px 30px;
+  background:#DDDDDD;
+  width:1120px;
+}
+
+legend{
+  font-weight:bold;
+}
+
+select{
+  width:100%;
+  background:#FFFFFF; 
+}
+
+#course4 input[type=text]{
+  margin-bottom:0px;
+}
+/*			Menu principal (onglets)		*/
+#onglets {
+  float:left;
+  position:absolute;
+  top:2px;
+  width: 1200px;
+  background:yellow;
+  font-size:8pt;
+  line-height:normal;
+}
+
+#onglets #titre {
+  margin: 3px 0 0 10px;
+  color:#7D3C25;
+  font-size:14pt;
+}
+
+#onglets ul {
+  position:absolute;
+  left:300px;
+  top:-8px;
+  margin:0;
+  padding:0;
+  list-style:none;
+  width:850px;
+}
+
+#onglets li {
+  float:left;
+  margin:0;
+  padding:0;
+}
+
+#onglets a {
+  display:block;
+}
+
+#onglets li {
+  float:left;
+  background:url("img/norm_right.gif")
+    no-repeat right top;
+  margin: 0;
+  padding:0;
+}
+
+#onglets a {
+  display:block;
+  background:url("img/norm_left.gif")
+    no-repeat left top;
+  padding:5px 15px;
+}
+
+#onglets #current {
+  background-image:url("norm_right_on.gif");
+}
+
+#onglets #current a {
+  background-image:url("norm_left_on.gif");
+}
+
+#onglets {
+  float:left;
+  width: 1200px;
+  background:#DAE0D2 url("img/bgOnglet.gif")
+    repeat-x bottom;
+  font-size:8pt;
+  line-height:normal;
+}
+
+#onglets ul {
+  margin:0;
+  padding:10px 10px 0;
+  list-style:none;
+}
+
+#onglets a {
+  display:block;
+  background:url("img/norm_left.gif")
+    no-repeat left top;
+  padding:5px 15px 4px;
+}
+
+#onglets #current a {
+  background-image:url("img/norm_left_on.gif");
+  padding-bottom:5px;
+}
+
+#onglets li {
+  float:left;
+  background:url("img/norm_right.gif")
+    no-repeat right top;
+  margin:0;
+  padding:0 0 0 9px;
+}
+
+#onglets a {
+  display:block;
+  background:url("img/norm_left.gif")
+    no-repeat left top;
+  padding:5px 15px 4px 6px;
+}
+
+#onglets li {
+  float:left;
+  background:url("img/norm_left.gif")
+    no-repeat left top;
+  margin:0;
+  padding:0 0 0 9px;
+}
+
+#onglets a, #onglets strong, #onglets span {
+  display:block;
+  background:url("img/norm_right.gif")
+    no-repeat right top;
+  padding:5px 15px 4px 6px;
+}
+
+#onglets #current {
+  background-image:url("img/norm_left_on.gif");
+}
+
+#onglets #current a {
+  background-image:url("img/norm_right_on.gif");
+  padding-bottom:5px;
+}
+
+#onglets a {
+  float:left;
+  display:block;
+  background:url("img/norm_right.gif")
+    no-repeat right top;
+  padding:5px 4px 4px 0;
+  text-decoration:none;
+  font-weight:bold;
+  color:#7D3C25;
+}
+
+/* Le hack de l'antislash commenté
+    cache cette règle à IE5-Mac \*/
+#onglets a {float:none;}
+
+/* End IE5-Mac hack */
+
+#onglets a {
+  /* Pour IE Mac uniquement \*//*/   
+  float:left;
+  /**/
+  display:block;
+  background:url("img/norm_right.gif")
+    no-repeat right top;
+  padding:5px 4px 4px 0;
+  text-decoration:none;
+  font-weight:bold;
+  color:#7D3C25;
+  }
+
+#logout{
+  position:absolute;
+  right:0px;
+  }
+
+#loginName {
+  position:absolute;
+  right:95px;
+  top:8px;
+}
+
+
+
+/*	Footer	*/
+#footer {
+  display: none;
+  margin-top:30px;
+  text-align:center;
+}
+
+
+#calendrier {		
+	position:absolute;
+	z-index:10;
+	background:#FFFFFF;
+	width:190px;
+	height:165px;
+	}

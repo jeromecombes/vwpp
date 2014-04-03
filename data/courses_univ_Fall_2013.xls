@@ -1,0 +1,66 @@
+Institution	Discipline	Niveau	Code	Nom	Nature	Professeur	E-mail	Jour	Début	Fin	Modalités	Modalités 1	Modalités 2	Student
+Académie de Port Royal				Peinture et Dessin										Gregoline Emma
+Université Paris III	Arts appliqués (studio art)	Licence 3	dsqfdsfds	fdsfds	CM	fsds	fdsds	3	08:45	21:00	Oui			test test
+Université Paris III	Arts appliqués (studio art)	Licence 3	k,bbh,n	b,n,nb	TD	,nbnb,	kjllkj	2	09:00	09:15	Oui	lkjljk		test test
+Université Paris III	Droit	Licence 2	Droit test	droit test	TD	prof du cours de test 5	email@test.edu							test test
+Université Paris III	Droit	Licence 2	Test	droit test	Option									test test
+Université Paris III	Economie	Licence 2	Test	test	CM	tete	tete@tete.gt	1	08:00	08:15	Oui	tetete		test test
+Université Paris III	Economie	Licence 2	razraz	razaz	Option	eazeaz	eazeaz	2	08:15	08:30	Oui	aezazeaz		test test
+Université Paris III	Economie	Licence 2	tetete	tetete	TD	tetetete	teter@tete.vom	1	08:30	08:45	Non			test test
+Université Paris III	Histoire-Géographie	Licence 3	O5A31	Religions et politique du monde arabe	TD	Benhima, Yassir	yassir.benhima@univ-paris3.fr	3	10:30	12:00	Oui	deux travaux écrits: commentaire d'un texte médiéval (traduit), dissertation sur un ouvrage moderne; examen final?		Owen-Dunow Max
+Université Paris III	Littérature	Licence 2	F3144	Mythes et Filiations Culturelles/ XVII-XVIIIe s.	TD	Kremer, Nancy								Kim Alice
+Université Paris III	Littérature	Licence 2	F3144 	Mythes et Filiations culturelles: XVIie-XVIIIe s., Figures de l'Imposteur	TD	Kremer, Nancy								Gregoline Emma
+Université Paris III	Littérature	Licence 3	A5B21	Littérature	CM	Bour, Isabelle								Kim Alice
+Université Paris III	Littérature	Licence 3	A5B21	Littérature	TD									Kim Alice
+Université Paris III	Littérature	Licence 3	F5LT1	Théâtre et politique	TD	Yvon Le-Scanff	Yvon.Le-Scanff@univ-paris3.fr	4	08:30	10:00	Oui	1 ou 2 devoirs êecrits, dont la meilleure note sera choisie + DST		Owen-Dunow Max
+Université Paris IV	Art-Archéologie	Licence 2	L3AA03	Archéologie et Histoire de l'art romain et gallo-romain	CM	Rosso, E.		4	09:00	10:00				Wilton Rebecca
+Université Paris IV	Art-Archéologie	Licence 2	L3AA03	Archéologie et Histoire de l'art romain et gallo-romain	CM	Joly, M.		4	12:00	13:00				Wilton Rebecca
+Université Paris IV	Art-Archéologie	Licence 2	L3AA03	Archéologie et Histoire de l'art romain et gallo-romain	TD	Maquinay, M.								Wilton Rebecca
+Université Paris IV	Art-Archéologie	Licence 2	L3AA03	Archéologie et Histoire de l'art romain et gallo-romain	TD	Maquinay, M.								Wilton Rebecca
+Université Paris IV	Art-Archéologie	Licence 2	L3AA06	Histoire de l'art du Moyen Âge Occidental: XIe-XIIIe s.	CM	Sandron, Denis		3	14:00	16:00				Wilton Rebecca
+Université Paris IV	Art-Archéologie	Licence 2	L3AA06	Histoire de l'art du Moyen Âge Occidental: XIe-XIIIe s.	TD	Berger, S.		3	08:00	10:00	Oui	deux examens		Wilton Rebecca
+Université Paris IV	Art-Archéologie	Licence 2	L3AA12	Archéologie et Iconographie de l'Egypte pharaonique	CM	Peyraudau, Frédéric	Fpeyraudau@sfr.fr	4	15:00	17:00		En attente		Huang Zhuofan
+Université Paris IV	Art-Archéologie	Licence 2	L3AA12	Archéologie et Iconographie de l'Egypte pharaonique	TD	Payraudeau, F	fpayraudeau@sfr.fr	1	16:00	18:00	Oui	dossier écrit (sujet à déterminer)		Huang Zhuofan
+Université Paris IV	Art-Archéologie	Licence 3	L5AA10HA	Histoire de l'art contemporain XIXe	CM	Goetz, Adrien		2	09:00	11:00				Mooney Grace
+Université Paris IV	Art-Archéologie	Licence 3	L5AA10HA	Histoire de l'art contemporain XIXe	TD	Ameille, B.		3	14:00	15:00	Oui	un exposé de 35 minutes 		Mooney Grace
+Université Paris IV	Art-Archéologie	Licence 3	L5AA10HA	Histoire de l'art contemporain XIXe	Option	Gauthier, Michel		3	09:00	10:00	Oui	En attente		Mooney Grace
+Université Paris IV	Art-Archéologie	Licence 3	L5AA10HA	Histoire de l'art contemporain XIXe	CM	Goetz, Adrien		2	09:00	11:00		En attente		Huang Zhuofan
+Université Paris IV	Art-Archéologie	Licence 3	L5AA10HA	Histoire de l'art contemporain XIXe	TD	Ameille, Brice		3	16:00	17:00	Oui	En attente d'un email du prof: exposé?		Huang Zhuofan
+Université Paris IV	Art-Archéologie	Licence 3	L5AA10HA	Les grandes tendances de l'art au début du XXIe s.	Option	Gauthier, M.		3	09:00	10:00	Oui	dossier écrit		Huang Zhuofan
+Université Paris IV	Art-Archéologie	Licence 3	L5AA15HA	Les Arts du Monde Indien	CM	Parlier-Renault, E.	Edith.Parlier-Renault@paris-sorbonne.fr	5	12:00	13:00				Hirsch Rachel
+Université Paris IV	Art-Archéologie	Licence 3	L5AA15HA	Les Arts du Monde Indien	TD	Ladrech, Karine	karine.Ladrech@paris-sorbonne.fr	5	15:00	16:00	Oui	devoir écrit?		Hirsch Rachel
+Université Paris IV	Art-Archéologie	Licence 3	L5AA15HA	Les Arts du Monde Indien: Histoire et civilisation de l'Inde	CM	Ladrech; K.		4	13:00	14:00				Hirsch Rachel
+Université Paris IV	Art-Archéologie	Licence 3	L5AA15HA	Les Arts du Monde Indien: L'art Hoysala	CM	Ladrech, Karine	Karine.Ledrech@paris-sorbonne.fr	4	14:00	15:00				Hirsch Rachel
+Université Paris IV	Cinéma-Communication	Licence 3	teqte22	testes	TD	prof du cours de test 5	tsetes	3	08:45	10:15	Oui	teqtq ééé		 
+Université Paris IV	Cinéma-Communication	Licence 3	tsqtest	tswegseg	Option	qgesgsr	segseg	5	12:00	11:30	Oui	eqgesgesge		 
+Université Paris IV	Cinéma-Communication	Licence 3	tsqtest tp ok	tswegseg	TP	qgesgsr	segseg	5	12:00	11:30	Oui	eqgesgesge  parfait	super  ok	 
+Université Paris IV	Littérature	Licence 3	L5LM84FR	Litt. fr. XIXe et XXe s. 	CM	Basch, Sophie		3	11:00	13:00				Buxton Nicholas
+Université Paris VII	Cinéma-Communication	Licence 2	54CC1111	Histoire du cinéma: une période- Le cinéma italien	CM	Aurore Renaut	aurorenaut@gmail.com	2	18:00	21:00	Oui	Un projet oral ou écrit (à discuter), sujet au choix.		Liang Lei
+Université Paris VII	Droit	Licence 1	54 DR1071 	Introduction au droit	CM	Sylvain Fourmond	sylvain.fourmond@univ-paris-diderot.fr	3	12:30	15:30	Non	En attente		Schieferstein Daria
+Université Paris VII	Economie	Licence 1	54EC1011	Introduction à l'économie	CM	Christophe Darmangeat	cdarmangeat@gmail.com	2	14:30	16:30	Non			Wallach Sophia
+Université Paris VII	Economie	Licence 1	54EC1011	Introduction à l'économie	TD			3	10:30	12:00	Non	En attente		Wallach Sophia
+Université Paris VII	Economie	Licence 2	54EC2213	Politique Économique	CM	Gérard Tasso	gtasso@club-internet.fr	5	13:30	16:00	Non	En attente		Wallach Sophia
+Université Paris VII	Economie	Licence 2	 54EC2213	 Politique Économique	TD			4	10:30	12:00	Non			Wallach Sophia
+Université Paris VII	Economie	Licence 3	43U2EC35	Économie industrielle	CM	Yorgos Rizopoulos	yorgos.rizopoulos@univ-paris-diderot.fr	1	10:30	12:30	Oui	Un examen à la maison		Kourdova Kalina
+Université Paris VII	Economie	Licence 3	43U2EC35	Économie industrielle	TD	Lyazid Kichou		4	10:45	12:15	Oui	9 quizz (5 à rendre), un devoir final (questions au choix), éventuellement autre chose (en attente)		Kourdova Kalina
+Université Paris VII	Histoire-Géographie	Licence 1	54DR1071	Introduction au droit	CM	Sylvain Fourmond	sylvain.fourmond@univ-paris-diderot.fr	3	12:30	15:30	Oui	Je pense qu'elles sont: Pas d'examen en janvier mais probablement une dissertation sur un sujet décidé au préalable.		Bird Emma
+Université Paris VII	Histoire-Géographie	Licence 2	54GO2713	Initiation à la géographie urbaine	TD	Sophie Baudet-Michel	sophie.baudet-michel@univ-paris-diderot.fr	2	16:00	18:30	Oui	Elle m'a dit que nous en discuterons de nouveau en novembre		Bird Emma
+Université Paris VII	Histoire-Géographie	Licence 3	43HI2035	Histoire des migrations en Europe (XIXe-XXe sie?cles)	TD	Manuella Martini	manuela.martini@univ-paris-diderot.fr	2	10:30	13:30	Non	En attente		Shajrawi Ali
+Université Paris VII	Histoire-Géographie	Licence 3	43HI6335	Histoire économique	CM	Zacarias Moutoukias	zacarias.moutoukias@univ-paris-diderot.fr. 	3	16:30	18:00	Non	Dissertation; contrôles au cours du semestre?		Guy Mireille
+Université Paris VII	Langues	Licence 3	44SOJP30	Sociologie :Société culture identité	TD	Kazuhiko Yatabe	kazuhiko.yatabe@univ-paris-diderot.fr	2	15:00	18:00	Oui	1 exposé oral binome 		Nakagawa Erika
+Université Paris VII	Littérature	Licence 1	54LC1110	Récits de la contre-utopie	CM	Régis Salado	regis.salado@gmail.com	4	18:00	21:00	Oui	trois commentaires composés et examen final jeudi 19 déc. 18h-21h		Nakagawa Erika
+Université Paris VII	Littérature	Licence 1	54LC1110	Récits de la contre-utopie	CM	Régis Salado	regis.salado@gmail.com	4	18:00	21:00	Non	trois commentaires composés et examen final 19déc 18-21h		Choi Lily
+Université Paris VII	Littérature	Licence 1	54LM1281	Cinéma du voyage au XXe siècle	TD	Jean-François Guennoc	 jean-francois.guennoc@univ-paris-diderot.fr	2	15:00	18:00	Oui	Un examen de mi-semestre: une dissertation; et peut-être un exposé oral.		Schieferstein Daria
+Université Paris VII	Littérature	Licence 3	46CE0135	Spectacle et récit dans la comédie musicale hollywoodienne	TD	Pierre Toulza	pierretoulza@gmail.com	2	09:00	12:00	Non	Un partiel après la toussaint, et, je peux choisir un exposé ou un devoir écrit à la maison.		Liang Lei
+Université Paris VII	Littérature	Licence 3	46LM3145	Littérature comparée	TD	Anne Paupert	apaupert@wanadoo.fr	4	15:00	18:00	Oui	- un examen écrit au milieu du semestre  - un exposé oral ou écrit    Examen final (dissertation ou commentaire de texte ? En attente de réponse) - quand? : en décembre		Gibbel Katherine
+Université Paris VII	Sciences appliquées (biologie, chimie, maths, physique ...)	Licence 2	51IF2OL3	Outils logiques	TD	Ralf Treinen	treinen@pps.univ-paris-diderot.fr	2	10:30	12:30	Oui	note: max (examen final ou examen de mi-semestre + examen final divisés par 2)		Thorne Evan
+Université Paris VII	Sciences appliquées (biologie, chimie, maths, physique ...)	Licence 2	51IF2OL3	Outils logiques	TD	Ralf Treinen	treinen@pps.univ-paris-diderot.fr	4	08:30	10:30	Oui	note: max (examen final ou examen de mi-semestre + examen final divisés par 2) (lié au TD du mardi)		Thorne Evan
+Université Paris VII	Sciences du langage (grammaire, traduction, linguistique ...)	Licence 2	54LG1221	La langue comme fait social	TD	Jean Cohen-Bacri	jean.cohen-bacri@univ-paris-diderot.fr	2	17:00	19:00	Non	En attente		Feldman Jennifer
+Université Paris VII	Sociologie	Licence 2	54SO1234	Femmes et Institutions	CM	Jules Falquet (Mme)	jules.falquet@univ-paris-diderot.fr	2	14:00	15:30	Non	lectures pour chaque cours		Choi Lily
+Université Paris VII	Sociologie	Licence 2	54SO1234	Femmes et Institutions	TD	Damien Trawalé	damien.trawale@gmail.com	2	11:30	13:00	Non	En attente		Choi Lily
+Université Paris VII	Sociologie	Licence 2	54SO1234	Femmes et Institutions	CM	Jules Falquet (Mme)	jules.falquet@univ-paris-diderot.fr	2	14:00	15:30	Non	dissertation?		Guy Mireille
+Université Paris VII	Sociologie	Licence 2	54SO1234	Femmes et Institutions	TD	Damien Trawalé	damien.trawale@gmail.com	2	11:30	13:00	Non	exposé de 10 minutes, (deux étudiants)		Guy Mireille
+Université Paris VII	Sociologie	Licence 2	54SO1243	Femmes et Institutions	CM	Jules Falquet	jules.falquet@univ-paris-diderot.fr	2	14:00	15:30	Non	En attente		Gibbel Katherine
+Université Paris VII	Sociologie	Licence 2	54SO1243	Femmes et Institutions	TD	Damien Trawalé	damien.trawale@gmail.com	2	11:30	13:00	Non	En attente		Gibbel Katherine
+Université Paris VII	Sociologie	Licence 2	54SO1243	Femmes et Institutions	CM	Jules Falquet	jules.falquet@univ-paris-diderot.fr	2	14:00	15:30	Non	Ne pense pas avoir de notes en CM mais uniquement en TD		Scher Gabrielle
+Université Paris VII	Sociologie	Licence 2	54SO1243	Femmes et Institutions	TD	Damien Trawalé	damien.trawale@gmail.com	2	11:30	13:00	Oui	1 fiche de lecture (groupe de 3)  Assiduité (33%)    À compléter (examen final en décembre?)		Scher Gabrielle

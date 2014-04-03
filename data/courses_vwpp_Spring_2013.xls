@@ -1,0 +1,55 @@
+type	code	title	nom	professor	studentLastname	studentFirstname
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Centofanti	Kate
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Chan	Alda
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Kaufman	Michael
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Liu	Xi
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Parks	Katherine
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Parlak	Duygu Vivian
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Pravitz-Rosen	Theodore
+Writing	WI1	Writing on France today	Réagir sur la France	Collet	Salah	Yasmine
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Dorsey	Emily
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Elbaum	Emma
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Esocoff	Sarah
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Kosman	Hannah
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Kudman	Zachary
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Martino	Nicholas
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Nguyen	John
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Orchant	Danielle
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Rosenthal	Elana
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Selter	Emily
+Writing	WI3	French Revolution	La Révolution française	Graille	Aybar	Melissa
+Writing	WI3	French Revolution	La Révolution française	Graille	Bonneau	Alyssa
+Writing	WI3	French Revolution	La Révolution française	Graille	Dellplain	Melanie
+Writing	WI3	French Revolution	La Révolution française	Graille	Demelier	Adrien
+Writing	WI3	French Revolution	La Révolution française	Graille	Dowling	Emily
+Writing	WI3	French Revolution	La Révolution française	Graille	Kornfeld	Molly
+Writing	WI3	French Revolution	La Révolution française	Graille	Pass	Emilie
+Writing	WI3	French Revolution	La Révolution française	Graille	Peterson-Cochrane	Chloe
+Writing	WI3	French Revolution	La Révolution française	Graille	Toy	Kelly
+Seminar	S2	Installations, Space	Installations, Espace	Kraguly	Aybar	Melissa
+Seminar	S2	Installations, Space	Installations, Espace	Kraguly	Dellplain	Melanie
+Seminar	S2	Installations, Space	Installations, Espace	Kraguly	Esocoff	Sarah
+Seminar	S2	Installations, Space	Installations, Espace	Kraguly	Peterson-Cochrane	Chloe
+Seminar	S2	Installations, Space	Installations, Espace	Kraguly	Pravitz-Rosen	Theodore
+Seminar	S2	Installations, Space	Installations, Espace	Kraguly	Salah	Yasmine
+Seminar	S3	Art and nature in the XIXth century	L'art et la Nature au XIXe	Peigné	Bonneau	Alyssa
+Seminar	S3	Art and nature in the XIXth century	L'art et la Nature au XIXe	Peigné	Kaufman	Michael
+Seminar	S3	Art and nature in the XIXth century	L'art et la Nature au XIXe	Peigné	Kudman	Zachary
+Seminar	S3	Art and nature in the XIXth century	L'art et la Nature au XIXe	Peigné	Rosenthal	Elana
+Seminar	S3	Art and nature in the XIXth century	L'art et la Nature au XIXe	Peigné	Selter	Emily
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Centofanti	Kate
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Dorsey	Emily
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Kosman	Hannah
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Liu	Xi
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Martino	Nicholas
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Nguyen	John
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre français	Clément	Pass	Emilie
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Chan	Alda
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Demelier	Adrien
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Dowling	Emily
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Elbaum	Emma
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Kornfeld	Molly
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Orchant	Danielle
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Parks	Katherine
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Parlak	Duygu Vivian
+Seminar	S4	Paris and its facets	Paris et ses facettes	Poisson	Toy	Kelly

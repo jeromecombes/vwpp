@@ -1,0 +1,56 @@
+@page {
+  size: 21.0cm 29.7cm;
+  margin: 1.7cm 2cm 1.4cm 2cm;
+}
+
+
+body, .fieldset, table {
+  width:170mm;
+  margin: 0 0 0 0;
+  font-size: 11pt;
+  font-family: times new roman;
+}
+
+#onglets, h3, a, #div2 {
+  display:none;
+}
+
+.fieldset {
+  padding: 0 0 0 0;
+  background:#FFFFFF;
+  text-align:justify;
+  width:175mm;
+}
+
+.fieldset a {
+  display:inline;
+}
+
+.fieldset h3{
+  display:block;
+/*   page-break-before:always; */
+}
+
+.fieldset input{
+  display: none;
+}
+
+.response {
+  margin: 5px 0 20px 0;
+  color:blue;
+  font-weight:bold;
+}
+
+font.response {
+  margin: 0 0 0 5px;
+}
+
+.response2 {
+  margin: 0 0 5px 0;
+  color:blue;
+  font-weight:bold;
+}
+
+.noprint {
+  display:none;
+}

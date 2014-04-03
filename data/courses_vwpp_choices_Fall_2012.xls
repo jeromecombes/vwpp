@@ -1,0 +1,93 @@
+type	code	title	nom	professor	studentLastname	studentFirstname	choice
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Bjornson	Julius	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Carr	Margaret	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Edwards	Ian	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Evans	Brian	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Hoffman	Ethan	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Ichizawa	Maria	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Lee	Vera	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Lopez	Sydney	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Madwed	Isaac	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Myerberg	Nicholas	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Ruffner	Zoe	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Scriptunas	Tess	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Zaccheo	Giovanni	1st
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Conrad	Caroline	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Garrick-Okoli	Isabelle	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Morgan	Anya	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Peterson-Cochrane	Chloe	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Ripecky	Zoe	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Sears	Anna	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Steiner	Elizabeth	2nd
+Seminar	S1	Scandal in Art: Provocations, Controversies and Visual Art	Le Scandale dans l?art : Provocations, controverses et Art Visuels	Kraguly, Nena	Zylo	Test-student	2nd
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Ellman	Hannah	1st
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Morgan	Anya	1st
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Peterson-Cochrane	Chloe	1st
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Ripecky	Zoe	1st
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Sears	Anna	1st
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Steiner	Elizabeth	1st
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Andrews	Charlotte	2nd
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Bjornson	Julius	2nd
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Hoffman	Ethan	2nd
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Lopez	Sydney	2nd
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Madwed	Isaac	2nd
+Seminar	S2	Women, Feminism and Gender in France (19th and 20th centuries)	Femmes, Féminisme, Genre en France (XIXe et XXe siècles)	Taraud, Christelle	Myerberg	Nicholas	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Andrews	Charlotte	1st
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Conrad	Caroline	1st
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Garrick-Okoli	Isabelle	1st
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Zylo	Test-student	1st
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Carr	Margaret	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Edwards	Ian	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Ellman	Hannah	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Evans	Brian	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Ichizawa	Maria	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Lee	Vera	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Ruffner	Zoe	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Scriptunas	Tess	2nd
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Zaccheo	Giovanni	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Hoffman	Ethan	1st
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Morgan	Anya	1st
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Scriptunas	Tess	1st
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Andrews	Charlotte	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Carr	Margaret	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Conrad	Caroline	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Ichizawa	Maria	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Lee	Vera	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Myerberg	Nicholas	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Ripecky	Zoe	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Ruffner	Zoe	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Zaccheo	Giovanni	2nd
+Writing	WI1	Writing of the Self	Écriture de soi	de Chalonge, Florence	Zylo	Test-student	2nd
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Andrews	Charlotte	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Carr	Margaret	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Conrad	Caroline	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Edwards	Ian	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Ellman	Hannah	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Evans	Brian	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Garrick-Okoli	Isabelle	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Ichizawa	Maria	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Lee	Vera	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Lopez	Sydney	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Peterson-Cochrane	Chloe	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Ripecky	Zoe	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Ruffner	Zoe	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Sears	Anna	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Steiner	Elizabeth	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Zylo	Test-student	1st
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Bjornson	Julius	2nd
+Writing	WI2	Paris and French Literature: Realms of Memory	Paris et la littérature française: Lieux de mémoire	Mégevand, Martin	Madwed	Isaac	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Bjornson	Julius	1st
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Madwed	Isaac	1st
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Myerberg	Nicholas	1st
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Zaccheo	Giovanni	1st
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Edwards	Ian	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Ellman	Hannah	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Evans	Brian	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Garrick-Okoli	Isabelle	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Hoffman	Ethan	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Lopez	Sydney	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Morgan	Anya	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Peterson-Cochrane	Chloe	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Scriptunas	Tess	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Sears	Anna	2nd
+Writing	WI3	Images of the Other in French Thought: from the Past to the Present	Images de l?autre dans la pensée française d?hier à aujourd?hui	Graille, Patrick	Steiner	Elizabeth	2nd

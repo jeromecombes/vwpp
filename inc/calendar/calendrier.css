@@ -1,0 +1,116 @@
+/*                                                                            */
+/* Feuille de style du calendrier                                             */
+/*                                                                            */
+
+
+body,a,a:hover {
+	color:#000000;		/* Maron BULAC	*/
+	font-family:Verdana;
+	}
+
+/* Style de la table principale contenant le calendrier                       */
+table.calendrier_principal {
+	font-family: Arial, Times, serif;
+	font-size: 10px;
+}
+
+/* Style du titre du calendrier (<< mois annee >>)                            */
+.calendrier_titre {
+	color: #000000;
+	text-align: center;
+}
+
+/* Style de la cellule "mois annee" du titre                                  */
+.calendrier_titre_mois {
+	font-weight: bold;
+}
+
+/* Style du lien "mois annee" du titre                                        */
+.calendrier_titre_mois_cliquable {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* Style de la cellule contenant le lien "<<" du titre                        */
+.calendrier_titre_fleche_gauche {
+	text-align: left;
+}
+
+/* Style de la cellule contenant le lien ">>" du titre                        */
+.calendrier_titre_fleche_droite {
+	text-align: right;
+}
+
+/* Style specifique du lien "<<" du titre                                     */
+.calendrier_titre_fleche_gauche_cliquable {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* Style specifique du lien ">>" du titre                                     */
+.calendrier_titre_fleche_droite_cliquable {
+	color: #000000;
+	text-decoration: none;
+}
+
+/* Style global de la table du calendrier                                     */
+.calendrier_tableau {
+	border: none;
+	border-collapse: collapse;
+	font-size: 10px;
+}
+
+/* Style generique des cellules de la table du calendrier                     */
+.calendrier_tableau td {
+	border: 1px solid #000000;
+	text-align: center;
+	width: 20px;
+}
+
+/* Style des cellules d'en-tete la table du calendrier, contenant les jours   */
+.calendrier_tableau th {
+	border: 1px solid #000000;
+	background-color: #999999;
+	font-weight: normal;
+	text-align: center;
+	color:#000000;
+}
+
+/* Style des cellules de la table contenant les jours du week-end (samedi et  */
+/* dimanche)                                                                  */
+.calendrier_weekend {
+	background-color: #CCCCCC;  /*#cccccc;*/
+}
+
+/* Style des cellules contenant des jours ne faisant pas partie du mois en    */
+/* cours d'affichage                                                          */
+.calendrier_hors_mois {
+	color: #999999;
+}
+
+/* Style des liens des jours ne faisant pas partie du mois en cours           */
+/* d'affichage                                                                */
+.calendrier_hors_mois_cliquable {
+	color: #999999;
+	text-decoration: none;
+	cursor:pointer;
+}
+
+/* Style du jour (non cliquable) representant aujourd'hui                     */
+.calendrier_aujourdhui {
+	color: #ff0000;
+}
+
+/* Style du lien sur le jour representant aujourd'hui                         */
+.calendrier_ajourdhui_cliquable {
+	color: #ff0000;
+	text-decoration: none;
+	cursor:pointer;
+}
+
+/* Style des liens des jours faisant partie du mois en cours d'affichage      */
+.calendrier_jour_cliquable {
+	color: #000000;
+	text-decoration: none;
+	cursor:pointer;
+}

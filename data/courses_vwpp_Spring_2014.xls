@@ -1,0 +1,72 @@
+type	code	title	nom	professor	studentLastname	studentFirstname
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Buxton	Nicholas
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Cabrera	Matthew
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Carpenter	Gabriella
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Don	Robert
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Fitzgerald	Julia
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Franchi	Sophia
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Hollithron	Henry
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Lawal	Olayinka
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Lyn	Michael
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Mike	Sherrel
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Satayopas	Borworn
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Wright	Claire
+Seminar	S1	Panorama of contemporary theater	Panorama du théâtre contemporain	Clément	Zinser	Sophie
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Dawson	Stephanie
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Durr	Katherine
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Issroff	Daniel
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Jia	Claire
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Lawal	Olayinka
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Lyn	Michael
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Medvedev	Danila
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Struve	Juliana
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Yang	Yang
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Zheutlin	Alexander
+Seminar	S2	Installations, Space	Installations et espace	Kraguly	Zinser	Sophie
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Bourenane	Sarah
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Buxton	Nicholas
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Cabrera	Matthew
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Don	Robert
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Leatherman	Zachary
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Lyn	Michael
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Mike	Sherrel
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Mirchand	Drue
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Reidy	Haylle
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Slap	William
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Struve	Juliana
+Seminar	S3	Art and nature in the XIXth century	L'art et la nature au XIXe siècle	Peigné	Zheutlin	Alexander
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Bourenane	Sarah
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Don	Robert
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Durr	Katherine
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Jia	Claire
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Lawal	Olayinka
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Leatherman	Zachary
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Reidy	Haylle
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Steele	Elena
+Seminar	S4	Women, feminism, gender in France (XIXth-XXIst centuries)	Femmes, Féminisme, Genre en France (XIXe- XXIe siècles)	Taraud	Yang	Yang
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Bourenane	Sarah
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Don	Robert
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Durr	Katherine
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Issroff	Daniel
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Lawal	Olayinka
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Leatherman	Zachary
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Medvedev	Danila
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Yang	Yang
+Writing	WI1	Writing about France today	Réagir sur la France d?aujourd?hui	Collet-Basset	Zheutlin	Alexander
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Cabrera	Matthew
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Carpenter	Gabriella
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Dawson	Stephanie
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Hollithron	Henry
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Mirchand	Drue
+Writing	WI2	Literature and journalism	Littérature et journalisme	De Chalonge	Zinser	Sophie
+Writing	WI3	French Revolution	La Révolution française	Graille	Jia	Claire
+Writing	WI3	French Revolution	La Révolution française	Graille	Lyn	Michael
+Writing	WI3	French Revolution	La Révolution française	Graille	Reidy	Haylle
+Writing	WI3	French Revolution	La Révolution française	Graille	Steele	Elena
+Writing	WI3	French Revolution	La Révolution française	Graille	Struve	Juliana
+Writing	WI3	French Revolution	La Révolution française	Graille	Wright	Claire
+Writing	WI4	Medieval Paris	Paris médiéval	Reno	Fitzgerald	Julia
+Writing	WI4	Medieval Paris	Paris médiéval	Reno	Franchi	Sophia
+Writing	WI4	Medieval Paris	Paris médiéval	Reno	Mike	Sherrel
+Writing	WI4	Medieval Paris	Paris médiéval	Reno	Satayopas	Borworn
+Writing	WI4	Medieval Paris	Paris médiéval	Reno	Slap	William

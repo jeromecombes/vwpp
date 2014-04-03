@@ -1,0 +1,49 @@
+type	code	title	nom	professor	studentLastname	studentFirstname
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Bird	Emma
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Buxton	Nicholas
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Feldman	Jennifer
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Gregoline	Emma
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Hirsch	Rachel
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Kourdova	Kalina
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Mooney	Grace
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Scher	Gabrielle
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Schieferstein	Daria
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Shajrawi	Ali
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Thorne	Evan
+Seminar	S1	Artistic perspectives of Postmodernism	Positions artistiques du Postmodernisme: déconstruction, discontinuité, ambiguïté?	Kraguly, Nena	Wilton	Rebecca
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Choi	Lily
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Feldman	Jennifer
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Guy	Mireille
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Kim	Alice
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Nakagawa	Erika
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Scher	Gabrielle
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Shajrawi	Ali
+Seminar	S2	Sex economy, XIXth-XXIth centuries	Economie du sexe, XIXe-XXIe siècles	Madame Pheterson	Wallach	Sophia
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Gibbel	Katherine
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Huang	Zhuofan
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Kourdova	Kalina
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Liang	Lei
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Owen-Dunow	Max
+Seminar	S3	Theatre in Paris: History and Performance	L?histoire du théâtre au miroir des programmations parisiennes	Clément, Bruno	Thorne	Evan
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Bird	Emma
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Guy	Mireille
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Hirsch	Rachel
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Kourdova	Kalina
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Liang	Lei
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Mooney	Grace
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Scher	Gabrielle
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Schieferstein	Daria
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Shajrawi	Ali
+Writing	WI1	Nasty, dirty and mean: monsters in French literature	Affreux, sales et méchants : les monstres dans la littérature française	Graille, Patrick	Wallach	Sophia
+Writing	WI2	Writing of the self	L?écriture de soi	de Chalonge, Florence	Buxton	Nicholas
+Writing	WI2	Writing of the self	L?écriture de soi	de Chalonge, Florence	Choi	Lily
+Writing	WI2	Writing of the self	L?écriture de soi	de Chalonge, Florence	Gibbel	Katherine
+Writing	WI2	Writing of the self	L?écriture de soi	de Chalonge, Florence	Kim	Alice
+Writing	WI2	Writing of the self	L?écriture de soi	de Chalonge, Florence	Nakagawa	Erika
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Feldman	Jennifer
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Gregoline	Emma
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Huang	Zhuofan
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Mooney	Grace
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Owen-Dunow	Max
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Thorne	Evan
+Writing	WI3	Paris and French literature: realms of memory	Paris et la littérature française: Lieux de mémoire 	Mégevand, Martin	Wilton	Rebecca
