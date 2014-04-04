@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once "class.courses.inc";
 require_once "class.grades.inc";
 
@@ -14,10 +16,10 @@ $tmp=$c->univ_courses;
 $univ_courses=array();
 $td_courses=array();
 foreach($tmp as $elem){
-  if($elem['type']=="CM")
+//   if($elem['type']=="CM")
     $univ_courses[]=$elem;
-  elseif($elem['type']=="TD" and $elem['code'])
-    $td_courses[]=$elem;
+/*  elseif($elem['type']=="TD" and $elem['code'])
+    $td_courses[]=$elem;*/
 }
 
 $g=new grades();
@@ -145,7 +147,8 @@ echo <<<EOD
 </table>
 </fieldset>		<!--	END OF University 	-->
 
-<h3>Discussion courses</h3>			<!--	TD	-->
+<!--
+<h3>Discussion courses</h3>			<!--	TD	
 <fieldset>
 <table>
 <tr style='font-weight:bold;font-size:10pt;'><td style='width:595px;'>Course title</td>
@@ -197,7 +200,8 @@ foreach($td_courses as $course){
 
 echo <<<EOD
 </table>
-</fieldset>		<!--	END OF TD		-->
+</fieldset>		<!--	END OF TD		
+-->
 
 
 <h3>CIPh or other institutions Courses</h3>
@@ -262,7 +266,7 @@ EOD;
 
 if(in_array(18,$_SESSION["vwpp"]["access"]) or in_array(19,$_SESSION["vwpp"]["access"])){
   echo "<div style='text-align:right;width:1200px;'>\n";
-  echo "<input id='form_1_radio_$j' style='display:none;' type='button' value='Annuler' onclick='location.href=\"students-view2.php\";'/>\n";
+  echo "<input id='form_1_radio_$j' style='display:none;' type='button' value='Cancel' onclick='location.href=\"students-view2.php\";'/>\n";
   echo "<input id='form_1_done' style='display:none;' type='submit' value='Submit'/>\n";
   echo "<input type='button' value='Change' id='form_1_$i' onclick='displayForm(\"form\",1);' />\n";
   echo "</div>\n";

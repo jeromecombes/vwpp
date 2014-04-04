@@ -1,7 +1,9 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once "class.student.inc";
 require_once "class.tutorat.inc";
-require_once "class.univ3.inc";
+require_once "class.univ4.inc";
 
 class courses{
   public $semester=null;
@@ -42,17 +44,13 @@ class courses{
       $this->vwpp_courses[]=$this->seminar3;
 
     //			University Courses
-    $u=new univ3();
+    $u=new univ4();
     $u->student=$student;
     $u->fetchAll();
     foreach($u->elements as $elem){
-      $tmp=$elem['cm'];
-      $tmp['nom_en']=$elem['cm']['nom_en']?$elem['cm']['nom_en']:$elem['cm']['nom'];
-      $tmp['type']="CM";
-      $this->univ_courses[]=$tmp;
-      $tmp=$elem['td'];
-      $tmp['nom_en']=$elem['td']['nom_en']?$elem['td']['nom_en']:$elem['td']['nom'];
-      $tmp['type']="TD";
+      $tmp=$elem;
+      $tmp['nom_en']=$elem['nom'];
+      $tmp['type']=$elem['nature'];
       $this->univ_courses[]=$tmp;
     }
     usort($this->univ_courses,cmp_type);

@@ -1,7 +1,8 @@
 <?php
-ini_set('display_errors',1);
+// Last update : 2014-04-04, Jérôme Combes
+ini_set('display_errors',0);
 ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
-ini_set('error_reporting',E_ALL);
+
 require_once("../inc/config.php");
 require_once("../inc/class.ciph.inc");
 require_once("../inc/class.reidhall.inc");

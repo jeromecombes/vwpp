@@ -1,4 +1,5 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
 
 class grades{
   public $semester=null;
@@ -59,7 +60,7 @@ class grades{
     $db->select("grades","*","semester='{$this->semester}' AND student=$student AND course='$course' AND course_id=$course_id");
     $id=$db->result?$db->result[0]['id']:null;
 
-    if($grade=="null_fr" and $id){				//	Set note=null
+    if($grade=="" and $id){				//	Set note=null
       $db=new db();
       $db->update("grades","note='', date1=''","id=$id");
       return;

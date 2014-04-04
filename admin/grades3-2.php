@@ -33,7 +33,7 @@ switch($univ){
   case "univ" :
     $u=new univ4();
     $u->fetch($course_id);
-    $title=$u->elements['nom_en']?$u->elements['nom_en']:$u->elements['nom'];
+    $title=$u->elements['nom'];
     $course=array("code"=>$u->elements['code'],"title"=>$title,"professor"=>$u->elements['prof']);
     $students[]=array("id"=>$u->elements['student'],"lastname"=>$u->elements['studentLastname'],"firstname"=>$u->elements['studentFirstname']);
 // print_r($u->elements);
