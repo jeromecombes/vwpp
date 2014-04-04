@@ -1,3 +1,5 @@
+// Last update : 2014-04-04, Jérôme Combes
+
 var li_ids=new Array();
 var logins=new Array();
 
@@ -641,7 +643,7 @@ function password_ctrl(me){
     return;
   if(me.name=="password"){
     if(me.value.length<8){
-      document.getElementById("passwd1").innerHTML="Must be 8 characteres";
+      document.getElementById("passwd1").innerHTML="Must be 8 characters";
       form1_ctrl();
       return;
     }
