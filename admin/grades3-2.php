@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once("../inc/config.php");
 require_once("../inc/class.ciph.inc");
 require_once("../inc/class.courses.inc");
@@ -77,9 +79,7 @@ else{
   <td>Lastname</td><td>Firstname</td>
 EOD;
 
-  if(in_array(18, $_SESSION['vwpp']['access']) or in_array(19, $_SESSION['vwpp']['access'])){
-    echo "<td>Note</td><td>Date received</td>";
-  }
+  echo "<td>Note</td><td>Date received</td>";
 
   if(in_array(19, $_SESSION['vwpp']['access']) or in_array(20, $_SESSION['vwpp']['access'])){
     echo "<td>US Grade</td><td>Date Recorded</td>";
@@ -119,7 +119,7 @@ EOD;
       echo "</td>\n";
     }
 								  // Voir les notes FR
-    if(!in_array(18, $_SESSION['vwpp']['access']) and in_array(19, $_SESSION['vwpp']['access'])){
+    else{
       echo "<td><font>{$elem['note']}</font></td>\n";
       echo "<td><font>{$elem['date1']}</font></td>\n";
     }

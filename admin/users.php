@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-04-04, Jérôme Combes
+
 require_once  "../header.php";
 require_once  "menu.php";
 access_ctrl(9);
@@ -63,7 +65,7 @@ get_button("Add",1,11,"left","10px 0 0 0");
 <input type='checkbox' name='access[]' value='16' id='access16' />Modifier les cours<br/>
 <input type='checkbox' name='access[]' value='17' id='access17' />Voir Univ. Reg.<br/>
 <input type='checkbox' name='access[]' value='18' id='access18' />Voir et modifier les Notes FR<br/>
-<input type='checkbox' name='access[]' value='20' id='access20' />Voir les Notes US<br/>
+<input type='checkbox' name='access[]' value='20' id='access20' />Voir les Notes FR et US<br/>
 <input type='checkbox' name='access[]' value='19' id='access19' />Voir et modifier les Notes US<br/>
 <input type='checkbox' name='access[]' value='21' id='access21' />Bloc-notes des cours<br/>
 <input type='checkbox' name='access[]' value='24' id='access24' />Modifier les dates (1<sup>ère</sup> page)<br/>

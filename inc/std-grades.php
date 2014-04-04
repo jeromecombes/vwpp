@@ -16,10 +16,7 @@ $tmp=$c->univ_courses;
 $univ_courses=array();
 $td_courses=array();
 foreach($tmp as $elem){
-//   if($elem['type']=="CM")
     $univ_courses[]=$elem;
-/*  elseif($elem['type']=="TD" and $elem['code'])
-    $td_courses[]=$elem;*/
 }
 
 $g=new grades();
@@ -38,7 +35,7 @@ echo <<<EOD
 <tr style='font-weight:bold;font-size:10pt;'><td style='width:595px;'>Course title</td>
 
 EOD;
-if(in_array(18,$_SESSION['vwpp']['access'])){
+if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
   echo "<td style='width:50px;'>Note</td><td style='width:150px;'>Date received</td>";
 }
 if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access']))
@@ -62,6 +59,11 @@ EOD;
     $i++;
     $j++;
   }
+  elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
+    echo "<td>{$grades['VWPP'][$course['id']]['note']}</td>\n";
+    echo "<td>{$grades['VWPP'][$course['id']]['date1']}</td>\n";
+  }
+
 
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
     echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['grade']}</font>\n";
@@ -96,7 +98,7 @@ echo <<<EOD
 <table>
 <tr style='font-weight:bold;font-size:10pt;'><td style='width:595px;'>Course title</td>
 EOD;
-if(in_array(18,$_SESSION['vwpp']['access'])){
+if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
   echo "<td style='width:50px;'>Note</td><td style='width:150px;'>Date received</td>";
 }
 if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access']))
@@ -118,6 +120,11 @@ EOD;
     $i++;
     $j++;
   }
+  elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
+    echo "<td>{$grades['UNIV'][$course['id']]['note']}</td>\n";
+    echo "<td>{$grades['UNIV'][$course['id']]['date1']}</td>\n";
+  }
+
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
     echo "<td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['grade']}</font>\n";
     $i++;
@@ -153,7 +160,7 @@ echo <<<EOD
 <table>
 <tr style='font-weight:bold;font-size:10pt;'><td style='width:595px;'>Course title</td>
 EOD;
-if(in_array(18,$_SESSION['vwpp']['access'])){
+if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
   echo "<td style='width:50px;'>Note</td><td style='width:150px;'>Date received</td>";
 }
 if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access']))
@@ -173,6 +180,11 @@ foreach($td_courses as $course){
     echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
     $j++;
   }
+  elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
+    echo "<td>{$grades['TD'][$course['id']]['note']}</td>\n";
+    echo "<td>{$grades['TD'][$course['id']]['date1']}</td>\n";
+  }
+
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
     echo "<td><font id='form_1_$i'>{$grades['TD'][$course['id']]['grade']}</font>\n";
     $i++;
@@ -209,7 +221,7 @@ echo <<<EOD
 <table>
 <tr style='font-weight:bold;font-size:10pt;'><td style='width:595px;'>Course title</td>
 EOD;
-if(in_array(18,$_SESSION['vwpp']['access'])){
+if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
   echo "<td style='width:50px;'>Note</td><td style='width:150px;'>Date received</td>";
 }
 if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
@@ -229,6 +241,10 @@ foreach($ciph_courses as $course){
     echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"CIPH_FRDATE_{$course['id']}\",true);' >\n";
     echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
     $j++;
+  }
+  elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
+    echo "<td>{$grades['CIPH'][$course['id']]['note']}</td>\n";
+    echo "<td>{$grades['CIPH'][$course['id']]['date1']}</td>\n";
   }
 
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
