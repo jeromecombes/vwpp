@@ -36,6 +36,10 @@ class courses{
 
     if($this->writing1)
       $this->vwpp_courses[]=$this->writing1;
+	if($this->writing2)
+      $this->vwpp_courses[]=$this->writing2;
+	if($this->writing3)
+      $this->vwpp_courses[]=$this->writing3;
     if($this->seminar1)
       $this->vwpp_courses[]=$this->seminar1;
     if($this->seminar2)
