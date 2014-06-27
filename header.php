@@ -34,9 +34,16 @@ if(!array_key_exists('vwpp',$_SESSION) and stripos($_SERVER['PHP_SELF'],"admin")
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <?php
 echo "<link rel='shortcut icon' href='{$config['folder']}/favicon.ico' type='image/x-icon' />\n";
-echo "<link rel='StyleSheet' href='{$config['folder']}/style.css' type='text/css' media='screen'/>\n";
-echo "<link rel='StyleSheet' href='{$config['folder']}/print.css' type='text/css' media='print'/>\n";
-echo "<script type='text/JavaScript' src='{$config['folder']}/script.js'></script>\n";
+echo "<link rel='StyleSheet' href='{$config['folder']}/css/jquery-ui.min.css' type='text/css' media='print'/>\n";
+echo "<link rel='StyleSheet' href='{$config['folder']}/css/style.css' type='text/css' media='screen'/>\n";
+echo "<link rel='StyleSheet' href='{$config['folder']}/css/print.css' type='text/css' media='print'/>\n";
+
+echo "<script type='text/JavaScript' src='{$config['folder']}/js/script.js'></script>\n";
+echo "<script type='text/JavaScript' src='{$config['folder']}/js/jquery-ui-1.10.4/jquery-1.10.2.js'></script>\n";
+echo "<script type='text/JavaScript' src='{$config['folder']}/js/jquery-ui-1.10.4/ui/jquery-ui.js'></script>\n";
+echo "<script type='text/JavaScript' src='{$config['folder']}/js/dataTables/jquery.dataTables.min.js'></script>\n";
+echo "<script type='text/JavaScript' src='{$config['folder']}/js/dataTables/sort.js'></script>\n";
+
 ?>
 <noscript><center><h1>ATTENTION : JavaScript is needed</h1></center></noscript>
 </head>

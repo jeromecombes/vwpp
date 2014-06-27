@@ -230,7 +230,7 @@ select{
 
 #onglets li {
   float:left;
-  background:url("img/norm_right.gif")
+  background:url("images/norm_right.gif")
     no-repeat right top;
   margin: 0;
   padding:0;
@@ -238,7 +238,7 @@ select{
 
 #onglets a {
   display:block;
-  background:url("img/norm_left.gif")
+  background:url("images/norm_left.gif")
     no-repeat left top;
   padding:5px 15px;
 }
@@ -254,7 +254,7 @@ select{
 #onglets {
   float:left;
   width: 1200px;
-  background:#DAE0D2 url("img/bgOnglet.gif")
+  background:#DAE0D2 url("images/bgOnglet.gif")
     repeat-x bottom;
   font-size:8pt;
   line-height:normal;
@@ -268,19 +268,19 @@ select{
 
 #onglets a {
   display:block;
-  background:url("img/norm_left.gif")
+  background:url("images/norm_left.gif")
     no-repeat left top;
   padding:5px 15px 4px;
 }
 
 #onglets #current a {
-  background-image:url("img/norm_left_on.gif");
+  background-image:url("images/norm_left_on.gif");
   padding-bottom:5px;
 }
 
 #onglets li {
   float:left;
-  background:url("img/norm_right.gif")
+  background:url("images/norm_right.gif")
     no-repeat right top;
   margin:0;
   padding:0 0 0 9px;
@@ -288,14 +288,14 @@ select{
 
 #onglets a {
   display:block;
-  background:url("img/norm_left.gif")
+  background:url("images/norm_left.gif")
     no-repeat left top;
   padding:5px 15px 4px 6px;
 }
 
 #onglets li {
   float:left;
-  background:url("img/norm_left.gif")
+  background:url("images/norm_left.gif")
     no-repeat left top;
   margin:0;
   padding:0 0 0 9px;
@@ -303,24 +303,24 @@ select{
 
 #onglets a, #onglets strong, #onglets span {
   display:block;
-  background:url("img/norm_right.gif")
+  background:url("images/norm_right.gif")
     no-repeat right top;
   padding:5px 15px 4px 6px;
 }
 
 #onglets #current {
-  background-image:url("img/norm_left_on.gif");
+  background-image:url("images/norm_left_on.gif");
 }
 
 #onglets #current a {
-  background-image:url("img/norm_right_on.gif");
+  background-image:url("images/norm_right_on.gif");
   padding-bottom:5px;
 }
 
 #onglets a {
   float:left;
   display:block;
-  background:url("img/norm_right.gif")
+  background:url("images/norm_right.gif")
     no-repeat right top;
   padding:5px 4px 4px 0;
   text-decoration:none;
@@ -339,7 +339,7 @@ select{
   float:left;
   /**/
   display:block;
-  background:url("img/norm_right.gif")
+  background:url("images/norm_right.gif")
     no-repeat right top;
   padding:5px 4px 4px 0;
   text-decoration:none;
