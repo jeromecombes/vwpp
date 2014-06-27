@@ -670,10 +670,15 @@ function select_action(form){
   for(i=0;i<elem.length;i++)
     if(elem[i].checked && elem[i].name!="all")
     checked=true;
-  if(me.value && checked)
-     document.getElementById("submit_button").disabled=false;
-  else
-      document.getElementById("submit_button").disabled=true;
+  if(me.value && checked){
+     $("#submit_button").attr("disabled",false);
+     $("#submit_button").removeClass("ui-state-disabled");
+  }
+  else{
+     $("#submit_button").attr("disabled",true);
+     $("#submit_button").addClass("ui-state-disabled");
+  }
+
 }
 
 function submit_action(form,form2){		// a finir
@@ -888,3 +893,23 @@ function suivre_souris(e)
 		//~ }
 	}
 /***********		FIN Position du pointeur		*************/
+
+$(document).ready(function(){
+  var nbCol=$(".datatable th").length;
+  var aoCol=[{"bSortable":false}];
+  for(i=1;i<nbCol;i++){
+    aoCol.push({"bSortable":true});
+  }
+
+  $(".datatable").dataTable({
+      "bJQueryUI": true,
+      "sPaginationType": "full_numbers",
+      "bStateSave": true,
+      "aLengthMenu" : [[25,50,75,100,-1],[25,50,75,100,"All"]],
+      "iDisplayLength" : -1,
+      "aaSorting" : [[1,"asc"],[2,"asc"]],
+      "aoColumns" : aoCol,
+  });
+  
+  $(".myUI-button").button();
+});

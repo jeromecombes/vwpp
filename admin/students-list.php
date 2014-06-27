@@ -87,57 +87,32 @@ if($semestre){
 
     echo <<<EOD
     <h3>Student list for {$semester}</h3>
-    <table style='padding:20px 0 0 0;width:1180px;' border='0'>
-    <tr style='vertical-align:top;'>
-    <td style='width:200px;'>
 
-    Number of students : {$db->nb}<br/>
-    Vassar : {$nb['Vassar']}<br/>
-    Wesleyan : {$nb['Wesleyan']}<br/>
-    Other : {$nb['guest']}<br/><br/>
-    $addStudents<br/>
-    </td><td>
+    <div class='marginBottom10'>
+      <span class='marginRight'>Number of students : <b>{$db->nb}</b></span>
+      <span class='marginRight'>Vassar : <b>{$nb['Vassar']}</b></span>
+      <span class='marginRight'>Wesleyan : <b>{$nb['Wesleyan']}</b></span>
+      <span class='marginRight'>Other : <b>{$nb['guest']}</b></span>
+      <span class='myUI-button'>$addStudents</span>
+    </div>
 
     <form name='form2' method='post' action='students-delete.php'>
-    <table id='myTab' cellspacing='0' style='width:100%;'><tr class='th'><td>
-    <input type='checkbox' name='all' onclick='checkall("form2",this);' /></td>
-    <td>Lastname
-    <a href='students-list.php?sort=lastname'>
-    <img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-    <a href='students-list.php?sort=lastname_desc'>
-    <img src='../img/down2.png' alt='Down' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-    <td>Firstname
-    <a href='students-list.php?sort=firstname'>
-    <img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-    <a href='students-list.php?sort=firstname_desc'>
-    <img src='../img/down2.png' alt='Down' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-    <td>Gender
-    <a href='students-list.php?sort=gender'>
-    <img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-    <a href='students-list.php?sort=gender_desc'>
-    <img src='../img/down2.png' alt='Down' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-    <td>French Univ.
-    <a href='students-list.php?sort=frenchUniv'>
-    <img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-    <a href='students-list.php?sort=frenchUniv_desc'>
-    <img src='../img/down2.png' alt='Down' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-    <td>Email
-    <a href='students-list.php?sort=email'>
-    <img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-    <a href='students-list.php?sort=email_desc'>
-    <img src='../img/down2.png' alt='Down' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-    <td>Home Institution
-    <a href='students-list.php?sort=univ_lastname'>
-    <img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-    <a href='students-list.php?sort=univ_lastname_desc'>
-    <img src='../img/down2.png' alt='Down' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td></tr>
+    <table class='datatable'>
+    <thead>
+      <tr><th><input type='checkbox' name='all' onclick='checkall("form2",this);' /></th>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Gender</th>
+      <th>French Univ.</th>
+      <th>Email</th>
+      <th>Home Institution</th>
+      </tr>
+    </thead>
+    <tbody>
 EOD;
-    $class="tr2";
     foreach($students as $elem){
-      $class=$class=="tr1"?"tr2":"tr1";
-//       $university=$elem['guest']?$elem['univ']:$elem['university'];
       echo <<<EOD
-      <tr class='$class'><td style='width:50px;'>
+      <tr><td class='nowrap'>
       <input type='checkbox' name='students[]' value='{$elem['id']}' onclick='setTimeout("select_action(\"form2\")",5);'/>
       <input type='hidden' id='mail_{$elem['id']}' value='{$elem['email']}' />
       <a href='students-view2.php?id={$elem['id']}'><img src='../img/edit.png' alt='view' border='0'/></a>
@@ -148,8 +123,10 @@ EOD;
       <td>{$elem['university']}</td></tr>
 EOD;
     }
+    echo "</tbody>\n";
     echo "</table></form>\n";
     echo "<br/><form name='form3' action='students-list.php' method='get'>\n";
+    echo "<div class='marginBottom'>\n";
     echo "For selected students : ";
     echo "<select name='action' id='action' onchange='select_action(\"form2\");' style='width:250px;'>\n";
     echo "<option value=''>&nbsp;</option>\n";
@@ -176,13 +153,12 @@ EOD;
       echo "<option value='publishVWPP'>Publish VWPP Courses Final reg.</option>\n";
       echo "<option value='hideVWPP'>Hide VWPP Courses Finale reg.</option>\n";
     }
-    echo "<input type='button' id='submit_button' value='Go' disabled='disabled' onclick='submit_action(\"form3\",\"form2\");'/>\n";
+    echo "<input type='button' id='submit_button' value='Go' disabled='disabled' onclick='submit_action(\"form3\",\"form2\");' class='myUI-button marginLeft' />\n";
+    echo "</div>\n";
     echo "</form>\n";
   }
 
 }
-
-echo "</td></tr></table>\n";
 
 require_once "../footer.php";
 ?>

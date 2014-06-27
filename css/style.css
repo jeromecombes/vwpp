@@ -11,6 +11,53 @@ table {
   width:1170px;
 }
 
+.marginBottom{
+  margin-bottom :30px;
+}
+
+.marginBottom10{
+  margin-bottom :10px;
+}
+
+.marginLeft{
+  margin-left:20px;
+}
+
+.marginRight{
+  margin-right:50px;
+}
+
+.nowrap{
+  white-space: nowrap;
+}
+
+.right{
+  position: absolute;
+  right: 0px;
+}
+
+
+table.datatable{
+  width:100%;
+}
+
+/*	DataTables */
+.dataTable tbody tr.odd {
+  background-color:#E0E0E0;
+}
+
+.dataTable tbody tr.odd td.sorting_1,
+.dataTable tbody tr.odd td.sorting_2,
+.dataTable tbody tr.odd td.sorting_3{
+  background-color:#CECECE;
+}
+
+.dataTable tbody tr.even td.sorting_1,
+.dataTable tbody tr.even td.sorting_2,
+.dataTable tbody tr.even td.sorting_3{
+  background-color:#EEEEEE;
+}
+
 
 #login_form {
   width:930px;
@@ -186,6 +233,14 @@ legend{
 select{
   width:100%;
   background:#FFFFFF; 
+}
+
+#DataTables_Table_0_length select {
+  width: 70px;
+}
+
+#DataTables_Table_0_filter input[type=text] {
+  width: 200px;
 }
 
 #course4 input[type=text]{
