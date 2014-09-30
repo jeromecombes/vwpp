@@ -1,4 +1,6 @@
 <?php
+// Last update : 09/30/2014
+
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
 require_once "../inc/class.doc.inc";
@@ -32,7 +34,7 @@ Make sure not to append the extension (pdf, doc, jpg etc.) to the name of your f
 <br/>
 </p>
 -->
-<p>
+<div>
 <form name='form' action='documents.php' method='post'>
 Type of document : 
 <select name='type' style='width:200px;' onchange='document.form.submit();'>
@@ -46,41 +48,34 @@ foreach($GLOBALS['config']['documentType'] as $type){
 echo <<<EOD
 </select>
 </form>
-</p>
-<fieldset>
+</div>
 EOD;
 
-$class="tr2";
 if($docs){
   echo <<<EOD
-  <table cellspacing='0'>
-  <tr class='th'><td>Lastname
-  <a href='documents.php?sort=lastname'><img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-  <a href='documents.php?sort=lastname_desc'><img src='../img/down2.png' alt='Up' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-  <td>Firstname
-  <a href='documents.php?sort=firstname'><img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-  <a href='documents.php?sort=firstname_desc'><img src='../img/down2.png' alt='Up' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-  <td>Doc. name
-  <a href='documents.php?sort=name2'><img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-  <a href='documents.php?sort=name2_desc'><img src='../img/down2.png' alt='Up' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-  <td>Type
-  <a href='documents.php?sort=rel'><img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-  <a href='documents.php?sort=rel_desc'><img src='../img/down2.png' alt='Up' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
-  <td style='text-align:right;'>Size</td>
-  <td>Date
-  <a href='documents.php?sort=timestamp'><img src='../img/up2.png' alt='Up' style='width:12px;' border='0'/></a>
-  <a href='documents.php?sort=timestamp_desc'><img src='../img/down2.png' alt='Up' style='width:12px;margin: 2px 0 0 -5px;' border='0'/></a></td>
+  <table class='datatable'>
+  <thead>
+  <tr>
+  <th style='width:0px;padding:0;'>&nbsp;</th>
+  <th>Lastname</th>
+  <th>Firstname</th>
+  <th>Doc. name</th>
+  <th>Type</th>
+  <th style='text-align:right;'>Size</th>
+  <th class='dataTableDate'>Date</th>
 EOD;
   if($_SESSION['vwpp']['category']=="admin"){
-    echo "<td>Visibility</td>";
+    echo "<th>Visibility</th>";
   }
   echo "</tr>\n";
+  echo "</thead>\n";
+  echo "<tbody>\n";
   foreach($docs as $doc){
     if($doc['rel']==$_SESSION['vwpp']['type'] or !$_SESSION['vwpp']['type']){
       $doc['size']=$doc['size']?$doc['size']:null;
-      $class=$class=="tr1"?"tr2":"tr1";
       $visibility=$doc['adminOnly']?"Admin only":null;
-      echo "<tr class='$class'>\n";
+      echo "<tr>\n";
+      echo "<td>&nbsp;</td>\n";
       echo "<td>{$doc['lastname']}</td>\n";
       echo "<td>{$doc['firstname']}</td>\n";
       echo "<td><a href='docs.php?id={$doc['id']}'>{$doc['name2']}</a></td>\n";
@@ -92,7 +87,9 @@ EOD;
       }
     }
   }
+  echo "</tbody>\n";
   echo "</table>\n";
+  echo "</div>\n";
 }
 //	Copy-paste from form.docs.inc
 // get_button("Edit",$id,8,"right");	// text, div id, acl, align
