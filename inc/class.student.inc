@@ -1,7 +1,7 @@
 <?php
 /*
 VWPP Database V 3.0
-Last update 14/06/2013, Jérôme Combes
+Last update 09/30/2014, Jérôme Combes
 */
 
 require_once "class.mails.inc";
@@ -22,15 +22,14 @@ class student{
   public $password=null;
   public $token=null;
   public $semester;
+  public $tin;
   public $university=null;				// university filter
 
   public $cryptedFieldsNoID=array("lastname","firstname","email");
   public $cryptedFieldsMD5=array("token","password");
   public $cryptedFields=array("gender","dob","citizenship1","citizenship2","town","university",
       "university2","graduation","city","street","zip","state","country","contactlast","contactfirst","contactphone",
-      "contactmobile","contactemail","cellphone","homeInstitution","placeOB","countryOB","frenchNumber","resultatTCF");
-
-
+      "contactmobile","contactemail","cellphone","homeInstitution","placeOB","countryOB","frenchNumber","resultatTCF","tin");
 
   function student(){
     $this->semester=str_replace(array(" ","_"),"%",$_SESSION['vwpp']['semester']);

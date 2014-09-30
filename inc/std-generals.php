@@ -1,4 +1,6 @@
 <?php
+// Last Update : 09/30/2014
+
 require_once "class.housing.inc";
 require_once "class.doc.inc";
 
@@ -34,6 +36,7 @@ echo <<<EOD
 <tr><td>Date of birth</td><td>{$std['dob_text']}</td></tr>
 <tr><td>Place of birth (City, State)</td><td>{$std['placeOB']}</td></tr>
 <tr><td>Country of birth</td><td>{$std['countryOB']}</td></tr>
+<tr><td>TIN</td><td>{$std['tin']}</td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>Email</td><td><a href='mailto:{$std['email']}'>{$std['email']}</a></td></tr>
 <tr><td>Cellphone in France</td><td>{$std['cellphone']}</td></tr>
@@ -177,6 +180,7 @@ foreach($GLOBALS['countries'] as $elem){
 echo <<<EOD
 </select>
 </td></tr>
+<tr><td>TIN</td><td><input type='text' name='std[tin]' value='{$std['tin']}' /></td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>Email</td><td><input type='text' name='std[email]' value='{$std['email']}'/></td></tr>
 <tr><td>Cellphone in France</td><td><input type='text' name='std[cellphone]' value='{$std['cellphone']}'/></td></tr>
