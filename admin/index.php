@@ -16,10 +16,10 @@ echo <<<EOD
 </div>
 
 <form name='form' action='students-list.php' method='get'>
-<table border='0' style='width:400px;'><tr style='vertical-align:top;'>
+<table border='0' style='width:500px;'><tr style='vertical-align:top;'>
 <td style='font-size:12pt; padding:30px 0 0 0;'>Select a semester</td>
-<td style='font-size:12pt; padding:27px 0 0 30px; width:200px;''><select name='semestre' style='width:70%;'> 
-<!--  onchange='document.form.submit();' -->
+<td style='font-size:12pt; padding:27px 0 0 30px; width:300px;''>
+<select name='semestre' style='width:50%;' class='ui-widget-content ui-corner-all'> 
 <option value=''>Semester</option>
 EOD;
 
@@ -31,7 +31,7 @@ for($i=date('Y')-2;$i<date('Y')+3;$i++){
 }
 echo <<<EOD
 </select>
-<input type='submit' value='OK' />
+<input type='submit' value='OK' class='myUI-button' style='margin-left:20px;'/>
 
 </td></tr>
 </table>

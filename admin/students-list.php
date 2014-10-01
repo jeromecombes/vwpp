@@ -1,4 +1,6 @@
 <?php
+// Last update : 2014-10-01
+
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
 require_once "../header.php";
@@ -99,7 +101,7 @@ if($semestre){
     <form name='form2' method='post' action='students-delete.php'>
     <table class='datatable'>
     <thead>
-      <tr><th><input type='checkbox' name='all' onclick='checkall("form2",this);' /></th>
+      <tr><th class='dataTableNoSort'><input type='checkbox' name='all' onclick='checkall("form2",this);' /></th>
       <th>Lastname</th>
       <th>Firstname</th>
       <th>Gender</th>
@@ -128,7 +130,7 @@ EOD;
     echo "<br/><form name='form3' action='students-list.php' method='get'>\n";
     echo "<div class='marginBottom'>\n";
     echo "For selected students : ";
-    echo "<select name='action' id='action' onchange='select_action(\"form2\");' style='width:250px;'>\n";
+    echo "<select name='action' id='action' onchange='select_action(\"form2\");' style='width:250px;' class='ui-widget-content ui-corner-all'>\n";
     echo "<option value=''>&nbsp;</option>\n";
     echo "<option value='Excel'>Export General Info to Excel</option>\n";
     if(in_array(17,$_SESSION['vwpp']['access']))
