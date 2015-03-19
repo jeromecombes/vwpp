@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-10-01
+// Last update : 09/30/2014
 
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
@@ -34,7 +34,7 @@ Make sure not to append the extension (pdf, doc, jpg etc.) to the name of your f
 <br/>
 </p>
 -->
-<div style='margin-bottom:20px;'>
+<div>
 <form name='form' action='documents.php' method='post'>
 Type of document : 
 <select name='type' style='width:200px;' onchange='document.form.submit();'>
@@ -56,11 +56,12 @@ if($docs){
   <table class='datatable'>
   <thead>
   <tr>
+  <th style='width:0px;padding:0;'>&nbsp;</th>
   <th>Lastname</th>
   <th>Firstname</th>
   <th>Doc. name</th>
   <th>Type</th>
-  <!-- <th style='text-align:right;'>Size</th> -->
+  <th style='text-align:right;'>Size</th>
   <th class='dataTableDate'>Date</th>
 EOD;
   if($_SESSION['vwpp']['category']=="admin"){
@@ -74,11 +75,12 @@ EOD;
       $doc['size']=$doc['size']?$doc['size']:null;
       $visibility=$doc['adminOnly']?"Admin only":null;
       echo "<tr>\n";
+      echo "<td>&nbsp;</td>\n";
       echo "<td>{$doc['lastname']}</td>\n";
       echo "<td>{$doc['firstname']}</td>\n";
       echo "<td><a href='docs.php?id={$doc['id']}'>{$doc['name2']}</a></td>\n";
       echo "<td>{$doc['rel']}</td>\n";
-//       echo "<td style='text-align:right;'>{$doc['size']}</td>\n";
+      echo "<td style='text-align:right;'>{$doc['size']}</td>\n";
       echo "<td>".date($GLOBALS['config']['dateFormat'],$doc['timestamp'])."</td>\n";
       if($_SESSION['vwpp']['category']=="admin"){
 	echo "<td>$visibility</td></tr>\n";
