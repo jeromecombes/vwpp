@@ -1,4 +1,4 @@
-// Last update : 2014-10-01, Jérôme Combes
+// Last update : 2015-03-19, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -895,28 +895,33 @@ function suivre_souris(e)
 /***********		FIN Position du pointeur		*************/
 
 $(document).ready(function(){
-  var aoCol=[];
-  $(".datatable th").each(function(){
-    if($(this).attr("class")==undefined){
-      aoCol.push({"bSortable":true});
-    }
-    else if($(this).attr("class")=="dataTableDate"){
-      aoCol.push({"sType": "date"});
-    }
-    else if($(this).attr("class")=="dataTableNoSort"){
-      aoCol.push({"bSortable":false});
-    }
-  });
+
+	$(".datatable").each(function(){
+  		var aoCol=[];
+  		$(this).find("thead th").each(function(){
+    		if($(this).attr("class")==undefined){
+      			aoCol.push({"bSortable":true});
+    		}
+    		else if($(this).attr("class")=="dataTableDate"){
+      			aoCol.push({"sType": "date"});
+   			}
+    		else if($(this).attr("class")=="dataTableNoSort"){
+      			aoCol.push({"bSortable":false});
+   			}
+   		});
   
-  $(".datatable").dataTable({
-      "bJQueryUI": true,
-      "sPaginationType": "full_numbers",
-      "bStateSave": true,
-      "aLengthMenu" : [[25,50,75,100,-1],[25,50,75,100,"All"]],
-      "iDisplayLength" : -1,
-      "aaSorting" : [[1,"asc"],[2,"asc"]],
-      "aoColumns" : aoCol,
-  });
-  
+  		$(this).dataTable({
+      		"bJQueryUI": true,
+      		"sPaginationType": "full_numbers",
+      		"bStateSave": true,
+      		"aLengthMenu" : [[25,50,75,100,-1],[25,50,75,100,"All"]],
+      		"iDisplayLength" : -1,
+      		"aaSorting" : [[1,"asc"],[2,"asc"]],
+      		"aoColumns" : aoCol,
+  		});
+  	});
+
+
   $(".myUI-button").button();
+  $(".myUI-datepicker-string").datepicker({dateFormat: "MM d, yy"});
 });

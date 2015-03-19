@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-19
+
 ini_set('display_errors',0);
 ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
 // ini_set('error_reporting',E_ALL);
@@ -43,6 +45,7 @@ echo "<script type='text/JavaScript' src='{$config['folder']}/js/jquery-ui-1.10.
 echo "<script type='text/JavaScript' src='{$config['folder']}/js/jquery-ui-1.10.4/ui/jquery-ui.js'></script>\n";
 echo "<script type='text/JavaScript' src='{$config['folder']}/js/dataTables/jquery.dataTables.min.js'></script>\n";
 echo "<script type='text/JavaScript' src='{$config['folder']}/js/dataTables/sort.js'></script>\n";
+echo "<script type='text/JavaScript' src='{$config['folder']}/vendor/CJScript.js'></script>\n";
 echo "<script type='text/JavaScript' src='{$config['folder']}/js/script.js'></script>\n";
 
 ?>

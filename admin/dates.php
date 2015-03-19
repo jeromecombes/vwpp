@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-19
+
 require_once "../header.php";
 require_once "menu.php";
 require_once "../inc/class.dates.inc";
@@ -10,34 +12,73 @@ $d->fetch();
 $dates=$d->elements;
 
 echo <<<EOD
-<h3>Dates</h3>
+<h3>Dates, Deadlines</h3>
+<br/>
+
 <form name='form' action='dates_update.php' method='post'>
-<table id='myTab' cellspacing='0' style='width:650px;'>
-<tr class='th'><td>Home form</td><td colspan='2'>Date</td></tr>
-<tr><td style='width:400px;'>Personal details and contact information by </td>
-  <td style='width:200px;'><input type='text' name='date1' value='{$dates['date1']}'</td>
-  <td><a href='javascript:calendar("form","date1",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr class='tr2'><td>Housing preferences by </td>
-  <td><input type='text' name='date2' value='{$dates['date2']}'</td>
-  <td><a href='javascript:calendar("form","date2",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr><td>University preference by </td>
-  <td><input type='text' name='date3' value='{$dates['date3']}'</td>
-  <td><a href='javascript:calendar("form","date3",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr class='tr2'><td>pre-registration for VWPP Courses by </td>
-  <td><input type='text' name='date4' value='{$dates['date4']}'</td>
-  <td><a href='javascript:calendar("form","date4",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr class='th'><td>Univ registration form</td><td colspan='2'>Date</td></tr>
-<tr class='tr2'><td>Paris 3, end of course </td>
-  <td><input type='text' name='date5' value='{$dates['date5']}'</td>
-  <td><a href='javascript:calendar("form","date5",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr class='tr2'><td>Paris 4, end of course </td>
-  <td><input type='text' name='date6' value='{$dates['date6']}'</td>
-  <td><a href='javascript:calendar("form","date6",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr class='tr2'><td>Paris 7, end of course </td>
-  <td><input type='text' name='date7' value='{$dates['date7']}'</td>
-  <td><a href='javascript:calendar("form","date7",1);'><img src='../img/calendar.gif' border='0' alt='calendar'/></a></td></tr>
-<tr><td colspan='3' style='text-align:right;'><input type='submit' value='Valider' /></td></tr>
+
+<table class='datatable'>
+<thead>
+<tr>
+<th style='display:none';>&nbsp;</th>
+<th style='display:none';>&nbsp;</th>
+<th style='width:50%;' class='dataTableNoSort'>Home form</th>
+<th class='dataTableNoSort'>Date</th></tr></thead>
+<tbody>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>Personal details and contact information by </td>
+  <td><input type='text' name='date1' value='{$dates['date1']}' class='myUI-datepicker-string'/></td></tr>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>Housing preferences by </td>
+  <td><input type='text' name='date2' value='{$dates['date2']}' class='myUI-datepicker-string'/></td></tr>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>University preference by </td>
+  <td><input type='text' name='date3' value='{$dates['date3']}' class='myUI-datepicker-string'/></td></tr>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>pre-registration for VWPP Courses by </td>
+  <td><input type='text' name='date4' value='{$dates['date4']}' class='myUI-datepicker-string'/></td></tr>
+</tbody>
 </table>
+
+<br/><br/>
+
+<table class='datatable'>
+<thead>
+<tr>
+<th style='display:none';>&nbsp;</th>
+<th style='display:none';>&nbsp;</th>
+<th style='width:50%;' class='dataTableNoSort'>Univ registration form</th>
+<th class='dataTableNoSort'>Date</th></tr></thead>
+<tbody>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>Paris 3, end of course </td>
+  <td><input type='text' name='date5' value='{$dates['date5']}' class='myUI-datepicker-string'/></td></tr>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>Paris 4, end of course </td>
+  <td><input type='text' name='date6' value='{$dates['date6']}' class='myUI-datepicker-string'/></td></tr>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>Paris 7, end of course </td>
+  <td><input type='text' name='date7' value='{$dates['date7']}' class='myUI-datepicker-string'/></td></tr>
+</tbody>
+</table>
+
+<br/><br/>
+
+<input type='submit' value='Valider' class='myUI-button'/>
 </form>
 EOD;
 

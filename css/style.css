@@ -1,4 +1,4 @@
-/* Last update : 2014-04-04, Jérôme Combes */
+/* Last update : 2015-03-19, Jérôme Combes */
 
 body{
   background: #EEEEEE;
@@ -235,7 +235,8 @@ select{
   background:#FFFFFF; 
 }
 
-#DataTables_Table_0_length select {
+#DataTables_Table_0_length select,
+#DataTables_Table_1_length select {
   width: 70px;
 }
 

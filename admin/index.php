@@ -1,9 +1,20 @@
 <?php
+// Last update : 2015-03-19
+
 require_once "../header.php";
 require_once "menu.php";
-if(isset($_GET['semestre']))
-  $_SESSION['vwpp']['semestre']=$_GET['semestre'];
-$semestre=isset($_SESSION['vwpp']['semestre'])?$_SESSION['vwpp']['semestre']:null;
+if(isset($_GET['semestre'])){
+  $semestre=$_GET['semestre'];
+}elseif(array_key_exists("semestre",$_SESSION["vwpp"])){
+	$semestre=$_SESSION['vwpp']['semestre'];
+}else{
+	$semestre=date("n")>7?"Fall_".date("Y"):"Spring_".date("Y");
+}
+$_SESSION['vwpp']['semestre']=$semestre;
+
+$db=new db();
+$db->select("students","semestre",null,"group by semestre");
+$oldestYear=substr($db->result[0]['semestre'],-4);
 
 echo <<<EOD
 
@@ -23,11 +34,11 @@ echo <<<EOD
 <option value=''>Semester</option>
 EOD;
 
-for($i=date('Y')-2;$i<date('Y')+3;$i++){
-  $selected1=$semestre=="Spring_$i"?"selected='selected'":null;
+for($i=date('Y')+1;$i>=$oldestYear;$i--){
   $selected2=$semestre=="Fall_$i"?"selected='selected'":null;
-  echo "<option value='Spring_$i' $selected1 >Spring $i</option>\n";
+  $selected1=$semestre=="Spring_$i"?"selected='selected'":null;
   echo "<option value='Fall_$i' $selected2 >Fall $i</option>\n";
+  echo "<option value='Spring_$i' $selected1 >Spring $i</option>\n";
 }
 echo <<<EOD
 </select>

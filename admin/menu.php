@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-19
+
 $li=array("li0","li1","li2","li3","li4","li5","li6","li7","li8","li9","li10","li11");
 
 $script=explode("/",$_SERVER['SCRIPT_NAME']);
@@ -60,9 +62,9 @@ echo "<li id='{$li[6]}'><a href='myAccount.php'>My Account</a></li>\n";
 <?php echo "<div id='loginName'>{$_SESSION['vwpp']['login_name']}</div>\n"; ?>
 </div>	<!--	Onglets	-->
 <?php
-echo <<<EOD
-<div id='information_{$_GET['error']}'>{$GLOBALS['lang'][$_GET['msg']]}</div>
-<script type='text/JavaScript'>setTimeout("document.getElementById('information_{$_GET['error']}').style.display='none'",3000);</script>
-<div id="content">
-EOD;
+echo "<div id='content'>\n";
+if(isset($_GET['msg'])){
+	$infoType=$_GET['error']?"error":"highlight";
+	echo "<script type='text/JavaScript'>CJInfo(\"{$GLOBALS['lang'][$_GET['msg']]}\",\"$infoType\");</script>\n";
+}
 ?>
