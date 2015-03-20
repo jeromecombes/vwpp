@@ -1,5 +1,7 @@
 <?php
-		// menu id
+// Last update : 2015-03-20
+
+// menu id
 $current_id=array_key_exists("menu_id",$_SESSION['vwpp'])?$_SESSION['vwpp']['menu_id']:1;
 
 $db=new db();
@@ -7,10 +9,20 @@ $db->select("students","*","id='{$_SESSION['vwpp']['std-id']}'");
 $titleMenu=decrypt($db->result[0]['lastname']);
 $titleMenu.=", ".decrypt($db->result[0]['firstname']);
 
+
 echo <<<EOD
-<div id='onglets'>
-<div id='titre'>{$titleMenu}</div>
-<ul>\n
+<div id='title'>VWPP Database - {$titleMenu}</div>
+<div id='loginName'><span>{$_SESSION['vwpp']['login_name']}</span>
+  <span class='ui-icon ui-icon-triangle-1-s' id='myMenuTriangle'></span><br/>
+  <div id='myMenu'>
+    <a href='myAccount.php'>My Account</a><br/>
+    <a href='logout.php'>Logout</a>
+  </div>
+</div>
+
+<div class='ui-tabs ui-widget ui-widget-content ui-corner-all'>
+<nav>
+<ul class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>
 EOD;
 get_menu2("General info",1,1);		//	menu name, page, menu id, required access
 get_menu2("Housing",2,2);
@@ -21,10 +33,7 @@ get_menu2("Upload Docs",3,3);
 get_menu2("Schedule",8,1);
 
 echo <<<EOD
-<li style='position:absolute;right:0px;'><a href='students-list.php'>Back to list</a></li>
-</ul></div>
-<div id='information_{$_GET['error']}'>{$GLOBALS['lang'][$_GET['msg']]}</div>
-<script type='text/JavaScript'>setTimeout("document.getElementById('information_{$_GET['error']}').style.display='none'",3000);</script>
-<div id="content">
+<li  class='ui-state-default ui-corner-top'><a href='students-list.php'>Back to list</a></li>
+</ul>
 EOD;
 ?>

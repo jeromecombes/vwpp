@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-19
+// Last update : 2015-03-20
 
 require_once "../header.php";
 require_once "menu.php";
@@ -25,9 +25,9 @@ echo <<<EOD
 </div>
 
 <form name='form' action='students-list.php' method='get'>
-<table border='0' style='width:500px;'><tr style='vertical-align:top;'>
+<table border='0' style='width:600px;'><tr style='vertical-align:top;'>
 <td style='font-size:12pt; padding:30px 0 0 0;'>Select a semester</td>
-<td style='font-size:12pt; padding:27px 0 0 30px; width:300px;''>
+<td style='font-size:12pt; padding:27px 0 0 30px; width:400px;''>
 <select name='semestre' style='width:50%;' class='ui-widget-content ui-corner-all'> 
 <option value=''>Semester</option>
 EOD;

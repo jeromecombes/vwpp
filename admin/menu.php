@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-19
+// Last update : 2015-03-20
 
 $script=explode("/",$_SERVER['SCRIPT_NAME']);
 $script=$script[count($script)-1];
@@ -7,7 +7,7 @@ $semester=($_SESSION['vwpp']['semestre'] or $_REQUEST['semestre'])?true:false;
 
 echo <<<EOD
 <div id='title'>VWPP Database - Admin</div>
-<div id='loginName'>{$_SESSION['vwpp']['login_name']}
+<div id='loginName'><span>{$_SESSION['vwpp']['login_name']}</span>
   <span class='ui-icon ui-icon-triangle-1-s' id='myMenuTriangle'></span><br/>
   <div id='myMenu'>
     <a href='myAccount.php'>My Account</a><br/>

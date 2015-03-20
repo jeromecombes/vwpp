@@ -760,7 +760,7 @@ function login_ctrl(){
 function get_button($text,$id,$required,$align="left",$margin=null){
   if($_SESSION['vwpp']['category']=="admin" and !in_array($required,$_SESSION['vwpp']['access']))
     return false;
-  echo "<p style='text-align:$align;margin:$margin'><input type='button' value='$text' onclick='edit($id);' /></p>\n";
+  echo "<p style='text-align:$align;margin:$margin'><input type='button' value='$text' onclick='edit($id);' class='myUI-button'/></p>\n";
 }
 
 function get_input($type,$id,$responses=null,$response=null){
@@ -841,8 +841,8 @@ function get_menu2($menu,$id,$required){
   if(!$access)
     return false;
 
-  $lid=$id==$GLOBALS['current_id']?"current":"li".$id;
-  echo "<li id='$lid'><a href='students-view2.php?menu_id=$id'>$menu</a></li>\n";
+  $class=$id==$GLOBALS['current_id']?"ui-tabs-active ui-state-active":null;
+  echo "<li id='$lid' class='ui-state-default ui-corner-top $class'><a href='students-view2.php?menu_id=$id'>$menu</a></li>\n";
   echo "<script type='text/JavaScript'>li_ids.push($id);</script>\n";
 }
 
