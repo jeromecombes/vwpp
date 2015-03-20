@@ -924,4 +924,29 @@ $(document).ready(function(){
 
   $(".myUI-button").button();
   $(".myUI-datepicker-string").datepicker({dateFormat: "MM d, yy"});
+
+  $("#loginName").hover(function(){
+    $("#myMenu").show();
+  });
+
+  $("#loginName").mouseout(function(){
+    timeoutMyMenu=window.setTimeout(function(){$("#myMenu").hide()},3000);
+  });
+
+});
+
+$(document).ready(function(){
+
+  // Menu : set active tab
+  var href=document.location.href;
+  if(href.indexOf(".php")<1){
+    href+="index.php";
+  }
+
+  $("li.ui-state-default").each(function(){
+    if($(this).find("a").prop("href")==href){
+      $(this).addClass("ui-tabs-active");
+      $(this).addClass("ui-state-active");
+    }
+  });
 });

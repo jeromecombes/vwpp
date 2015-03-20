@@ -1,9 +1,11 @@
 /* Last update : 2015-03-19, Jérôme Combes */
 
 body{
+  width: 1000px;
+  margin: auto;
   background: #EEEEEE;
   font-family:Verdana;
-  font-size:11pt;
+  font-size:9pt;
   background:#FFFFFF;
 }
 
@@ -93,7 +95,7 @@ table.datatable{
   top: 20px;
 }
 
-#content {
+div#content {
   position:absolute;
   top:60px;
   left:30px;
@@ -248,6 +250,7 @@ select{
   margin-bottom:0px;
 }
 /*			Menu principal (onglets)		*/
+/*
 #onglets {
   float:left;
   position:absolute;
@@ -383,18 +386,19 @@ select{
   font-weight:bold;
   color:#7D3C25;
 }
-
+*/
 /* Le hack de l'antislash commenté
     cache cette règle à IE5-Mac \*/
-#onglets a {float:none;}
-
+/*#onglets a {float:none;}
+*/
 /* End IE5-Mac hack */
 
-#onglets a {
+/*#onglets a {
+*/
   /* Pour IE Mac uniquement \*//*/   
   float:left;
   /**/
-  display:block;
+/*  display:block;
   background:url("images/norm_right.gif")
     no-repeat right top;
   padding:5px 4px 4px 0;
@@ -402,17 +406,13 @@ select{
   font-weight:bold;
   color:#7D3C25;
   }
-
-#logout{
+*/
+/*#logout{
   position:absolute;
   right:0px;
   }
+*/
 
-#loginName {
-  position:absolute;
-  right:95px;
-  top:8px;
-}
 
 .green{
   color:green;
@@ -427,11 +427,19 @@ select{
 }
 
 /*	Footer	*/
+footer,
 #footer {
-  display: none;
-  margin-top:30px;
+  margin:15px;
   text-align:center;
 }
+
+footer a,
+#footer a{
+  text-decoration:none;
+  color: #777;
+}
+
+
 
 
 #calendrier {		
@@ -441,3 +449,53 @@ select{
 	width:190px;
 	height:165px;
 	}
+
+
+
+ul.ui-widget-header{
+  font-size:0.9em;
+}
+
+#title{
+  font-size:14pt;
+  margin: 12px 6px;
+}
+
+#loginName {
+  position: absolute;
+  top: 0px;
+  width:986px;
+  padding: 16px 6px;
+  text-align: right;
+  cursor: pointer;
+}
+
+#myMenuTriangle{
+  display: inline-block;
+  vertical-align:middle;
+  -webkit-transform:scale(1.4);
+  -moz-transform:scale(1.4);
+  -o-transform:scale(1.4);
+}
+
+#myMenu{
+  position: absolute;
+  top: 35px;
+  right: 0px;
+  width:130px;
+  text-align: center;
+  display:none;
+  background-color: white;
+  border: 1px black solid;
+  padding: 2px;
+  z-index:100;
+}
+
+#myMenu a{
+  line-height: 20px;
+}
+
+
+section#content{
+  padding:10px;
+}

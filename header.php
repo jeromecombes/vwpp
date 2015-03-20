@@ -67,3 +67,10 @@ if(!array_key_exists('vwpp',$_SESSION)){
 <div style='position:relative;top:30px;'>
 <iframe id='calendrier' style='display:none' scrolling='no'></iframe>
 </div>
+
+<?php
+if(isset($_GET['msg'])){
+	$infoType=$_GET['error']?"error":"highlight";
+	echo "<script type='text/JavaScript'>CJInfo(\"{$GLOBALS['lang'][$_GET['msg']]}\",\"$infoType\");</script>\n";
+}
+?>

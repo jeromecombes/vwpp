@@ -5,12 +5,10 @@ require_once "../header.php";
 require_once "menu.php";
 if(isset($_GET['semestre'])){
   $semestre=$_GET['semestre'];
+  $_SESSION['vwpp']['semestre']=$semestre;
 }elseif(array_key_exists("semestre",$_SESSION["vwpp"])){
 	$semestre=$_SESSION['vwpp']['semestre'];
-}else{
-	$semestre=date("n")>7?"Fall_".date("Y"):"Spring_".date("Y");
 }
-$_SESSION['vwpp']['semestre']=$semestre;
 
 $db=new db();
 $db->select("students","semestre",null,"group by semestre");
