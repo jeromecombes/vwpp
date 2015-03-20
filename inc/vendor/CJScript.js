@@ -36,7 +36,7 @@ function CJFileExists(url){
 
 function CJInfo(message,type,top,time,myClass){
   if(top==undefined){
-    top=92;
+    top=50;
   }
   
   if(time==undefined){

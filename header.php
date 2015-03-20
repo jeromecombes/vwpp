@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-19
+// Last update : 2015-03-20
 
 ini_set('display_errors',0);
 ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
@@ -60,6 +60,7 @@ if(!array_key_exists('vwpp',$_SESSION)){
   exit;
 }				// Else, show the requested page
 ?>
+<div id='body'>
 <form name='position' action='#'>
 <input type='hidden' name='x' />
 <input type='hidden' name='y' />

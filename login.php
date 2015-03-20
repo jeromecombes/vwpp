@@ -1,3 +1,7 @@
+<?php
+// Last update : 2015-03-20
+?>
+
 <div id='login1'>
 <center>
 <div id='login2'>
@@ -30,4 +34,3 @@ or the Office of International Studies at <a href='http://www.wesleyan.edu/ois/a
 </div>
 </div>	<!--	login2	-->
 </center>
-</div>	<!--	login1	-->

@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-20
+
 if(!isset($_POST['password'])){
   require_once "../header.php";
   require_once "../inc/class.users.inc";
@@ -18,10 +20,10 @@ if(!isset($_POST['password'])){
   <td><input type='password' name='password' /></td></tr>
   <tr><td>Confirm new password :</td>
   <td><input type='password' name='confirm' /></td></tr>
-  <tr><td colspan='2' style='text-align:center;padding-top:20px;' >
-  <input type='button' value='Cancel' onclick='location.href="index.php";' />
-  <input type='submit' value='Change password' /></td></tr>
-  </table></form>
+  </table>
+  <input type='button' value='Cancel' onclick='location.href="index.php";'  class='myUI-button' />
+  <input type='submit' value='Change password'  class='myUI-button' />
+  </form>
 
   <br/><br/>
   <form method='post' action=''>

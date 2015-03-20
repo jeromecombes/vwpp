@@ -1,12 +1,15 @@
-/* Last update : 2015-03-19, Jérôme Combes */
+/* Last update : 2015-03-20, Jérôme Combes */
 
 body{
-  width: 1000px;
-  margin: auto;
   background: #EEEEEE;
   font-family:Verdana;
   font-size:9pt;
   background:#FFFFFF;
+}
+
+#body{
+  width: 1000px;
+  margin: auto;
 }
 
 table {
@@ -219,13 +222,14 @@ font.response {
 
 
 fieldset{
-  background:#DDDDDD;
+  background:#F8F8F8;
+  border-radius: 5px;
 }
 
 .fieldset {
   padding: 10px 30px 10px 30px;
-  background:#DDDDDD;
-  width:1120px;
+  background:#EFEFEF;
+  border-radius:5px;
 }
 
 legend{
@@ -467,7 +471,14 @@ ul.ui-widget-header{
   width:986px;
   padding: 16px 6px;
   text-align: right;
+}
+
+#loginName span{
   cursor: pointer;
+}
+
+.pointer{
+	cursor: pointer;
 }
 
 #myMenuTriangle{
@@ -495,7 +506,19 @@ ul.ui-widget-header{
   line-height: 20px;
 }
 
+.myUI-button{
+	min-width:100px;
+	margin-right:30px;
+}
 
 section#content{
   padding:10px;
+}
+
+label{
+	font-weight: bold;
+}
+
+.CJInfo{
+	min-width: 400px;
 }
