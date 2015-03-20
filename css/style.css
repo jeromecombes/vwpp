@@ -522,3 +522,7 @@ label{
 .CJInfo{
 	min-width: 400px;
 }
+
+.content{
+	min-height: 650px;
+}

@@ -15,7 +15,7 @@ echo <<<EOD
   </div>
 </div>
 
-<div class='ui-tabs ui-widget ui-widget-content ui-corner-all'>
+<div class='ui-tabs ui-widget ui-widget-content ui-corner-all content'>
 <nav>
 <ul class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>
 <li id='li0' class='ui-state-default ui-corner-top'><a href='index.php'>Home</a></li>
