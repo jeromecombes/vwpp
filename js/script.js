@@ -1,4 +1,4 @@
-// Last update : 2015-03-20, Jérôme Combes
+// Last update : 2015-03-22, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -923,6 +923,7 @@ $(document).ready(function(){
 
 
   $(".myUI-button").button();
+  $(".myUI-button-right").button();
   $(".myUI-datepicker-string").datepicker({dateFormat: "MM d, yy"});
 
   $("#loginName").find("span").hover(function(){
@@ -933,6 +934,7 @@ $(document).ready(function(){
     timeoutMyMenu=window.setTimeout(function(){$("#myMenu").hide()},3000);
   });
 
+  $(document).tooltip();
 });
 
 $(document).ready(function(){
@@ -944,6 +946,7 @@ $(document).ready(function(){
   }
   
   href=href.replace("users-edit.php","users.php");
+  href=href.replace(/(housing.*)/,"housing.php");
   href=href.replace(/(\?.*)/,"");
 
   $("li.ui-state-default").each(function(){

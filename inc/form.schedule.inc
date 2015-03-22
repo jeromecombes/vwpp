@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "class.courses.inc";
 
 $c=new courses();
@@ -10,8 +12,8 @@ echo <<<EOD
 
 EOD;
 
-echo "<table id='myTab' cellspacing='0'>\n";
-echo "<tr class='th'><td>Jour</td><td>Début</td><td>Fin</td><td>Type</td><td>Cours</td><td>Professeur</td></tr>\n";
+echo "<table id='myTab' cellspacing='0' cellpadding='5'>\n";
+echo "<tr class='th'><th>Jour</th><th>Début</th><th>Fin</th><th>Type</th><th>Cours</th><th>Professeur</th></tr>\n";
 foreach($tab as $elem){
   $class=$class=="tr1"?"tr2":"tr1";
   echo "<tr class='$class'><td>{$elem['jour']}</td><td>{$elem['debut']}</td><td>{$elem['fin']}</td>

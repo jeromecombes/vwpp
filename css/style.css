@@ -1,4 +1,4 @@
-/* Last update : 2015-03-20, Jérôme Combes */
+/* Last update : 2015-03-22, Jérôme Combes */
 
 body{
   background: #EEEEEE;
@@ -13,7 +13,7 @@ body{
 }
 
 table {
-  width:1170px;
+  width:100%;
 }
 
 .marginBottom{
@@ -116,6 +116,10 @@ div#content {
 
 #myTab td,#myTab2 td, #content td{
   padding:0 10px 0 10px;
+}
+
+.myTab td{
+  padding: 0 20px 0 5px;
 }
 
 #home{
@@ -513,6 +517,11 @@ ul.ui-widget-header{
 	margin-right:30px;
 }
 
+.myUI-button-right{
+	min-width:100px;
+	margin-left:30px;
+}
+
 section#content{
   padding:10px;
 }
@@ -526,6 +535,6 @@ label{
 }
 
 .content{
-  min-height: 650px;
+  min-height: 500px;
   padding:10px;
 }

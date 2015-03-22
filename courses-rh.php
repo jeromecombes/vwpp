@@ -1,4 +1,6 @@
 <?php
+// Last update 2015-03-22
+
 require_once "inc/class.reidhall.inc";
 
 $student=$_SESSION['vwpp']['student'];
@@ -34,34 +36,34 @@ if($rh->isLock($student)){
 
 
   echo <<<EOD
-  <fieldset style='width:1170px;'>
+  <fieldset>
   <h3><u>My Choices</u></h3>
-  <table style='width:1170px;'>
+  <table>
   <tr><td colspan='2' style='padding-left:0px;'><u><b>Writing-Intensive Course</b></u></td></tr>
-  <tr><td style='width:200px;padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>
+  <tr><td style='padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>
   <td>$a1</td></tr>
-  <tr><td style='width:200px;padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>
+  <tr><td style='padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>
   <td>$b1</td></tr>
   <tr><td colspan='2' style='padding:20px 0 0 0;'><u><b>Seminar</b></u></td></tr>
-  <tr><td style='width:200px;padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>
+  <tr><td style='padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>
   <td>$a2</td></tr>
-  <tr><td style='width:200px;padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>
+  <tr><td style='padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>
   <td>$b2</td></tr>
   </table></form></fieldset>
 EOD;
 }
 else{
   echo <<<EOD
-  <fieldset style='width:1170px;'>
+  <fieldset>
   <h3><u>My Choices</u></h3>
   <form name='form_rh' action='courses-update.php' method='post'>
   <input type='hidden' name='id' value='{$stdCourse['id']}' />
   <input type='hidden' name='univ' value='rh' />
-  <table style='width:1170px;'>
+  <table>
 EOD;
 
   echo "<tr><td colspan='2' style='padding-left:0px;'><u><b>Writing-Intensive Course</b></u></td></tr>\n";
-  echo "<tr><td style='width:200px;padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>\n";
+  echo "<tr><td style='padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>\n";
   echo "<td><select name='a1' style='width:100%;'>\n";
   echo "<option value=''>&nbsp;</option>\n";
   foreach($rh->writings as $elem){
@@ -70,7 +72,7 @@ EOD;
   }
   echo "</select></td></tr>\n";
 
-  echo "<tr><td style='width:200px;padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>\n";
+  echo "<tr><td style='padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>\n";
   echo "<td><select name='b1' style='width:100%;'>\n";
   echo "<option value=''>&nbsp;</option>\n";
   foreach($rh->writings as $elem){
@@ -80,7 +82,7 @@ EOD;
   echo "</select></td></tr>\n";
 
   echo "<tr><td colspan='2' style='padding:20px 0 0 0;'><u><b>Seminar</b></u></td></tr>\n";
-  echo "<tr><td style='width:200px;padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>\n";
+  echo "<tr><td style='padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>\n";
   echo "<td><select name='a2' style='width:100%;'>\n";
   echo "<option value=''>&nbsp;</option>\n";
   foreach($rh->seminars as $elem){
@@ -89,7 +91,7 @@ EOD;
   }
   echo "</select></td></tr>\n";
 
-  echo "<tr><td style='width:200px;padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>\n";
+  echo "<tr><td style='padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>\n";
   echo "<td><select name='b2' style='width:100%;'>\n";
   echo "<option value=''>&nbsp;</option>\n";
   foreach($rh->seminars as $elem){
@@ -100,7 +102,7 @@ EOD;
 
   echo <<<EOD
   <tr><td colspan='2' style='text-align:right;padding-top:20px;'>
-  <input type='submit' value='Valider' /></td></tr>
+  <input type='submit' value='Valider' class='myUI-button-right'/></td></tr>
   </table></form></fieldset>
 EOD;
 }

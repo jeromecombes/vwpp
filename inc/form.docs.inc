@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "class.doc.inc";
 //	Get data
 $std_id=$GLOBALS['std_id'];
@@ -24,10 +26,10 @@ EOD;
 
 $class="tr2";
 if($docs){
-  echo "<table cellspacing='0'>\n";
-  echo "<tr class='th'><td>Name</td><td>Type</td><td style='text-align:right;'>Size</td><td>Date</td>";
+  echo "<table cellspacing='0' cellpadding='5'>\n";
+  echo "<tr class='th'><th>Name</th><th>Type</th><th style='text-align:right;'>Size</th><th>Date</th>";
   if($_SESSION['vwpp']['category']=="admin"){
-    echo "<td>Visibility</td>";
+    echo "<th>Visibility</th>";
   }
   echo "</tr>\n";
   foreach($docs as $doc){
@@ -64,12 +66,12 @@ echo <<<EOD
 <fieldset>
 EOD;
 
-echo "<table cellspacing='0' style='width:1170px;'>\n";
-echo "<tr class='th'><td>Name</td><td>Type</td>";
+echo "<table cellspacing='0' cellpadding='5'>\n";
+echo "<tr class='th'><th>Name</th><th>Type</th>";
 if($_SESSION['vwpp']['category']=="admin"){
-  echo "<td style='width:150px;'>Visibility</td>";
+  echo "<th>Visibility</th>";
 }
-echo "<td>File</td></tr>\n";
+echo "<th>File</th></tr>\n";
 $i=0;
 if($docs){
   foreach($docs as $doc){
@@ -126,8 +128,9 @@ EOD;
 echo <<<EOD
 </table>
 <p style='text-align:right'>
-<input type='button' value='Cancel' onclick='document.getElementById("div-edit$id").style.display="none";document.getElementById("div$id").style.display="";' />
-<input type='submit' value='Submit' /></p>
+<br/>
+<input type='button' value='Cancel' onclick='document.getElementById("div-edit$id").style.display="none";document.getElementById("div$id").style.display="";' class='myUI-button-right' />
+<input type='submit' value='Submit' class='myUI-button-right' /></p>
 
 </fieldset></form></div>
 EOD;

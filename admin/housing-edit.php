@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "../header.php";
 require_once "../inc/class.housing.inc";
 require_once "menu.php";
@@ -28,18 +30,18 @@ $fields[]=array("email","E-mail","email2","E-mail 2");
 <form method='post' action='housing-update.php' name='form_1'>
 <input type='hidden' name='logement[id]' value='<?php echo $logement['id']; ?>' />
 <fieldset>
-<table>
+<table class='myTab'>
 
 <?php
 $i=0;
 foreach($fields as $elem){
   echo "<tr><td>{$elem[1]}</td>\n";
-  echo "<td style='width:350px;'><input type='text' name='logement[{$elem[0]}]' value='{$logement[$elem[0]]}' style='display:none;' tabindex='1$i'/>\n";
+  echo "<td style='width:300px;'><input type='text' name='logement[{$elem[0]}]' value='{$logement[$elem[0]]}' style='display:none;' tabindex='1$i'/>\n";
   echo "<font id='form_1_$i'>{$logement[$elem[0]]}</font></td>\n";
   $i++;
   if($elem[2]){
     echo "<td>{$elem[3]}</td>\n";
-    echo "<td style='width:350px;'><input type='text' name='logement[{$elem[2]}]' value='{$logement[$elem[2]]}' style='display:none;' tabindex='100$i'/>\n";
+    echo "<td style='width:300px;'><input type='text' name='logement[{$elem[2]}]' value='{$logement[$elem[2]]}' style='display:none;' tabindex='100$i'/>\n";
     echo "<font id='form_1_$i'>{$logement[$elem[2]]}</font></td>\n";
     $i++;
   }
@@ -49,19 +51,19 @@ foreach($fields as $elem){
 echo "<tr><td colspan='4' style='padding-top:20px;'>Etudiant(e) attribué(e) : {$logement["studentName"]}</td></tr>";
 ?>
 
-<tr><td colspan='2' style='text-align:center;padding-top:20px;'>
-<input type='button' value='Retour' onclick='document.location.href="housing-list.php";' id='form_1_<?php echo $i++; ?>'/>
+<tr><td colspan='4' style='text-align:right;padding-top:20px;'>
+<input type='button' value='Retour' onclick='document.location.href="housing-list.php";' id='form_1_<?php echo $i++; ?>' class='myUI-button-right' />
 
 <?php
 if(in_array(7,$_SESSION['vwpp']['access'])){
-  echo "<input type='button' value='Supprimer' onclick='if(confirm(\"Etes-vous sûr(e) de vouloir supprimer ce logement ?\")) location.href=\"housing-delete.php\";' id='form_1_$i'/>\n";
+  echo "<input type='button' value='Supprimer' onclick='if(confirm(\"Etes-vous sûr(e) de vouloir supprimer ce logement ?\")) location.href=\"housing-delete.php\";' id='form_1_$i' class='myUI-button-right' />\n";
   $i++;
-  echo "<input type='button' value='Modifier' onclick='displayForm(\"form\",1);' id='form_1_$i'/>\n";
+  echo "<input type='button' value='Modifier' onclick='displayForm(\"form\",1);' id='form_1_$i' class='myUI-button-right' />\n";
   $i++;
 }
 ?>
-<input type='button' value='Annuler' onclick='document.location.reload(false);' style='display:none;'/>
-<input type='submit' value='<?php echo $submit; ?>' style='display:none;' />
+<input type='button' value='Annuler' onclick='document.location.reload(false);' style='display:none;' class='myUI-button-right' />
+<input type='submit' value='<?php echo $submit; ?>' style='display:none;'  class='myUI-button-right' />
 </table>
 </fieldset>
 </form>

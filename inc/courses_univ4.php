@@ -1,5 +1,6 @@
 <?php
-// Last Update 27/09/2013, Jérôme Combes
+// Last Update 2015-03-22, Jérôme Combes
+
 require_once "class.univ.inc";
 require_once "class.univ4.inc";
 /*	Needed :
@@ -63,10 +64,10 @@ $arrow
     <input type='hidden' name='semester' value='$semester' />
     <input type='hidden' name='id' value='{$course['id']}' />
     <input type='hidden' name='modalitesOnly' value='{$course['id']}' />
-    <table style='width:1100px;margin-left:{$margin2}px;'>
+    <table style='margin-left:{$margin2}px;'>
 
-    <tr><td style='width:400px;'>Code</td>
-      <td style='width:350px;' class='response'>{$course['code']}</td></tr>
+    <tr><td>Code</td>
+      <td class='response'>{$course['code']}</td></tr>
 
     <tr><td>Nom du cours</td>
       <td class='response'>{$course['nom']}</td></tr>
@@ -131,22 +132,22 @@ EOD;
 EOD;
     if($admin or !$course['lock']){
       echo "<tr><td colspan='2' style='padding-top:20px;'>\n";
-      echo "<input type='button' value='Modifier' onclick='editCourse({$course['id']},true);'/>\n";
+      echo "<input type='button' value='Modifier' onclick='editCourse({$course['id']},true);' class='myUI-button'/>\n";
 
       if(!$course['liaison']){
-	echo "<input type='button' value='Supprimer' onclick='dropCourse({$course['id']},$admin);' style='margin-left:20px;'/>\n";
+	echo "<input type='button' value='Supprimer' onclick='dropCourse({$course['id']},$admin);' style='margin-left:20px;' class='myUI-button'/>\n";
       }
       if($admin){
 	$lockButton=$course['lock']?"D&eacute;verrouiller":"Verrouiller";
-	echo "<input type='button' value='$lockButton' id='lock{$course['id']}' onclick='lockCourse4({$course['id']});' style='margin-left:20px;'/>\n";
+	echo "<input type='button' value='$lockButton' id='lock{$course['id']}' onclick='lockCourse4({$course['id']});' style='margin-left:20px;' class='myUI-button'/>\n";
       }
       echo "</td></tr>\n";
     }
     if(!$admin and $course['lock']){
       echo "<tr><td colspan='2' style='padding-top:20px;'>\n";
-      echo "<input type='button' value='Modifier' id='modalitesUpdate{$course['id']}' onclick='editModalites({$course['id']},true);'/>\n";
-      echo "<input type='reset' value='Annuler' style='display:none;' id='modalitesReset{$course['id']}' onclick='editModalites({$course['id']},false);' />\n";
-      echo "<input type='submit' value='Valider' style='display:none;' id='modalitesSubmit{$course['id']}' />\n";
+      echo "<input type='button' value='Modifier' id='modalitesUpdate{$course['id']}' onclick='editModalites({$course['id']},true);' class='myUI-button'/>\n";
+      echo "<input type='reset' value='Annuler' style='display:none;' id='modalitesReset{$course['id']}' onclick='editModalites({$course['id']},false);'  class='myUI-button'/>\n";
+      echo "<input type='submit' value='Valider' style='display:none;' id='modalitesSubmit{$course['id']}'  class='myUI-button'/>\n";
       echo "</td></tr>\n";
     }
 
@@ -168,10 +169,10 @@ EOD;
     <input type='hidden' name='semester' value='$semester' />
     <input type='hidden' name='id' value='{$course['id']}' />
 
-    <table style='width:1100px;margin-left:{$margin2}px;'>
+    <table style='margin-left:{$margin2}px;'>
 
-    <tr><td style='width:400px;'>Code</td>
-      <td style='width:400px;'><input type='text' name='code' value='{$course['code']}'/></td></tr>
+    <tr><td>Code</td>
+      <td><input type='text' name='code' value='{$course['code']}'/></td></tr>
 
     <tr><td>Nom du cours</td>
       <td><input type='text' name='nom'  value='{$course['nom']}'/></td></tr>
@@ -309,8 +310,8 @@ EOD;
 
     echo <<<EOD
     <tr><td colspan='2'>
-      <input type='reset' value='Annuler' onclick='editCourse({$course['id']},false);'/>
-      <input type='submit' value='Valider' /></td></tr>
+      <input type='reset' value='Annuler' onclick='editCourse({$course['id']},false);' class='myUI-button'/>
+      <input type='submit' value='Valider' class='myUI-button' /></td></tr>
 
     </table>
     </form>
@@ -323,7 +324,7 @@ EOD;
 
 
 //	Add course button
-echo "<br/><input type='button' value='Ajouter un cours &agrave; l&#039;universit&eacute' onclick='addUnivCourse(this);' id='AddCourseButton'/>";
+echo "<br/><input type='button' value='Ajouter un cours &agrave; l&#039;universit&eacute' onclick='addUnivCourse(this);' id='AddCourseButton' class='myUI-button'/>";
 
 //			ADD NEW COURSE
 //	New course Form
@@ -340,10 +341,10 @@ echo <<<EOD
   <input type='hidden' name='student' value='$student' />
   <input type='hidden' name='semester' value='$semester' />
 
-  <table style='width:1100px;'>
+  <table>
 
-  <tr><td style='width:400px;'>Code</td>
-    <td style='width:400px;'><input type='text' name='code' /></td></tr>
+  <tr><td>Code</td>
+    <td><input type='text' name='code' /></td></tr>
 
   <tr><td>Nom du cours</td>
     <td><input type='text' name='nom' /></td></tr>
@@ -471,8 +472,8 @@ EOD;
 
   echo <<<EOD
   <tr><td colspan='2'>
-    <input type='reset' value='Annuler' onclick='resetNewCourse();'/>
-    <input type='submit' value='Valider' /></td></tr>
+    <input type='reset' value='Annuler' onclick='resetNewCourse();' class='myUI-button'/>
+    <input type='submit' value='Valider' class='myUI-button' /></td></tr>
 
   </table>
   </form>

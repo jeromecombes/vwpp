@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-03-22
 
 if(!isset($_POST['password'])){
   require_once "header.php";
@@ -17,9 +17,11 @@ if(!isset($_POST['password'])){
   <tr><td>Confirm new password :</td>
   <td><input type='password' name='confirm' /></td></tr>
   </table>
+  <div style='text-align:right;'>
   <br/>
-  <input type='button' value='Cancel' onclick='location.href="index.php";'  class='myUI-button' />
-  <input type='submit' value='Change password'  class='myUI-button' />
+  <input type='button' value='Cancel' onclick='location.href="index.php";'  class='myUI-button-right' />
+  <input type='submit' value='Change password'  class='myUI-button-right' />
+  </div>
   </fieldset>
   </form>
 EOD;

@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "../header.php";
 require_once "../inc/class.housing.inc";
 require_once "../inc/class.student.inc";
@@ -45,7 +47,7 @@ foreach($logements as $elem){
   echo "<option value='{$elem['id']}'>{$elem['firstname']} {$elem['lastname']}, {$elem['zipcode']}</option>\n";
 }
 echo "</select></td>\n";
-echo "<td><input type='submit' value='OK' /></td></tr>\n";
+echo "<td><input type='submit' value='OK' class='myUI-button-right'/></td></tr>\n";
 echo "</table></form>\n";
 
 if($student['logement']){

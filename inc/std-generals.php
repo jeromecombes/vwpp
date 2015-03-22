@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2015-03-20
+// Last Update : 2015-03-22
 
 require_once "class.housing.inc";
 require_once "class.doc.inc";
@@ -267,8 +267,7 @@ echo <<<EOD
 
 <p style='text-align:right'>
 <input type='hidden' name='std[semesters][]' value='{$std['semesters'][0]}'/>
-<input type='button' onclick='document.stdform$id.submit();' value='Done' /></p>
-
+<input type='button' onclick='document.stdform$id.submit();' value='Done' class='myUI-button-right'/></p>
 </fieldset></form></div>
 EOD;
 ?>

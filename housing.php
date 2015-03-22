@@ -1,10 +1,12 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "header.php";
 require_once "inc/class.housing.inc";
 require_once "menu.php";
 ?>
 <h3>Housing</h3>
-<p style='text-align:justify;width:1170px;'>
+<p style='text-align:justify;'>
 Welcome to the VWPP Housing questionnaire pages.  Please take a few minutes to read through the Housing 
 Process Residence commitment sections of the VWPP website by clicking on the link below, before 
 proceeding to fill out the questionnaire.

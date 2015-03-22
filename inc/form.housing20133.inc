@@ -1,4 +1,5 @@
 <?php
+// 2013-03-22
 
 for($i=0;$i<count($housing);$i++){
   $housing[$i]=str_replace("<br/>",null,$housing[$i]);
@@ -71,7 +72,7 @@ the Office of International Studies (Wesleyan).
 </p>
 
 
-<table style='width:1170px;' border='0'>
+<table border='0'>
 <tr><td colspan='5'><h3>I. Personal details</h3></td></tr>
 <tr><td>1. Last Name : </td>
 <td colspan='2'><div class='response2'>{$std['lastname']}</div></td>
@@ -324,7 +325,7 @@ housing: children, animals, interests, neatness, study habits, noise, sleeping h
 
 
 <!-- <h3>...</h3> -->
-<table style='width:800px;margin-left:50px;'>
+<table style='margin-left:50px;'>
 EOD;
 foreach($customForm as $elem){
   echo "<tr><td>{$elem['question']}</td><td>";
@@ -337,7 +338,7 @@ echo <<<EOD
 
 <p style='text-align:right'>
 <!-- <a href='javascript:document.stdform$id.submit();'>Submit</a>  -->
-<input type='button' value='Submit' onclick='document.stdform$id.submit();' />
+<input type='button' value='Submit' onclick='document.stdform$id.submit();' class='myUI-button-right'/>
 </p>
 
 <!-- </fieldset> --> </div></form></div>

@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "class.student.inc";
 require_once "class.users.inc";
 
@@ -760,7 +762,8 @@ function login_ctrl(){
 function get_button($text,$id,$required,$align="left",$margin=null){
   if($_SESSION['vwpp']['category']=="admin" and !in_array($required,$_SESSION['vwpp']['access']))
     return false;
-  echo "<p style='text-align:$align;margin:$margin'><input type='button' value='$text' onclick='edit($id);' class='myUI-button'/></p>\n";
+  $class=$align=="right"?"myUI-button-right":"myUI-button";
+  echo "<p style='text-align:$align;margin:$margin'><input type='button' value='$text' onclick='edit($id);' class='$class'/></p>\n";
 }
 
 function get_input($type,$id,$responses=null,$response=null){

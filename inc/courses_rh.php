@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "class.reidhall.inc";
 //	Get RH courses attribution
 $attrib=array();
@@ -20,7 +22,7 @@ $courses=$rh->elements;
 
 
 if(!empty($attrib) and $rh->isPublished($_SESSION['vwpp']['student'])){
-  echo "<fieldset style='width:1170px;'><ul>\n";
+  echo "<fieldset><ul>\n";
   echo "<h3 style='margin-left:-40px;'><u>Final Reg.</u></h3>\n";
   foreach($attrib as $elem){
     if($elem){

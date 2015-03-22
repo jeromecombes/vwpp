@@ -1,5 +1,5 @@
 <?php
-// Last Update : Jérôme Combes, 23 octobre 2013
+// Last Update : Jérôme Combes, 2015-03-22
 
 require_once "class.univ_reg.inc";
 require_once "class.dates.inc";
@@ -85,8 +85,8 @@ University Registration Request Form</h3>
 <input type='hidden' name='std_id' value='$std_id' />
 <input type='hidden' name='semestre' value='$semestre' />
 
-<table style='width:100%;'>
-<tr><td style='width:150px;'>Lastname :</td>
+<table>
+<tr><td>Lastname :</td>
 <td colspan='2'><font class='response'>{$std['lastname']}</font></td></tr>
 <tr><td>Firstname :</td>
 <td colspan='2'><font class='response'>{$std['firstname']}</font></td></tr>
@@ -94,22 +94,22 @@ University Registration Request Form</h3>
 <td colspan='2'><font class='response'>{$std['email']}</font></td></tr>
 <tr><td>Major 1:</td>
 <td colspan='2'>
-<input type='text' style='display:none;width:100%;' name='data[1]' value='{$data[1]}' />
+<input type='text' style='display:none;' name='data[1]' value='{$data[1]}' />
 <font class='response' id='stdform_5_0'>{$data[1]}</font>
 </td>
-<td style='width:180px;'>Minor / Correlate 1</td>
+<td>Minor / Correlate 1</td>
 <td colspan='2'>
-<input type='text' style='display:none;width:100%;' name='data[2]' value='{$data[2]}' />
+<input type='text' style='display:none;' name='data[2]' value='{$data[2]}' />
 <font class='response' id='stdform_5_1'>{$data[2]}</font>
 </td></tr>
 <tr><td>Major 2:</td>
 <td colspan='2'>
-<input type='text' style='display:none;width:100%;' name='data[3]' value='{$data[3]}' />
+<input type='text' style='display:none;' name='data[3]' value='{$data[3]}' />
 <font class='response' id='stdform_5_2'>{$data[3]}</font>
 </td>
 <td>Minor / Correlate 2</td>
 <td colspan='2'>
-<input type='text' style='display:none;width:100%;' name='data[4]' value='{$data[4]}' />
+<input type='text' style='display:none;' name='data[4]' value='{$data[4]}' />
 <font class='response' id='stdform_5_3'>{$data[4]}</font>
 </td></tr>
 EOD;
@@ -131,7 +131,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 
 <tr><td>Paris 3</td>
 <td colspan='2'>
-<select style='display:none;width:100%;' name='data[5]'>
+<select style='display:none;' name='data[5]'>
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[0]}>1st Choice</option>
 <option value='2nd' {$selected[1]}>2nd Choice</option>
@@ -146,7 +146,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 
 <tr><td>Paris 4</td>
 <td colspan='2'>
-<select style='display:none;width:100%;' name='data[6]'>
+<select style='display:none;' name='data[6]'>
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[5]}>1st Choice</option>
 <option value='2nd' {$selected[6]}>2nd Choice</option>
@@ -161,7 +161,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 
 <tr><td>Paris 7</td>
 <td colspan='2'>
-<select style='display:none;width:100%;' name='data[7]'>
+<select style='display:none;' name='data[7]'>
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[10]}>1st Choice</option>
 <option value='2nd' {$selected[11]}>2nd Choice</option>
@@ -176,7 +176,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 
 <tr><td>CIPh</td>
 <td colspan='2'>
-<select style='display:none;width:100%;' name='data[8]'>
+<select style='display:none;' name='data[8]'>
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[15]}>1st Choice</option>
 <option value='2nd' {$selected[16]}>2nd Choice</option>
@@ -192,7 +192,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <!--
 <tr><td>IEP</td>
 <td colspan='2'>
-<select style='display:none;width:100%;' name='data[10]'>
+<select style='display:none;' name='data[10]'>
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[20]}>1st Choice</option>
 <option value='2nd' {$selected[21]}>2nd Choice</option>
@@ -209,7 +209,7 @@ Please provide an academic justification for your 1<sup>st</sup> and 2<sup>nd</s
 in the text box below (Maximum 1200 characters with spaces) :</td></tr>
 
 <tr><td colspan='6'>
-<textarea name='data[9]' style='display:none;width:100%;'>{$data[9]}</textarea>
+<textarea name='data[9]' style='display:none;'>{$data[9]}</textarea>
 <font class='response' id='stdform_5_8'>{$textarea[9]}</font>
 </td></tr>
 
@@ -235,12 +235,13 @@ has a specific number of spots for our students.<br/>
 
 <tr><td colspan='6' style='text-align:right;'>
 <div id='stdform_5_done' style='display:none;'>
-<input style='display:none;' type='button' value='Cancel' onclick='displayText("stdform",5);' style='margin-right:50px;' />
-<input style='display:none;' type='submit' value='Submit' />
+<br/>
+<input style='display:none;' type='button' value='Cancel' onclick='displayText("stdform",5);' class='myUI-button-right' />
+<input style='display:none;' type='submit' value='Submit' class='myUI-button-right' />
 </div>
 EOD;
 if($_SESSION['vwpp']['category']=="admin" or !$university){
-  echo "<input id='stdform_5_9' type='button' value='Edit' onclick='displayForm(\"stdform\",5);'/>\n";
+  echo "<br/><input id='stdform_5_9' type='button' value='Edit' onclick='displayForm(\"stdform\",5);' class='myUI-button-right' />\n";
 }
 echo <<<EOD
 </td></tr>
@@ -250,9 +251,9 @@ EOD;
 if($_SESSION['vwpp']['category']=="admin"){
   echo <<<EOD
   <form method='post' action='univ_reg_update.php'>
-  <table style='width:500px;'>
+  <table>
   <tr><td colspan='2'><h3>University Registration</h3></td></tr>
-  <tr><td style='width:150px;'>University</td>
+  <tr><td>University</td>
   <td>
   <input type='hidden' name='action' value='attrib' />
   <select name='university' style='width:80%;'>
@@ -273,9 +274,9 @@ EOD;
 }
 elseif($university){
   echo <<<EOD
-  <table style='width:500px;'>
+  <table>
   <tr><td colspan='2'><h3>University Registration</h3></td></tr>
-  <tr><td style='width:150px;'>University</td>
+  <tr><td>University</td>
   <td class='response'>$university</td></tr></table>
 EOD;
 }

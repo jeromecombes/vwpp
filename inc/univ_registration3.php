@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-22
+
 require_once "class.univ_reg.inc";
 
 $u=new univ_reg();
@@ -135,9 +137,10 @@ echo <<<EOD
 
 
 <tr><td colspan='2' style='text-align:right;'>
+<br/>
 EOD;
 if($_SESSION['vwpp']['category']=="admin" or !$lock){
-  echo "<input id='univreg_1_12' type='button' value='Edit' onclick='displayForm(\"univreg\",1);'/>\n";
+  echo "<input id='univreg_1_12' type='button' value='Edit' onclick='displayForm(\"univreg\",1);' class='myUI-button'/>\n";
 }
 echo <<<EOD
 <input type='submit' value='Valider' id='univreg_1_done' style='display:none;'/></td></tr>
@@ -147,6 +150,4 @@ echo <<<EOD
 </form>
 </fieldset>
 EOD;
-
-
 ?>

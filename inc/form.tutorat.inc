@@ -1,5 +1,5 @@
 <?php
-// Last Update : 3/10/2013, Jérôme Combes
+// Last Update : 2015-03-22, Jérôme Combes
 
 require_once "class.tutorat.inc";
 
@@ -32,8 +32,8 @@ echo <<<EOD
 <form name='formTutorat_1' method='post' action='$action'>
 <input type='hidden' name='afterSubmit' value='$afterSubmit' />
 <input type='hidden' name='student' value='$student' />
-<table style='width:1100px;'>
-<tr><td style='width:400px;'><b>Tuteur</b></td>
+<table>
+<tr><td><b>Tuteur</b></td>
 <td><input type='text' name='tutorat[tuteur]' value='{$tutorat['tuteur']}' style='display:none;'/>
 <font id='formTutorat_1_0'>{$tutorat['tuteur']}</td></tr>
 
@@ -84,12 +84,12 @@ echo <<<EOD
 
 
 <tr><td colspan='2' style='text-align:right;' id='formTutorat_1_2' >
-<input type='button' id='formTutorat_1_3' onclick='displayForm("formTutorat",1);' style='margin-left:30px;$displayEdit'  value='Modifier' />
-<input type='button' id='formTutorat_1_4' onclick='lock_registration("tutorats",{$tutorat['id']},$lock);' $displayLock id='lock_tutorat_1'  style='margin-left:30px;' value='$lock_msg' />
+<input type='button' id='formTutorat_1_3' onclick='displayForm("formTutorat",1);' style='margin-left:30px;$displayEdit'  value='Modifier' class='myUI-button-right' />
+<input type='button' id='formTutorat_1_4' onclick='lock_registration("tutorats",{$tutorat['id']},$lock);' $displayLock id='lock_tutorat_1'  style='margin-left:30px;' value='$lock_msg' class='myUI-button-right' />
 </td></tr>
 <tr style='display:none;' id='formTutorat_1_done'><td colspan='2' style='text-align:right;'>
-<br/><input type='button' onclick='location.href="$cancel";' style='margin-left:30px;' value='Annuler' />
-<input type='submit' style='margin-left:30px;' value='Valider' /></td></tr>
+<br/><input type='button' onclick='location.href="$cancel";' style='margin-left:30px;' value='Annuler' class='myUI-button-right' />
+<input type='submit' style='margin-left:30px;' value='Valider' class='myUI-button-right' /></td></tr>
 </table>
 </form>
 </fieldset>
