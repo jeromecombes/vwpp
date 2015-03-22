@@ -1,5 +1,5 @@
 <?php
-// Last Update : 09/30/2014
+// Last Update : 2015-03-20
 
 require_once "class.housing.inc";
 require_once "class.doc.inc";
@@ -24,11 +24,12 @@ $d->getPhoto($std['id']);
 echo <<<EOD
 <div id='div$id' style='display:$display;'>
 <h3>Personal Details and Contact Information</h3>
-<div class='fieldset'>
-<table style='margin-left:-30px;'><tr><td style='width:485px;'>
+<fieldset>
+<table style='width:100%;'>
+<tr><td style='width:40%;'>
 <table style='width:100%;'>
 <tr><td colspan='2'><br/><b><u>Personal Details</u></b></td></tr>		<!-- Personal details -->
-<tr><td style='width:220px;'>Lastname</td><td style='width:280px;'>{$std['lastname']}</td></tr>
+<tr><td style='width:40%;'>Lastname</td><td style='width:60%;'>{$std['lastname']}</td></tr>
 <tr><td>Firstname</td><td>{$std['firstname']}</td></tr>
 <tr><td>Gender</td><td>{$std['gender']}</td></tr>
 <tr><td>Citizenship 1</td><td>{$std['citizenship1']}</td></tr>
@@ -53,10 +54,10 @@ echo <<<EOD
 <tr><td>Cellphone</td><td>{$logement['cellphone']}</td></tr>
 
 </table>
-</td><td style='width:485px;'>
+</td><td style='width:350px;'>
 <table style='width:100%;'>
 <tr><td colspan='2'><br/><b><u>Contact Information for Parent/Guardian</u></b></td></tr>		<!-- Contact information -->
-<tr><td style='width:220px;'>Lastname</td><td style='width:360px;'>{$std['contactlast']}</td></tr>
+<tr><td style='width:40%;'>Lastname</td><td style='width:60%;'>{$std['contactlast']}</td></tr>
 <tr><td>Firstname</td><td>{$std['contactfirst']}</td></tr>
 <tr><td>Street</td><td>{$std['street']}</td></tr>
 <tr><td>City</td><td>{$std['city']}</td></tr>
@@ -81,13 +82,13 @@ echo "<tr><td>French Univ. Student number</td><td>{$std['frenchNumber']}</td></t
 echo <<<EOD
 </table>
 </td>
-<td style='width:200px;padding-top:20px;'>{$d->photo}</td>
+<td style='padding-top:20px;'>{$d->photo}</td>
 </tr></table>
 EOD;
 
 //	Edit Button
 get_button("Edit",$id,6,"right");	// text, div id, acl, align
-echo "</div></div>\n";	
+echo "</fieldset></div>\n";	
 
 //	Update Form
 echo <<<EOD
@@ -99,8 +100,8 @@ echo <<<EOD
 <input type='hidden' name='table' value='students' />
 <input type='hidden' name='acl' value='6' />
 <h3>Personal Details and Contact Information</h3>
-<div class='fieldset'>
-<table style='margin-left:-30px;'><tr><td style='width:485px;'>
+<fieldset>
+<table style='width:100%;'><tr><td style='width:40%;'>
 <table style='width:100%;'>
 <tr><td colspan='2'><br/><b><u>Personal Details</u></b></td></tr>		<!-- Personal details -->
 <tr><td style='width:220px;'>Lastname</td>
@@ -197,10 +198,10 @@ echo <<<EOD
 <tr><td>Cellphone</td><td>{$logement['cellphone']}</td></tr>
 
 </table>
-</td><td style='width:485px;'>
+</td><td style='width:40%;'>
 <table style='width:100%;'>
 <tr><td colspan='2'><br/><b><u>Contact Information for Parent/Guardian</u></b></td></tr>		<!-- Contact information -->
-<tr><td style='width:220px;'>Lastname</td><td style='width:360px;'><input type='text' name='std[contactlast]' value='{$std['contactlast']}'/></td></tr>
+<tr><td style='width:40%;'>Lastname</td><td style='width:60%;'><input type='text' name='std[contactlast]' value='{$std['contactlast']}'/></td></tr>
 <tr><td>Firstname</td><td><input type='text' name='std[contactfirst]' value='{$std['contactfirst']}'/></td></tr>
 <tr><td>Street</td><td><input type='text' name='std[street]' value='{$std['street']}'/></td></tr>
 <tr><td>City</td><td><input type='text' name='std[city]' value='{$std['city']}'/></td></tr>
@@ -261,13 +262,13 @@ echo "<td><input type='text' name='std[frenchNumber]' value='{$std['frenchNumber
 echo <<<EOD
 </table>
 </td>
-<td style='width:200px;padding-top:20px;'>{$d->photo}</td>
+<td style='padding-top:20px;'>{$d->photo}</td>
 </tr></table>
 
 <p style='text-align:right'>
 <input type='hidden' name='std[semesters][]' value='{$std['semesters'][0]}'/>
 <input type='button' onclick='document.stdform$id.submit();' value='Done' /></p>
 
-</div></form></div>
+</fieldset></form></div>
 EOD;
 ?>

@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-10-01
+// Last update : 2015-03-20
 
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
@@ -17,7 +17,7 @@ $sort=$_GET['sort']?"cmp_".$_GET['sort']:"cmp_lastname";
 
 
 if($semestre and in_array(4,$_SESSION['vwpp']['access'])){
-  $addStudents="<a href='students-add.php'>Add students</a>\n";
+  $addStudents="<a href='students-add.php' class='myUI-button'>Add students</a>\n";
 }
 
 //		Check If dates (dead lines) are registered

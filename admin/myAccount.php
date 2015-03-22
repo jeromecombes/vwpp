@@ -21,6 +21,7 @@ if(!isset($_POST['password'])){
   <tr><td>Confirm new password :</td>
   <td><input type='password' name='confirm' /></td></tr>
   </table>
+  <br/>
   <input type='button' value='Cancel' onclick='location.href="index.php";'  class='myUI-button' />
   <input type='submit' value='Change password'  class='myUI-button' />
   </form>

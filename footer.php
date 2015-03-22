@@ -2,7 +2,7 @@
 // Last Update : 2015-03-20
 ?>
 </section> <!-- content -->
-</div>	<!-- tab -->
+</div>	<!-- tabs -->
 <footer>
 <a href='http://www.jeromecombes.com' target='_blank'>www.jeromecombes.com</a>
 </footer>

@@ -119,15 +119,17 @@ div#content {
 }
 
 #home{
-  width:1180px;
   text-align:justify;
 }
 
 #map{
   text-align: center;
-  margin: 30px 0 30px 0;
+  margin: 30px 0;
 }
 
+#map img{
+  width: 100%;
+}
 
 input[type=radio],input[type=checkbox]{
   margin-bottom:10px;
@@ -524,5 +526,6 @@ label{
 }
 
 .content{
-	min-height: 650px;
+  min-height: 650px;
+  padding:10px;
 }

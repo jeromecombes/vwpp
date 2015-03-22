@@ -8,6 +8,7 @@ if(!isset($_POST['password'])){
   echo <<<EOD
   <form method='post' action='myAccount.php'>
   <h3>Change password</h3>
+  <fieldset>
   <table style='width:600px;'>
   <tr><td>Current password :</td>
   <td><input type='password' name='current' /></td></tr>
@@ -16,8 +17,10 @@ if(!isset($_POST['password'])){
   <tr><td>Confirm new password :</td>
   <td><input type='password' name='confirm' /></td></tr>
   </table>
+  <br/>
   <input type='button' value='Cancel' onclick='location.href="index.php";'  class='myUI-button' />
   <input type='submit' value='Change password'  class='myUI-button' />
+  </fieldset>
   </form>
 EOD;
   require_once "footer.php";

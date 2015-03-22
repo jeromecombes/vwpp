@@ -1,8 +1,6 @@
 <?php
 // Last update : 2015-03-20
 
-$script=explode("/",$_SERVER['SCRIPT_NAME']);
-$script=$script[count($script)-1];
 $semester=($_SESSION['vwpp']['semestre'] or $_REQUEST['semestre'])?true:false;
 
 echo <<<EOD
@@ -15,7 +13,7 @@ echo <<<EOD
   </div>
 </div>
 
-<div class='ui-tabs ui-widget ui-widget-content ui-corner-all content'>
+<div class='ui-tabs ui-widget ui-widget-content ui-corner-all'>
 <nav>
 <ul class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>
 <li id='li0' class='ui-state-default ui-corner-top'><a href='index.php'>Home</a></li>
@@ -51,4 +49,4 @@ echo "<li id='li6' class='ui-state-default ui-corner-top'><a href='myAccount.php
 ?>
 </ul>
 </nav>
-<section id='content'>
+<section class='content'>
