@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-23
+
 require_once "../header.php";
 require_once "../inc/class.reidhall.inc";
 require_once "../inc/class.student.inc";
@@ -53,10 +55,10 @@ if($id){
     $dontDelete=true;
 
   if($id and !$dontDelete and !$alertDelete){
-    $delete="<input type='button' value='Delete' style='margin-right:30px;' onclick='location.href=\"courses-update.php?id=$id&amp;delete=\";'/>";
+    $delete="<input type='button' value='Delete' style='margin-right:30px;' onclick='location.href=\"courses-update.php?id=$id&amp;delete=\";'  class='myUI-button-right'/>";
   }
   elseif($id and !$dontDelete and $alertDelete){
-    $delete="<input type='button' value='Delete' style='margin-right:30px;' onclick='alertDelete(\"$alertDelete\",$id);'/>";
+    $delete="<input type='button' value='Delete' style='margin-right:30px;' onclick='alertDelete(\"$alertDelete\",$id);'  class='myUI-button-right'/>";
   }
 }
 
@@ -66,8 +68,8 @@ echo <<<EOD
 <form name='form' action='courses-update.php' method='post'>
 <input type='hidden' name='univ' value='rh' />
 <input type='hidden' name='id' value='$id' />
-<table style='width:1170px;'>
-<tr><td style='width:300px;'><b>Code</b></td>
+<table class='myTab'>
+<tr><td><b>Code</b></td>
 <td><input type='text' name='code' value='$code' /></td></tr>
 <tr><td><b>Nom du cours</b></td>
 <td><input type='text' name='nom' value='$nom' /></td></tr>
@@ -85,7 +87,7 @@ echo <<<EOD
 <tr><td style='padding-top:5px;'><b>Schedule</b></td>
 <td style='padding-top:5px;'>
 On&nbsp;
-<select name='jour' style='width:28%;'>
+<select name='jour' style='width:27%;'>
 <option value=''>&nbsp;</option>
 EOD;
 foreach($days as $day){
@@ -96,7 +98,7 @@ echo <<<EOD
 </select>
 
 &nbsp;from&nbsp;
-<select name='debut' style='width:28%;'>
+<select name='debut' style='width:27%;'>
 <option value=''>&nbsp;</option>
 EOD;
 for($i=$hoursStart;$i<$hoursEnd+1;$i++){
@@ -111,7 +113,7 @@ echo <<<EOD
 </select>
 
 &nbsp;to&nbsp;
-<select name='fin' style='width:28%;'>
+<select name='fin' style='width:27%;'>
 <option value=''>&nbsp;</option>
 EOD;
 
@@ -128,10 +130,10 @@ echo <<<EOD
 
 </td></tr>
 
-<tr><td colspan='2' style='text-align:center;padding-top:10px;'>
-<input type='button' value='Cancel' style='margin-right:30px;'onclick='history.back();' />
+<tr><td colspan='2' style='text-align:right;padding-top:30px;'>
+<input type='button' value='Cancel' onclick='history.back();' class='myUI-button-right'/>
 $delete
-<input type='submit' value='$submit' $submitDisabled/></td></tr>
+<input type='submit' value='$submit' $submitDisabled class='myUI-button-right'/></td></tr>
 
 </table>
 </form>

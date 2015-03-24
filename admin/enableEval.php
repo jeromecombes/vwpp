@@ -1,7 +1,9 @@
 <?php
+// Last update : 2015-03-24
+
 include "../inc/config.php";
-$semester=$_GET['semester'];
-echo $semester;
+$semester=$_POST['semester'];
+
 $db=new db();
 $db->select("eval_enabled","*","semester='$semester'");
 if($db->result){
@@ -12,4 +14,6 @@ else{
   $db=new db();
   $db->insert("eval_enabled",array("'$semester'"),"semester");
 }
+
+echo json_encode("ok");
 ?>

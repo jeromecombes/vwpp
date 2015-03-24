@@ -53,7 +53,7 @@ class grades{
   }
 
   function update($student,$course,$course_id,$grade,$field=null){
-    if(!$student)
+    if(!is_numeric($student))
       return false;
 
     $db=new db();					//	Check if grade exists
@@ -80,7 +80,6 @@ class grades{
     if($id){						//	Update note or grade
       $sql="UPDATE `{$GLOBALS['dbprefix']}grades` set $field=:grade WHERE id=:id";
       $data=array(":grade"=>$grade, ":id"=>$db->result[0]['id']);
-
     }
     else{						//	Or insert
       $sql="INSERT INTO `{$GLOBALS['dbprefix']}grades` (semester,student,course,course_id,$field) 

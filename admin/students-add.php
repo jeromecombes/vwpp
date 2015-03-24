@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-03-23
 
 require_once "../header.php";
 require_once "menu.php";
@@ -22,9 +22,11 @@ for($i=0;$i<60;$i++)
   }
 ?>
 </table>
-<br/>
-<input type='button' value='Cancel' onclick='history.back();' class='myUI-button' />
-<input type='submit' value='Add' style='margin-left:20px;' class='myUI-button' />
+
+<div style='margin-top:30px;text-align:right;'>
+<input type='button' value='Cancel' onclick='history.back();' class='myUI-button-right' />
+<input type='submit' value='Add' style='margin-left:20px;' class='myUI-button-right' />
+</div>
 </form>
 
 

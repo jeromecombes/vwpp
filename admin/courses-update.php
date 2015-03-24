@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-23
+
 ini_set('display_errors',1);
 ini_set('error_reporting',E_ALL);
 
@@ -12,7 +14,7 @@ access_ctrl(16);
 if(isset($_GET['delete'])){
   $rh=new reidhall();
   $rh->delete($_GET['id']);
-  header("Location: courses.php?error=0&msg=delete_success");
+  header("Location: courses4.php?error=0&msg=delete_success");
   exit;
 }
 
@@ -102,5 +104,5 @@ elseif(!$id and $_POST['univ']=="univ"){		// a faire
 
 $msg="update_success";
 $error=0;
-header("Location: courses.php?error=$error&msg=$msg");
+header("Location: courses4.php?error=$error&msg=$msg");
 ?>

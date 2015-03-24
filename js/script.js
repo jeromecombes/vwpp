@@ -1,4 +1,4 @@
-// Last update : 2015-03-22, Jérôme Combes
+// Last update : 2015-03-24, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -897,26 +897,34 @@ function suivre_souris(e)
 $(document).ready(function(){
 
 	$(".datatable").each(function(){
+	  // columns sort
   		var aoCol=[];
   		$(this).find("thead th").each(function(){
     		if($(this).attr("class")==undefined){
       			aoCol.push({"bSortable":true});
     		}
-    		else if($(this).attr("class")=="dataTableDate"){
+    		else if($(this).hasClass("dataTableDate")){
       			aoCol.push({"sType": "date"});
    			}
-    		else if($(this).attr("class")=="dataTableNoSort"){
+    		else if($(this).hasClass("dataTableNoSort")){
       			aoCol.push({"bSortable":false});
    			}
+		else{
+      			aoCol.push({"bSortable":true});
+			}
    		});
   
+	  var sort=[[1,"asc"],[2,"asc"]];		// {{"1","asc"},{"2","asc"}}
+	  if($(this).attr("data-sort")){
+	    var sort=JSON.parse($(this).attr("data-sort"));
+	  }
   		$(this).dataTable({
       		"bJQueryUI": true,
       		"sPaginationType": "full_numbers",
       		"bStateSave": true,
       		"aLengthMenu" : [[25,50,75,100,-1],[25,50,75,100,"All"]],
       		"iDisplayLength" : -1,
-      		"aaSorting" : [[1,"asc"],[2,"asc"]],
+      		"aaSorting" : sort,
       		"aoColumns" : aoCol,
   		});
   	});
@@ -935,9 +943,6 @@ $(document).ready(function(){
   });
 
   $(document).tooltip();
-});
-
-$(document).ready(function(){
 
   // Menu : set active tab
   var href=document.location.href;
@@ -946,6 +951,9 @@ $(document).ready(function(){
   }
   
   href=href.replace("users-edit.php","users.php");
+  href=href.replace(/(courses.*)/,"courses4.php");
+  href=href.replace(/(eval.*)/,"eval_index.php");
+  href=href.replace(/(grades.*)/,"grades3-1.php");
   href=href.replace(/(housing.*)/,"housing.php");
   href=href.replace(/(\?.*)/,"");
 
@@ -955,4 +963,28 @@ $(document).ready(function(){
       $(this).addClass("ui-state-active");
     }
   });
+});
+
+$(function(){
+  $("#enableEvaluation").click(function(){
+    $.ajax({
+      url: "enableEval.php",
+      dataType: "json",
+      type: "post",
+      data: {semester : $(this).attr("data-semester")},
+      success: function(){
+	var value=$("#enableEvaluation").attr("data-enabled")==1?"Enable evaluations":"Disable evaluations";
+	var enable=$("#enableEvaluation").attr("data-enabled")==1?0:1;
+	$("#enableEvaluation").attr("data-enabled",enable);
+	$("#enableEvaluation").attr("value",value);
+      },
+      error: function(){
+	alert($("#enableEvaluation").attr("data-enabled"));
+	var msg=$("#enableEvaluation").attr("data-enabled")==1?"disable":"enable";
+	CJInfo("Cannot "+msg+" evaluations","error");
+      }
+    });
+  });
+  
+  
 });

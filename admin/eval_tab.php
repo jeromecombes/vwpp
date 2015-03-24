@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update : 2015-03-24, Jérôme Combes
 
 require_once "../header.php";
 require_once "menu.php";
@@ -16,21 +16,34 @@ $eval=new evaluation();
 $eval->fetchAll($form,1,$_SESSION['vwpp']['login_univ']);
 $result=$eval->elements;
 
-echo "<a href='eval_index.php'>Back to Evaluations, main page</a>\n";
-echo "<a href='eval_export.php' style='margin-left:100px;'>Export to Excel</a>\n";
+switch($form){
+  case "CIPH" : $title="CIPH and other institutions evaluations for {$_SESSION['vwpp']['semester']}"; break;
+  case "intership" : $title="Intership evaluations for {$_SESSION['vwpp']['semester']}"; break;
+  case "program" : $title="Program evaluations for {$_SESSION['vwpp']['semester']}"; break;
+  case "ReidHall" : $title="VWPP Courses evaluations for {$_SESSION['vwpp']['semester']}"; break;
+  case "tutorats" : $title="Tutorial evaluations for {$_SESSION['vwpp']['semester']}"; break;
+  case "univ" : $title="University Courses evaluations for {$_SESSION['vwpp']['semester']}"; break;
+  default : $title="Evaluations for {$_SESSION['vwpp']['semester']}"; break;
+}
+
+echo "<h3>$title</h3>\n";
+echo "<a href='eval_index.php' class='myUI-button'>Back to Evaluations, main page</a>\n";
+echo "<a href='eval_export.php' class='myUI-button'>Export to Excel</a>\n";
 
 echo "<br/><br/>\n";
-echo "<table cellspacing='0' border='1'>\n";
-
-echo "<tr class='th'>\n";
+echo "<table class='datatable' data-sort='[[0,\"asc\"]]'>\n";
+echo "<thead>\n";
+echo "<tr>\n";
 foreach($questions as $elem){
-  echo "<td>$elem</td>\n";
+  echo "<th>$elem</th>\n";
 }
 echo "</tr>\n";
+echo "</thead>\n";
+
+echo "</tbody>\n";
 
 foreach($result as $elem){
-  $class=$class=="tr1"?"tr2":"tr1";
-  echo "<tr class='$class'>\n";
+  echo "<tr>\n";
   for($i=1;$i<count($questions)+1;$i++){
     if($form=="program" and $i==32){
       $elem[$i]=unserialize($elem[$i]);
@@ -38,10 +51,11 @@ foreach($result as $elem){
 	$elem[$i]=join($elem[$i]," ; ");
       }
     }
-    echo "<td>{$elem[$i]}</td>\n";
+    echo "<td><div style='height:50px;overflow:hidden;' title='{$elem[$i]}'>{$elem[$i]}</div></td>\n";
    }
   echo "</tr>\n";
 }
+echo "</tbody>\n";
 echo "</table>\n";
 
 require_once "../footer.php";

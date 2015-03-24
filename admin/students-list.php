@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-03-23
 
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
@@ -17,7 +17,7 @@ $sort=$_GET['sort']?"cmp_".$_GET['sort']:"cmp_lastname";
 
 
 if($semestre and in_array(4,$_SESSION['vwpp']['access'])){
-  $addStudents="<a href='students-add.php' class='myUI-button'>Add students</a>\n";
+  $addStudents="<input type='button' value='Add students' onclick='location.href=\"students-add.php\";' class='myUI-button' />\n";
 }
 
 //		Check If dates (dead lines) are registered
@@ -95,7 +95,7 @@ if($semestre){
       <span class='marginRight'>Vassar : <b>{$nb['Vassar']}</b></span>
       <span class='marginRight'>Wesleyan : <b>{$nb['Wesleyan']}</b></span>
       <span class='marginRight'>Other : <b>{$nb['guest']}</b></span>
-      <span class='myUI-button'>$addStudents</span>
+      $addStudents
     </div>
 
     <form name='form2' method='post' action='students-delete.php'>

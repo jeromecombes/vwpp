@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-24
+
 session_start();
 if(in_array(22,$_SESSION['vwpp']['access'])){		// voir qui a rempli les évaluations
   header("Location: eval_index3.php");
@@ -76,11 +78,12 @@ $program=$db->result;
 
 $db=new db();
 $db->select("eval_enabled","*","semester='$semester'");
-$checked=$db->result?"checked='checked'":null;
+$buttonValue=$db->result?"Disable evaluations":"Enable evaluations";
+$buttonData=$db->result?1:0;
 
 echo "<h3>$semester2 Evaluation Forms :\n";
 echo "<span style='font-weight:normal;font-size:11pt;margin-left:150px;'>\n";
-echo "<input type='checkbox' onclick='file(\"enableEval.php?semester=$semester\");' $checked/>Enable evaluations for $semester2</span></h3>";
+echo "<input type='button' id='enableEvaluation' data-semester='$semester' data-enabled='$buttonData' value='$buttonValue' class='myUI-button' />\n";
 
 echo "<h4 style='margin-bottom:0px;'>Program Evaluations</h4><p style='margin:0 0 0 30px;'>";
 echo "<a href='eval_tab.php?form=program'>Table</a>,&nbsp;\n";

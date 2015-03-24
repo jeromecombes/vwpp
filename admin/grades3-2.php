@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update : 2015-03-23
 
 require_once("../inc/config.php");
 require_once("../inc/class.ciph.inc");
@@ -72,49 +72,37 @@ if(empty($students)){
 else{
   echo <<<EOD
   <form name='form_1' action='grades_update2.php' method='post'>
-  <!-- <input type='hidden' name='course' value='$univ' /> -->
-  <table cellspacing='0'>
-  <tr class='th'>
-  <!-- <td>&nbsp;</td> -->
-  <td>Lastname</td><td>Firstname</td>
+  <table class='datatable' data-sort='[["0","asc"],["1","asc"]]' >
+  <thead>
+    <tr>
+      <th>Lastname</th>
+      <th>Firstname</th>
+      <th>Note</th>
+      <th>Date received</th>
 EOD;
 
-  echo "<td>Note</td><td>Date received</td>";
-
   if(in_array(19, $_SESSION['vwpp']['access']) or in_array(20, $_SESSION['vwpp']['access'])){
-    echo "<td>US Grade</td><td>Date Recorded</td>";
+    echo "<th>US Grade</th>\n";
+    echo "<th>Date Recorded</th>\n";
   }
 
-  echo "</tr>\n<tr><td>";
+  echo "</tr>\n";
+  echo "</thead>\n";
+
+  echo "<tbody>\n";
 
   $j=$k=0;
-
   foreach($students as $elem){
-    $class=$class=="tr1"?"tr2":"tr1";
-    echo "<tr class='$class'>\n";
+    echo "<tr>\n";
     echo "<td>{$elem['lastname']}</td><td>{$elem['firstname']}</td>\n";
-
 								  // Voir et modifier les notes FR
     if(in_array(18, $_SESSION['vwpp']['access'])){
       echo "<td><font id='form_1_$j'>{$elem['note']}</font>\n";	// Note
       $j++;
       echo "<input type='text' name='note_{$elem['id']}' value='{$elem['note']}' style='display:none;' onkeyup='verifNote(\"form_1\",this);'>\n";
-  //     echo "<select name='note_{$elem['id']}' style='display:none;'>\n";
-  //     echo "<option value='null_fr'>&nbsp;</option>\n";
-  //     for($i=0;$i<21;$i++){
-  //       $selected=null;
-  //       if(is_numeric($elem['note'])){	// permet de ne pas mettre null à 0
-  // 	$selected=$i==$elem['note']?"selected='selected'":null;
-  //       }
-  //       echo "<option value='$i' $selected >$i</option>\n";
-  //     }
-  //     echo "</select></td>\n";
-
       echo "<td><font id='form_1_$j'>{$elem['date1']}</font>\n";	// Date
       $j++;
-      echo "<input type='text' name='date1_{$elem['id']}' style='display:none;width:80%;' value='{$elem['date1']}'/>\n";
-      echo "<a href='javascript:calendar(\"form_1\",\"date1_{$elem['id']}\",true);' style=display:none;'  id='form_1_radio_$k'>\n";
-      echo "<img src='../img/calendar.gif' border='0' alt='calendar'></a>\n";
+      echo "<input type='text' name='date1_{$elem['id']}' style='display:none;width:80%;' value='{$elem['date1']}' class='myUI-datepicker-string' />\n";
       $k++;
       echo "</td>\n";
     }
@@ -137,9 +125,7 @@ EOD;
 
       echo "<td><font id='form_1_$j'>{$elem['date2']}</font>\n";	// Date
       $j++;
-      echo "<input type='text' name='date2_{$elem['id']}' style='display:none;width:80%;' value='{$elem['date2']}'/>\n";
-      echo "<a href='javascript:calendar(\"form_1\",\"date2_{$elem['id']}\",true);' style=display:none;' id='form_1_radio_$k'>\n";
-      echo "<img src='../img/calendar.gif' border='0' alt='calendar'></a>\n";
+      echo "<input type='text' name='date2_{$elem['id']}' style='display:none;width:80%;' value='{$elem['date2']}' class='myUI-datepicker-string' />\n";
       $k++;
       echo "</td>\n";
     }
@@ -152,15 +138,16 @@ EOD;
     echo "</tr>\n";
   }
 
+  echo "</tbody>\n";
   echo "</table>\n";
 
   if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo <<<EOD
-    <div style='text-align:right;margin:10px 30px 0 0;'>
-    <input type='button' onclick='displayForm("form",1);' id='form_1_$j' value='Edit'/>
+    <div style='text-align:right;margin:20px 0 0 0;'>
+    <input type='button' onclick='displayForm("form",1);' id='form_1_$j' value='Edit' class='myUI-button-right' />
     <div id='form_1_done' style='display:none'>
-    <input type='button' onclick='location.href="grades3-2.php"'; value='Cancel'/>
-    <input type='submit' value='Submit' id='submit'/>
+    <input type='button' onclick='location.href="grades3-2.php"'; value='Cancel' class='myUI-button-right' />
+    <input type='submit' value='Submit' id='submit' class='myUI-button-right' />
     </div>
     </div>
     </form>
