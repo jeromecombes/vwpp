@@ -1,5 +1,5 @@
 <?php
-// Last Update 2015-03-22, Jérôme Combes
+// Last Update 2015-03-24, Jérôme Combes
 
 require_once "class.univ.inc";
 require_once "class.univ4.inc";
@@ -64,7 +64,7 @@ $arrow
     <input type='hidden' name='semester' value='$semester' />
     <input type='hidden' name='id' value='{$course['id']}' />
     <input type='hidden' name='modalitesOnly' value='{$course['id']}' />
-    <table style='margin-left:{$margin2}px;'>
+    <table style='margin-left:{$margin2}px;width:920px;'>
 
     <tr><td>Code</td>
       <td class='response'>{$course['code']}</td></tr>
@@ -131,23 +131,23 @@ EOD;
 
 EOD;
     if($admin or !$course['lock']){
-      echo "<tr><td colspan='2' style='padding-top:20px;'>\n";
-      echo "<input type='button' value='Modifier' onclick='editCourse({$course['id']},true);' class='myUI-button'/>\n";
+      echo "<tr><td colspan='2' style='padding-top:20px; text-align:right;'>\n";
+      echo "<input type='button' value='Modifier' onclick='editCourse({$course['id']},true);' class='myUI-button-right'/>\n";
 
       if(!$course['liaison']){
-	echo "<input type='button' value='Supprimer' onclick='dropCourse({$course['id']},$admin);' style='margin-left:20px;' class='myUI-button'/>\n";
+	echo "<input type='button' value='Supprimer' onclick='dropCourse({$course['id']},$admin);' class='myUI-button-right'/>\n";
       }
       if($admin){
 	$lockButton=$course['lock']?"D&eacute;verrouiller":"Verrouiller";
-	echo "<input type='button' value='$lockButton' id='lock{$course['id']}' onclick='lockCourse4({$course['id']});' style='margin-left:20px;' class='myUI-button'/>\n";
+	echo "<input type='button' value='$lockButton' id='lock{$course['id']}' onclick='lockCourse4({$course['id']});' class='myUI-button-right'/>\n";
       }
       echo "</td></tr>\n";
     }
     if(!$admin and $course['lock']){
-      echo "<tr><td colspan='2' style='padding-top:20px;'>\n";
-      echo "<input type='button' value='Modifier' id='modalitesUpdate{$course['id']}' onclick='editModalites({$course['id']},true);' class='myUI-button'/>\n";
-      echo "<input type='reset' value='Annuler' style='display:none;' id='modalitesReset{$course['id']}' onclick='editModalites({$course['id']},false);'  class='myUI-button'/>\n";
-      echo "<input type='submit' value='Valider' style='display:none;' id='modalitesSubmit{$course['id']}'  class='myUI-button'/>\n";
+      echo "<tr><td colspan='2' style='padding-top:20px; text-align:right;'>\n";
+      echo "<input type='button' value='Modifier' id='modalitesUpdate{$course['id']}' onclick='editModalites({$course['id']},true);' class='myUI-button-right'/>\n";
+      echo "<input type='reset' value='Annuler' style='display:none;' id='modalitesReset{$course['id']}' onclick='editModalites({$course['id']},false);'  class='myUI-button-right'/>\n";
+      echo "<input type='submit' value='Valider' style='display:none;' id='modalitesSubmit{$course['id']}'  class='myUI-button-right'/>\n";
       echo "</td></tr>\n";
     }
 
@@ -169,7 +169,7 @@ EOD;
     <input type='hidden' name='semester' value='$semester' />
     <input type='hidden' name='id' value='{$course['id']}' />
 
-    <table style='margin-left:{$margin2}px;'>
+    <table style='margin-left:{$margin2}px;width:920px;'>
 
     <tr><td>Code</td>
       <td><input type='text' name='code' value='{$course['code']}'/></td></tr>
@@ -309,9 +309,9 @@ EOD;
     }
 
     echo <<<EOD
-    <tr><td colspan='2'>
-      <input type='reset' value='Annuler' onclick='editCourse({$course['id']},false);' class='myUI-button'/>
-      <input type='submit' value='Valider' class='myUI-button' /></td></tr>
+    <tr><td colspan='2' style='text-align:right;'>
+      <input type='reset' value='Annuler' onclick='editCourse({$course['id']},false);' class='myUI-button-right'/>
+      <input type='submit' value='Valider' class='myUI-button-right' /></td></tr>
 
     </table>
     </form>
@@ -471,9 +471,9 @@ EOD;
   }
 
   echo <<<EOD
-  <tr><td colspan='2'>
-    <input type='reset' value='Annuler' onclick='resetNewCourse();' class='myUI-button'/>
-    <input type='submit' value='Valider' class='myUI-button' /></td></tr>
+  <tr><td colspan='2' style='text-align:right;'>
+    <input type='reset' value='Annuler' onclick='resetNewCourse();' class='myUI-button-right'/>
+    <input type='submit' value='Valider' class='myUI-button-right' /></td></tr>
 
   </table>
   </form>

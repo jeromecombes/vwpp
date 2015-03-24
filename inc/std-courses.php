@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-24
+
 require_once "class.reidhall.inc";
 $semester=$_SESSION['vwpp']['semestre'];
 $student=$_SESSION['vwpp']['std-id'];
@@ -87,9 +89,9 @@ echo <<<EOD
 <input type='hidden' name='student' value='$student' />
 <input type='hidden' name='semester' value='$semester' />
 
-<table style='width:1170px;' border='0'>
+<table class='myTab'>
 <tr><td colspan='4' style='padding:0 0 10px 0;'><b><u>1.) Student's choices</u></b>
-<div style='text-align:right;'><input type='button' value='$lock1' onclick='lockRH(this,$student);' style='width:80px;'/></div>
+<div style='text-align:right;'><input type='button' value='$lock1' onclick='lockRH(this,$student);' class='myUI-button-right' /></div>
 </td></tr>
 <tr><td colspan='2'><b>Writing-Intensive Course</b></td></tr>
 <tr><td style='padding-left:30px;'>1<sup>st</sup> choice</td>
@@ -140,7 +142,7 @@ foreach($rh->writings as $elem){
 }
 echo <<<EOD
 </select></td>
-<td style='text-align:right;padding-right:0px;'><input type='submit' value='Submit' style='width:80px;'/></td></tr>
+<td style='text-align:right;padding-right:0px;'><input type='submit' value='Submit' class='myUI-button-right' /></td></tr>
 
 <tr><td style='text-align:right;'>N°2</td>
 <td colspan='2'>
@@ -154,7 +156,7 @@ foreach($rh->writings as $elem){
 echo <<<EOD
 </select>
 </td>
-<td style='text-align:right;padding-right:0px;'><input type='button' value='$lock2' onclick='lockRH2(this,$student);' style='width:80px;'/></td>
+<td style='text-align:right;padding-right:0px;'><input type='button' value='$lock2' onclick='lockRH2(this,$student);' class='myUI-button-right' /></td>
 </tr>
 <!--
 <tr><td style='text-align:right;'>N°3</td>
@@ -237,10 +239,6 @@ $isForm=false;
 include("form.tutorat.inc");
 
 include("form.stage.inc");
-
-
-echo <<<EOD
-</div>
-</div>
-EOD;
 ?>
+</div>
+</div>

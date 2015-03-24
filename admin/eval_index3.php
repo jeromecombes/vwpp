@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update : 2015-03-24, Jérôme Combes
 
 require_once "../header.php";
 require_once "../inc/class.ciph.inc";
@@ -20,9 +20,14 @@ $e->fetchStudents();
 $e=$e->students;
 // print_r($e);
 
-echo "<table cellspacing='0' border='1' style='text-align:center;'>\n";
-echo "<tr class='th'><td>Lastname</td><td>Firstname</td><td>Program</td><td>VWPP Courses</td>
-  <td>Univ. Courses</td><td>CIPh</td><td>Tutorats</td><td>Intership</td></tr>\n";
+echo "<h3>Evaluations for {$_SESSION['vwpp']['semester']}</h3>\n";
+
+echo "<table class='datatable' data-sort='[[0,\"asc\"],[1,\"asc\"]]' style='text-align:center;'>\n";
+echo "<thead>\n";
+echo "<tr><th>Lastname</th><th>Firstname</th><th>Program</th><th>VWPP Courses</th>
+  <th>Univ. Courses</th><th>CIPh</th><th>Tutorats</th><th>Intership</th></tr>\n";
+echo "</thead>\n";
+echo "<tbody>\n";
 foreach($students as $s){
   $r=new reidhall();
   $r->count2($s['id']);
@@ -37,7 +42,6 @@ foreach($students as $s){
   $u->fetchAll();
   $nbUniv=count($u->elements);
 
-  $class=$class=="tr1"?"tr2":"tr1";
   $classProgram=$e[$s['id']]['program']>0?"green bold":"red bold";
   $classVWPP=$e[$s['id']]['ReidHall']==$nbVWPP?"green bold":null;
   $classUniv=$e[$s['id']]['univ']==$nbUniv?"green bold":null;
@@ -45,7 +49,7 @@ foreach($students as $s){
   $classTutorats=$e[$s['id']]['tutorats']>0?"green bold":"red bold";
   $classIntership=$e[$s['id']]['intership']>0?"green bold":null;
 
-  echo "<tr class='$class'><td>{$s['lastname']}</td><td>{$s['firstname']}</td>
+  echo "<tr><td>{$s['lastname']}</td><td>{$s['firstname']}</td>
     <td class='$classProgram'>{$e[$s['id']]['program']}</td>
     <td class='$classVWPP'>{$e[$s['id']]['ReidHall']} / $nbVWPP</td>
     <td class='$classUniv'>{$e[$s['id']]['univ']} / $nbUniv</td>
@@ -54,6 +58,7 @@ foreach($students as $s){
     <td class='$classIntership'>{$e[$s['id']]['intership']}</td></tr>\n";
 }
 
+echo "</tbody>\n";
 echo "</table>\n";
 
 require_once "../footer.php";

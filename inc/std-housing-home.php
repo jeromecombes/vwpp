@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-03-24
+
 require_once "class.housing.inc";
 require_once "class.student.inc";
 
@@ -41,7 +43,7 @@ if(in_array(7,$_SESSION['vwpp']['access'])){
     echo "<option value='{$elem['id']}'>{$elem['firstname']} {$elem['lastname']}, {$elem['zipcode']}</option>\n";
   }
   echo "</select></td>\n";
-  echo "<td><input type='submit' value='OK' /></td></tr>\n";
+  echo "<td><input type='submit' value='OK' class='myUI-button' /></td></tr>\n";
   echo "</table></form>\n";
 }
 

@@ -1,5 +1,5 @@
 <?php
-// Last update : 09/30/2014
+// Last update : 2015-03-24
 
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
@@ -49,6 +49,7 @@ echo <<<EOD
 </select>
 </form>
 </div>
+<br/><br/>
 EOD;
 
 if($docs){

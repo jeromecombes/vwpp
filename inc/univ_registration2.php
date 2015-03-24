@@ -1,5 +1,5 @@
 <?php
-// Last Update : Jérôme Combes, 2015-03-22
+// Last Update : Jérôme Combes, 2015-03-24
 
 require_once "class.univ_reg.inc";
 require_once "class.dates.inc";
@@ -266,7 +266,7 @@ if($_SESSION['vwpp']['category']=="admin"){
   <option value='IEP' {$u[4]} >IEP</option>
 -->
   </select>
-  <input type='submit' value='OK' />
+  <input type='submit' value='OK' class='myUI-button' />
   </td></tr>
   </table>
   </form>

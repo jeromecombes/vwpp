@@ -1,4 +1,4 @@
-/* Last update : 2015-03-22, Jérôme Combes */
+/* Last update : 2015-03-24, Jérôme Combes */
 
 body{
   background: #EEEEEE;
@@ -120,6 +120,18 @@ div#content {
 
 .myTab td{
   padding: 0 20px 0 5px;
+}
+
+.myTab2{
+  border-left: solid 1px black ;
+  border-top: solid 1px black ;
+  border-right: solid 1px black ;
+  border-bottom: solid 1px black ;
+}
+
+.myTab2 th,
+.myTab2 td{
+  padding: 5px 20px 5px 5px;
 }
 
 #home{
