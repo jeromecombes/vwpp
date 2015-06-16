@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-24
+// Last update : 2015-06-16
 
 require_once "class.reidhall.inc";
 $semester=$_SESSION['vwpp']['semestre'];
@@ -94,23 +94,53 @@ echo <<<EOD
 <div style='text-align:right;'><input type='button' value='$lock1' onclick='lockRH(this,$student);' class='myUI-button-right' /></div>
 </td></tr>
 <tr><td colspan='2'><b>Writing-Intensive Course</b></td></tr>
+
 <tr><td style='padding-left:30px;'>1<sup>st</sup> choice</td>
 <td>{$courses[$choices['a1']]['code']} 
 {$courses[$choices['a1']]['title']}</td>
 <td>{$courses[$choices['a1']]['professor']}</td></tr>
+
 <tr><td style='padding-left:30px;'>2<sup>nd</sup> choice</td>
 <td>{$courses[$choices['b1']]['code']} 
 {$courses[$choices['b1']]['title']}</td>
 <td>{$courses[$choices['b1']]['professor']}</td></tr>
+
+<tr><td style='padding-left:30px;'>3<sup>rd</sup> choice</td>
+<td>{$courses[$choices['c1']]['code']} 
+{$courses[$choices['c1']]['title']}</td>
+<td>{$courses[$choices['c1']]['professor']}</td></tr>
+
+<tr><td style='padding-left:30px;'>4<sup>th</sup> choice</td>
+<td>{$courses[$choices['d1']]['code']} 
+{$courses[$choices['d1']]['title']}</td>
+<td>{$courses[$choices['d1']]['professor']}</td></tr>
+
 <tr><td colspan='2'><b>Seminar</b></td></tr>
+
 <tr><td style='padding-left:30px;'>1<sup>st</sup> choice</td>
 <td>{$courses[$choices['a2']]['code']} 
 {$courses[$choices['a2']]['title']}</td>
 <td>{$courses[$choices['a2']]['professor']}</td></tr>
+
 <tr><td style='padding-left:30px;'>2<sup>nd</sup> choice</td>
 <td>{$courses[$choices['b2']]['code']} 
 {$courses[$choices['b2']]['title']}</td>
 <td>{$courses[$choices['b2']]['professor']}</td></tr>
+
+<tr><td style='padding-left:30px;'>3<sup>rd</sup> choice</td>
+<td>{$courses[$choices['c2']]['code']} 
+{$courses[$choices['c2']]['title']}</td>
+<td>{$courses[$choices['c2']]['professor']}</td></tr>
+
+<tr><td style='padding-left:30px;'>4<sup>th</sup> choice</td>
+<td>{$courses[$choices['d2']]['code']} 
+{$courses[$choices['d2']]['title']}</td>
+<td>{$courses[$choices['d2']]['professor']}</td></tr>
+
+<tr><td style='padding-left:30px;'>5<sup>th</sup> choice</td>
+<td>{$courses[$choices['e2']]['code']} 
+{$courses[$choices['e2']]['title']}</td>
+<td>{$courses[$choices['e2']]['professor']}</td></tr>
 
 <tr><td colspan='3' style='font-weight:bold;padding:50px 0 10px 0;'><u>2.) Total registered</u></td></tr>
 <tr><td colspan='2'><b>Writing-Intensive Course</b></td></tr>
