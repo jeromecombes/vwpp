@@ -1,5 +1,5 @@
 <?php
-// Last update 2015-03-22
+// Last update 2015-06-16
 
 require_once "inc/class.reidhall.inc";
 
@@ -26,12 +26,22 @@ if($rh->isLock($student)){
       $a1="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
     if($stdCourse['b1']==$elem['id'])
       $b1="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
+    if($stdCourse['c1']==$elem['id'])
+      $c1="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
+    if($stdCourse['d1']==$elem['id'])
+      $d1="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
   }
   foreach($rh->seminars as $elem){
     if($stdCourse['a2']==$elem['id'])
       $a2="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
     if($stdCourse['b2']==$elem['id'])
       $b2="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
+    if($stdCourse['c2']==$elem['id'])
+      $c2="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
+    if($stdCourse['d2']==$elem['id'])
+      $d2="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
+    if($stdCourse['e2']==$elem['id'])
+      $e2="{$elem['code']} {$elem['nom']}, {$elem['professor']}";
   }
 
 
@@ -44,11 +54,21 @@ if($rh->isLock($student)){
   <td>$a1</td></tr>
   <tr><td style='padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>
   <td>$b1</td></tr>
+  <tr><td style='width:200px;padding-left:30px;'><b>3<sup>rd</sup> Choice</b></td>
+  <td>$c1</td></tr>
+  <tr><td style='width:200px;padding-left:30px;'><b>4<sup>th</sup> Choice</b></td>
+  <td>$d1</td></tr>
   <tr><td colspan='2' style='padding:20px 0 0 0;'><u><b>Seminar</b></u></td></tr>
   <tr><td style='padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>
   <td>$a2</td></tr>
   <tr><td style='padding-left:30px;'><b>2<sup>nd</sup> Choice</b></td>
   <td>$b2</td></tr>
+  <tr><td style='width:200px;padding-left:30px;'><b>3<sup>rd</sup> Choice</b></td>
+  <td>$c2</td></tr>
+  <tr><td style='width:200px;padding-left:30px;'><b>4<sup>th</sup> Choice</b></td>
+  <td>$d2</td></tr>
+  <tr><td style='width:200px;padding-left:30px;'><b>5<sup>th</sup> Choice</b></td>
+  <td>$e2</td></tr>
   </table></form></fieldset>
 EOD;
 }
@@ -81,6 +101,24 @@ EOD;
   }
   echo "</select></td></tr>\n";
 
+  echo "<tr><td style='width:200px;padding-left:30px;'><b>3<sup>rd</sup> Choice</b></td>\n";
+  echo "<td><select name='c1' style='width:100%;'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->writings as $elem){
+    $selected=$stdCourse['c1']==$elem['id']?"selected='selected'":null;
+    echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['nom']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td></tr>\n";
+
+  echo "<tr><td style='width:200px;padding-left:30px;'><b>4<sup>th</sup> Choice</b></td>\n";
+  echo "<td><select name='d1' style='width:100%;'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->writings as $elem){
+    $selected=$stdCourse['d1']==$elem['id']?"selected='selected'":null;
+    echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['nom']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td></tr>\n";
+
   echo "<tr><td colspan='2' style='padding:20px 0 0 0;'><u><b>Seminar</b></u></td></tr>\n";
   echo "<tr><td style='padding-left:30px;'><b>1<sup>st</sup> Choice</b></td>\n";
   echo "<td><select name='a2' style='width:100%;'>\n";
@@ -96,6 +134,33 @@ EOD;
   echo "<option value=''>&nbsp;</option>\n";
   foreach($rh->seminars as $elem){
     $selected=$stdCourse['b2']==$elem['id']?"selected='selected'":null;
+    echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['nom']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td></tr>\n";
+
+  echo "<tr><td style='width:200px;padding-left:30px;'><b>3<sup>rd</sup> Choice</b></td>\n";
+  echo "<td><select name='c2' style='width:100%;'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->seminars as $elem){
+    $selected=$stdCourse['c2']==$elem['id']?"selected='selected'":null;
+    echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['nom']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td></tr>\n";
+
+  echo "<tr><td style='width:200px;padding-left:30px;'><b>4<sup>th</sup> Choice</b></td>\n";
+  echo "<td><select name='d2' style='width:100%;'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->seminars as $elem){
+    $selected=$stdCourse['d2']==$elem['id']?"selected='selected'":null;
+    echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['nom']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td></tr>\n";
+
+  echo "<tr><td style='width:200px;padding-left:30px;'><b>5<sup>th</sup> Choice</b></td>\n";
+  echo "<td><select name='e2' style='width:100%;'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->seminars as $elem){
+    $selected=$stdCourse['e2']==$elem['id']?"selected='selected'":null;
     echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['nom']}, {$elem['professor']}</option>\n";
   }
   echo "</select></td></tr>\n";
