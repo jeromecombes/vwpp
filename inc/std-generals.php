@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2015-03-22
+// Last Update : 2015-08-26
 
 require_once "class.housing.inc";
 require_once "class.doc.inc";
@@ -37,7 +37,8 @@ echo <<<EOD
 <tr><td>Date of birth</td><td>{$std['dob_text']}</td></tr>
 <tr><td>Place of birth (City, State)</td><td>{$std['placeOB']}</td></tr>
 <tr><td>Country of birth</td><td>{$std['countryOB']}</td></tr>
-<tr><td>TIN</td><td>{$std['tin']}</td></tr>
+<tr><td>TIN (=SSN)<sup>*</sup></td><td>{$std['tin']}</td></tr>
+<tr><td style='font-size:0.8em;' colspan='2'><sup>*</sup> TIN is needed to open a bank account in France</td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>Email</td><td><a href='mailto:{$std['email']}'>{$std['email']}</a></td></tr>
 <tr><td>Cellphone in France</td><td>{$std['cellphone']}</td></tr>
@@ -181,7 +182,8 @@ foreach($GLOBALS['countries'] as $elem){
 echo <<<EOD
 </select>
 </td></tr>
-<tr><td>TIN</td><td><input type='text' name='std[tin]' value='{$std['tin']}' /></td></tr>
+<tr><td>TIN (=SSN)<sup>*</sup></td><td><input type='text' name='std[tin]' value='{$std['tin']}' /></td></tr>
+<tr><td style='font-size:0.8em;' colspan='2'><sup>*</sup> TIN is needed to open a bank account in France</td></tr>
 <tr><td>&nbsp;</td></tr>
 <tr><td>Email</td><td><input type='text' name='std[email]' value='{$std['email']}'/></td></tr>
 <tr><td>Cellphone in France</td><td><input type='text' name='std[cellphone]' value='{$std['cellphone']}'/></td></tr>
