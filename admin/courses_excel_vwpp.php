@@ -1,4 +1,6 @@
 <?php
+// Last update : 2015-09-14
+
 require_once "../inc/config.php";
 require_once "../inc/class.courses.inc";
 require_once "../inc/class.reidhall.inc";
@@ -14,11 +16,11 @@ foreach($courses as $course){
   $c=new courses();
   $c->getStudents($course['id']);
   foreach($c->students_attrib as $student){
-    $tab[]=array_merge($course,array("studentLastname"=>$student['lastname'],"studentFirstname"=>$student['firstname']));
+    $tab[]=array_merge($course,array("studentLastname"=>$student['lastname'],"studentFirstname"=>$student['firstname'],"studentEmail"=>$student['email']));
   }
 }
 
-$fields=array("type","code","title","nom","professor","studentLastname","studentFirstname");
+$fields=array("type","code","title","nom","professor","studentLastname","studentFirstname","studentEmail");
 
 $Fnm = "../data/courses_vwpp_{$_SESSION['vwpp']['semestre']}";
 
