@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-20, Jérôme Combes
+// Last update : 2015-09-15, Jérôme Combes
 
 //		Enregistrement des infos dans la BDD
 if(isset($_POST['id'])){
@@ -60,10 +60,10 @@ echo <<<EOD
 <div>
 <strong><u>General information</u></strong>
 <table id='myTab2' border='0' style='width:100%; margin-top:25px;'>
-<tr><td style='width:30%;'><label for='lastname'>Lastname</label></td>
+<tr><td style='width:30%;'><label for='lastname'>Last name</label></td>
 <td style='width:40%;'><input type='text' name='lastname' value='{$user['lastname']}' /></td>
 <td>&nbsp;</td></tr>
-<tr><td><label for='firstname'>Fistname</label></td>
+<tr><td><label for='firstname'>First name</label></td>
 <td><input type='text' name='firstname' value='{$user['firstname']}'/></td></tr>
 <tr><td><label for='email'>Email</label></td>
 <td><input type='text' name='email' value='{$user['email']}'/></td></tr>
