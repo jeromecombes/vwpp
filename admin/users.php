@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-20, Jérôme Combes
+// Last update : 2015-09-15, Jérôme Combes
 
 require_once  "../header.php";
 require_once  "menu.php";
@@ -18,7 +18,7 @@ foreach($db->result as $elem)
 <h3>Users list</h3>
 <table class='datatable'>
 <thead>
-<tr><th>&nbsp;</th><th>Lastname</th><th>Firstname</th><th>Email</th><th>University</th></tr>
+<tr><th>&nbsp;</th><th>Last name</th><th>First name</th><th>Email</th><th>University</th></tr>
 </thead>
 <tbody>
 
