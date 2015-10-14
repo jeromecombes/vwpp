@@ -1,4 +1,5 @@
 <?php
+// update : 2015-10-14
 // ini_set('display_errors',1);
 // ini_set('error_reporting',E_ALL);
 
@@ -8,7 +9,7 @@ require_once "../inc/class.housing.inc";
 $h=new housing();
 $h->getLogements($_SESSION['vwpp']['login_univ']);
 $housing=array_map("entity_decode",$h->logements);
-usort($housing,cmp_lastname);
+usort($housing,"cmp_lastname");
 $housing=array_map("utf8_decode2",$housing);
 $housing=array_map("delete_rnt",$housing);
 

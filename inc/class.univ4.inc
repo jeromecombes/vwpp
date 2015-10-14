@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "config.php";
 require_once "class.student.inc";
 
@@ -12,8 +13,10 @@ class univ4{
 
 
   public function univ4(){
+    $student=array_key_exists("student",$_SESSION['vwpp'])?$_SESSION['vwpp']['student']:null;
+    $std_id=array_key_exists("std-id",$_SESSION['vwpp'])?$_SESSION['vwpp']['std-id']:null;
+    $this->student=$std_id?$std_id:$student;
     $this->semester=$_SESSION['vwpp']['semester'];
-    $this->student=$_SESSION['vwpp']['std-id']?$_SESSION['vwpp']['std-id']:$_SESSION['vwpp']['student'];
   }
 
 
@@ -109,7 +112,7 @@ class univ4{
 	$data[$elem['id']]['liaison']=$db->result?true:false;
 	$data[$elem['id']]['institution2']=$data[$elem['id']]['institution']=="Autre"?$data[$elem['id']]['institutionAutre']:$data[$elem['id']]['institution'];
       }
-      usort($data,cmp_institution2);
+      usort($data,"cmp_institution2");
       // 2ème tri permettant de bien lier les cours entre eux
       $tmp=array();
       foreach($data as $elem){

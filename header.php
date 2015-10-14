@@ -1,12 +1,14 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-10-13
 
-ini_set('display_errors',0);
-ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
-// ini_set('error_reporting',E_ALL);
+ini_set('display_errors',1);
+//ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
+ini_set('error_reporting',E_ALL);
 
 require_once "inc/config.php";
 require_once "inc/lang.main.inc";
+
+$title=isset($title)?$title:"VWPP Database";
 
 switch($title){
   case "studentName" :
@@ -70,8 +72,10 @@ if(!array_key_exists('vwpp',$_SESSION)){
 </div>
 
 <?php
-if(isset($_GET['msg'])){
-	$infoType=$_GET['error']?"error":"highlight";
-	echo "<script type='text/JavaScript'>CJInfo(\"{$GLOBALS['lang'][$_GET['msg']]}\",\"$infoType\");</script>\n";
+$msg=filter_input(INPUT_GET,"msg",FILTER_SANITIZE_STRING);
+$error=filter_input(INPUT_GET,"error",FILTER_SANITIZE_STRING);
+if($msg){
+  $infoType=$error?"error":"highlight";
+  echo "<script type='text/JavaScript'>CJInfo(\"{$GLOBALS['lang'][$msg]}\",\"$infoType\");</script>\n";
 }
 ?>

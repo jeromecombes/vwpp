@@ -1,20 +1,22 @@
 <?php
-// Last update : 2015-03-23
+// Last update : 2015-10-14
 
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
 require_once "../header.php";
 require_once "menu.php";
 
-if(isset($_GET['semestre'])){
-  $_SESSION['vwpp']['semestre']=$_GET['semestre'];
-  $_SESSION['vwpp']['semester']=str_replace("_"," ",$_GET['semestre']);
+$semestre=filter_input(INPUT_GET,"semestre",FILTER_SANITIZE_STRING);
+$sort=filter_input(INPUT_GET,"sort",FILTER_SANITIZE_STRING);
+
+if($semestre){
+  $_SESSION['vwpp']['semestre']=$semestre;
+  $_SESSION['vwpp']['semester']=str_replace("_"," ",$semestre);
 
 }
 $semestre=isset($_SESSION['vwpp']['semestre'])?$_SESSION['vwpp']['semestre']:null;
 $semester=str_replace("_"," ",$semestre);
-$sort=$_GET['sort']?"cmp_".$_GET['sort']:"cmp_lastname";
-
+$sort=$sort?"cmp_".$sort:"cmp_lastname";
 
 if($semestre and in_array(4,$_SESSION['vwpp']['access'])){
   $addStudents="<input type='button' value='Add students' onclick='location.href=\"students-add.php\";' class='myUI-button' />\n";

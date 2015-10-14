@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
 require_once "../header.php";
@@ -19,7 +20,7 @@ foreach($students as $student){
   $students2[]="{$s->elements[$student]['firstname']} {$s->elements[$student]['lastname']}";
 }
 
-usort($students2,cmp_firstname);
+usort($students2,"cmp_firstname");
 $students2=join(" ; ",$students2);
 $students=serialize($students);
 

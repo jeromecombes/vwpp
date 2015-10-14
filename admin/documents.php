@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-24
+// Last update : 2015-10-14
 
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
@@ -22,7 +22,6 @@ if(is_array($docs)){
 }
 
 echo <<<EOD
-<div id='div$id' style='display:$display;'>
 <h3>Documents</h3>
 <!--
 <p>
@@ -90,7 +89,6 @@ EOD;
   }
   echo "</tbody>\n";
   echo "</table>\n";
-  echo "</div>\n";
 }
 //	Copy-paste from form.docs.inc
 // get_button("Edit",$id,8,"right");	// text, div id, acl, align

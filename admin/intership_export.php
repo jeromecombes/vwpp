@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "../inc/config.php";
 require_once "../inc/class.stage.inc";
 
@@ -13,7 +14,7 @@ foreach($_POST['students'] as $elem){
     $tab[$elem]=$s[$elem];
 }
 
-usort($tab,cmp_lastname);
+usort($tab,"cmp_lastname");
 $tab=array_map("entity_decode",$tab);
 $tab=array_map("delete_rnt",$tab);
 

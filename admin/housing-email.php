@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "../inc/config.php";
 require_once "../inc/class.housing.inc";
 require_once "../header.php";
@@ -22,7 +23,7 @@ foreach($housing as $elem){
   }
 }
 
-usort($housing2,cmp_firstname);
+usort($housing2,"cmp_firstname");
 $housing2=join(" ; ",$housing2);
 $housing=serialize($housing);
 

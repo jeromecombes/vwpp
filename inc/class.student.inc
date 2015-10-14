@@ -1,7 +1,7 @@
 <?php
 /*
 VWPP Database V 3.0
-Last update 09/30/2014, Jérôme Combes
+Last update 2015-10-14, Jérôme Combes
 */
 
 require_once "class.mails.inc";
@@ -32,7 +32,9 @@ class student{
       "contactmobile","contactemail","cellphone","homeInstitution","placeOB","countryOB","frenchNumber","resultatTCF","tin");
 
   function student(){
-    $this->semester=str_replace(array(" ","_"),"%",$_SESSION['vwpp']['semester']);
+    if(array_key_exists("vwpp",$_SESSION) and array_key_exists("semester",$_SESSION['vwpp'])){
+      $this->semester=str_replace(array(" ","_"),"%",$_SESSION['vwpp']['semester']);
+    }
   }
   
   public function createPassword($sendMail=false){

@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 
 class reidhall{
     var $semester;
@@ -41,16 +42,23 @@ class reidhall{
       $keys=array_keys($db->result[0]);
       foreach($db->result as $elem){
 	foreach($keys as $key){
-	  if(in_array($key,array("id","type")))
+	  if(in_array($key,array("id","type"))){
 	    $this->elements[$elem['id']][$key]=$elem[$key];
-	  elseif(!is_numeric($key))
+	  }elseif(!is_numeric($key)){
 	    $this->elements[$elem['id']][$key]=$elem[$key]?decrypt($elem[$key]):null;
-	  $this->elemExcel[$elem['id']][$key]=html_entity_decode($this->elements[$elem['id']][$key],ENT_QUOTES|ENT_IGNORE,"utf-8");
-	 }
-	if($elem['type']=="Seminar")
+	  }
+	  
+	  $this->elemExcel[$elem['id']][$key]=null;
+	  if(array_key_exists($key,$this->elements[$elem['id']])){
+	    $this->elemExcel[$elem['id']][$key]=html_entity_decode($this->elements[$elem['id']][$key],ENT_QUOTES|ENT_IGNORE,"utf-8");
+	  }
+	}
+	if($elem['type']=="Seminar"){
 	  $this->seminars[$elem['id']]=$this->elements[$elem['id']];
-	if($elem['type']=="Writing")
+	}
+	if($elem['type']=="Writing"){
 	  $this->writings[$elem['id']]=$this->elements[$elem['id']];
+	}
       }
     }
   }

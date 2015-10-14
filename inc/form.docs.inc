@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-22
+// Last update : 2015-10-14
 
 require_once "class.doc.inc";
 //	Get data
@@ -10,7 +10,7 @@ $d->fetchAll();
 $docs=$d->docs;
 
 if(is_array($docs))
-  usort($docs,cmp_name);
+  usort($docs,"cmp_name");
 
 echo <<<EOD
 <h3>Documents</h3>

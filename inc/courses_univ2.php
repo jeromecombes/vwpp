@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "class.univ.inc";
 
 $student=$_SESSION['vwpp']['student'];
@@ -33,7 +34,7 @@ foreach($u->elements as $elem){
   }
 }
 
-usort($stdCourses,cmp_univ);
+usort($stdCourses,"cmp_univ");
 //	Blank Form to Add
 $stdCourses[]=array();
 

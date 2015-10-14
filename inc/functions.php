@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-22
+// Last update : 2015-10-14
 
 require_once "class.student.inc";
 require_once "class.users.inc";
@@ -722,22 +722,25 @@ function login_ctrl(){
   if(isset($_SESSION['vwpp']['last_activity']))
     $_SESSION['vwpp']['last_activity']=time();
 
-  if(!$_SESSION['vwpp']['login']){	// if no session => login_ctrl
+  if(!array_key_exists("vwpp",$_SESSION) or !array_key_exists("login",$_SESSION['vwpp'])){	// if no session => login_ctrl
     ctrl_log_access();
 
+    $login=filter_input(INPUT_POST,"login",FILTER_SANITIZE_STRING);
+    $password=filter_input(INPUT_POST,"password",FILTER_SANITIZE_STRING);
+    
     $std=new student();			// try to log students
-    $std->setToken(trim($_POST['login']));
-    $std->setPassword($_POST['password']);
+    $std->setToken(trim($login));
+    $std->setPassword($password);
     $std->login();
     if(!$std->auth){			// if not, try to log admin
       $u=new user();
-      $u->setToken($_POST['login']);
-      $u->setPassword($_POST['password']);
+      $u->setToken($login);
+      $u->setPassword($password);
       $u->login();
     }
 
-  if(!$std->auth and !$u->auth and $_POST['login']){
-    $log_access=array(":login"=>encrypt($_POST['login']),":ip"=>encrypt($_SERVER['REMOTE_ADDR']));
+  if(!$std->auth and !$u->auth and $login){
+    $log_access=array(":login"=>encrypt($login),":ip"=>encrypt($_SERVER['REMOTE_ADDR']));
     $db=new dbh();
     $db->prepare("INSERT INTO `{$GLOBALS['dbprefix']}log_access` (login,ip,timestamp) VALUES (:login,:ip,SYSDATE());");
     $db->execute($log_access);		// Log if authentication failed
@@ -748,12 +751,16 @@ function login_ctrl(){
     $_SESSION['vwpp']['last_activity']=time();
   }
 
-
-
-  if($_SESSION['vwpp']['category']=="student" and stripos($_SERVER['PHP_SELF'],"admin")){
+  if(stripos($_SERVER['PHP_SELF'],"admin")
+    and (!array_key_exists("vwpp",$_SESSION)
+      or !array_key_exists("category",$_SESSION['vwpp'])
+      or $_SESSION['vwpp']['category']=="student")){
     header("Location: ..");		// redirect student to home if try to get admin pages
   }
-  elseif($_SESSION['vwpp']['category']=="admin" and !stripos($_SERVER['PHP_SELF'],"admin")){
+  elseif(array_key_exists("vwpp",$_SESSION)
+    and array_key_exists("category",$_SESSION['vwpp'])
+    and $_SESSION['vwpp']['category']=="admin" 
+    and !stripos($_SERVER['PHP_SELF'],"admin")){
     header("Location: admin");		// redirect admin to admin pages
   }
 }
@@ -902,7 +909,7 @@ function import_csv()
 	}
 
 function replace_name($tab){
-  $tab['nom_en']=$tab['nom_en']?$tab['nom_en']:$tab['nom'];
+  $tab['nom_en']=isset($tab['nom_en'])?$tab['nom_en']:$tab['nom'];
   return $tab;
 }
 

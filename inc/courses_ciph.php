@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 /*	Needed :
 $student (int)
 $semster (varchar)
@@ -41,7 +42,7 @@ if($db->result[0]){
   }
 }
 
-usort($stdCourses,cmp_univ);
+usort($stdCourses,"cmp_univ");
 //	Add a blank form
 $stdCourses[]=array();
 

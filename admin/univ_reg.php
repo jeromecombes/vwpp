@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-22
+// Last update : 2015-10-14
 
 require_once "../header.php";
 require_once "../inc/class.univ_reg.inc";
@@ -11,7 +11,7 @@ $u=new univ_reg();
 $u->fetchAll($_SESSION['vwpp']['login_univ']);
 $tab=$u->elements;
 
-usort($tab,cmp_lastname);
+usort($tab,"cmp_lastname");
 
 $title=array("Lastname","Firstname","Major 1","Minor 1","Major 2","Minor 2","Paris 3","Paris 4","Paris 7",
   "CIPh","IEP","Justification","Motivated by the calendar","Final Reg.","Diplome","Obtention","Pays","Ville","Etat","Etudes actuelles",

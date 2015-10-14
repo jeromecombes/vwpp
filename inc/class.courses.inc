@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update : 2015-10-14, Jérôme Combes
 
 require_once "class.student.inc";
 require_once "class.tutorat.inc";
@@ -57,7 +57,7 @@ class courses{
       $tmp['type']=$elem['nature'];
       $this->univ_courses[]=$tmp;
     }
-    usort($this->univ_courses,cmp_type);
+    usort($this->univ_courses,"cmp_type");
 /*
     $db=new db();
     $db->select("courses_univ3","*","semester LIKE '{$this->semester}' AND student=$student");
@@ -157,7 +157,7 @@ class courses{
 	}
       }
     }
-    usort($students_attrib,cmp_lastname);
+    usort($students_attrib,"cmp_lastname");
     $this->students_attrib=$students_attrib;
 
     $students_choices=array();
@@ -182,7 +182,7 @@ class courses{
       }
     }
 
-    usort($students_choices,cmp_lastname);
+    usort($students_choices,"cmp_lastname");
     $this->students_choices=$students_choices;
   }
 
@@ -251,7 +251,7 @@ class courses{
       }
     }
 
-    usort($tab,cmp_schedule);
+    usort($tab,"cmp_schedule");
     $this->schedule=$tab;
   }
 

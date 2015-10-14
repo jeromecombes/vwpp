@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "class.student.inc";
 
 class housing{
@@ -93,9 +94,9 @@ class housing{
     }
 
 	//	Sort by lastname
-    usort($elements,cmp_lastname);
-    usort($excelElem,cmp_lastname);
-    usort($shortElem,cmp_lastname);
+    usort($elements,"cmp_lastname");
+    usort($excelElem,"cmp_lastname");
+    usort($shortElem,"cmp_lastname");
       
     $this->elements=$elements;
     $this->excelElem=$excelElem;
@@ -284,8 +285,10 @@ class housing{
     $db->query("select $table1.lastname as lastname, $table1.firstname as firstname FROM $table2
       INNER JOIN $table1 ON $table2.student=$table1.id 
       WHERE $table2.logement=$logement AND $table2.semester='{$this->semester}';");
-    $this->studentLastname=decrypt($db->result[0]['lastname']);
-    $this->studentFirstname=decrypt($db->result[0]['firstname']);
+    if($db->result){
+      $this->studentLastname=decrypt($db->result[0]['lastname']);
+      $this->studentFirstname=decrypt($db->result[0]['firstname']);
+    }
   }
 
   public function getStudentLogement($student){

@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 $student=$_SESSION['vwpp']['student'];
 $semester=$_SESSION['vwpp']['semestre'];
 $isForm=false;
@@ -45,7 +46,7 @@ if($db->result[0]){
   }
 }
 
-usort($stdCourses,cmp_univ);
+usort($stdCourses,"cmp_univ");
 //	Add a blank form
 $stdCourses[]=array();
 

@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-22
+// Last update : 2015-10-14
 
 require_once "../header.php";
 require_once "../inc/class.housing.inc";
@@ -40,7 +40,10 @@ foreach($elements as $elem){
   echo "</td>\n";
   echo "<td>{$elem['lastname']}</td><td>{$elem['firstname']}</td>\n";
   foreach($questions_Ids as $id){
-    $div="<div style='height:50px;max-height:50px;overflow:hidden' title='{$elem[$id]}'>{$elem[$id]}</div>\n";
+    $div=null;
+    if(array_key_exists($id,$elem)){
+      $div="<div style='height:50px;max-height:50px;overflow:hidden' title='{$elem[$id]}'>{$elem[$id]}</div>\n";
+    }
     echo "<td>$div</td>\n";
   }
   echo "</tr>\n";

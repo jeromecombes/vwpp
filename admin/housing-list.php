@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2014-10-10
+// Last Update : 2015-10-14
 
 require_once "../header.php";
 require_once "../inc/class.housing.inc";
@@ -37,8 +37,7 @@ echo <<<EOD
 <tbody>
 EOD;
 foreach($logements as $elem){
-  $class=$class=="tr1"?"tr2":"tr1";
-  echo "<tr class='$class'>\n";
+  echo "<tr>\n";
   echo "<td style='width:40px;'>";
   echo <<<EOD
   <input type='checkbox' name='housing[]' value='{$elem['id']}' onclick='setTimeout("select_action(\"form\")",5);'/>

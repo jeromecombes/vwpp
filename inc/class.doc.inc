@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 require_once "class.student.inc";
 
 class doc{
@@ -16,7 +17,9 @@ class doc{
   public $type2=null;
 
   public function doc(){
-    $this->student=$_SESSION['vwpp']['std-id']?$_SESSION['vwpp']['std-id']:$_SESSION['vwpp']['student'];
+    $student=array_key_exists("student",$_SESSION['vwpp'])?$_SESSION['vwpp']['student']:null;
+    $std_id=array_key_exists("std-id",$_SESSION['vwpp'])?$_SESSION['vwpp']['std-id']:null;
+    $this->student=$std_id?$std_id:$student;
   }
 
   public function delete($id){

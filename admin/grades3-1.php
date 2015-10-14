@@ -15,28 +15,14 @@ access_ctrl("18,19,20");
 
 
 //	Reid Hall Courses
-$sortVWPP=isset($_GET['sortVWPP'])?$_GET['sortVWPP']:(isset($_SESSION['vwpp']['sortVWPP'])?$_SESSION['vwpp']['sortVWPP']:"title");
-$_SESSION['vwpp']['sortVWPP']=$sortVWPP;
 $r=new reidhall();
 $r->fetchAll();
-usort($r->elements,"cmp_".$sortVWPP);
 
 //	Univ. Courses
-$sortUniv=isset($_GET['sortUniv'])?$_GET['sortUniv']:(isset($_SESSION['vwpp']['sortUniv'])?$_SESSION['vwpp']['sortUniv']:"univ");
-$_SESSION['vwpp']['sortUniv']=$sortUniv;
 $u=new univ4();
-$u->sort=$sortUniv;
 $u->fetchAllStudents(true);
-$u->elements=array_map(replace_name,$u->elements);
+$u->elements=array_map("replace_name",$u->elements);
 $nbUniv=count($u->elements);
-
-
-//	CIPh. Courses
-$sortCIPh=isset($_GET['sortCIPh'])?$_GET['sortCIPh']:(isset($_SESSION['vwpp']['sortCIPh'])?$_SESSION['vwpp']['sortCIPh']:"institution");
-$_SESSION['vwpp']['sortCIPh']=$sortCIPh;
-$c=new ciph();
-$c->fetchAll($_SESSION['vwpp']['login_univ']);
-usort($c->elements,"cmp_".$sortCIPh);
 
 
 //	Reid Hall Courses

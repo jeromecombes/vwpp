@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-09-14
+// Last update : 2015-10-14
 
 require_once "../inc/config.php";
 require_once "../inc/class.courses.inc";
@@ -20,7 +20,7 @@ foreach($courses as $course){
   }
 }
 
-usort($tab,cmp_vwppChoices);
+usort($tab,"cmp_vwppChoices");
 
 
 $fields=array("type","code","title","nom","professor","studentLastname","studentFirstname","studentEmail","choice");

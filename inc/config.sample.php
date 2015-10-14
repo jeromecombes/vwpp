@@ -1,5 +1,5 @@
 <?php
-// Last Update 27/09/2013, Jérôme Combes
+// Last Update 2015-10-13, Jérôme Combes
 session_start();
 
 global $config;
@@ -10,16 +10,16 @@ $config=Array();
 //	Main Configuration
 $config['db']="mysql";	// mysql or postgre
 //$config['dbhost']="vwppdatabase2.db.9181526.hostedresource.com";
-$config['dbhost']="localhost";
-$config['dbname']="vwppdatabase2";
-$config['port']="3306";
-$config['dbuser']="vwppdatabase2";
-$config['dbpass']="ctsienkqjegsW2";
+$config['dbhost']="your_db_host";
+$config['dbname']="your_db_name";
+$config['port']="your_db_port";
+$config['dbuser']="your_db_host";
+$config['dbpass']="your_password";
 $config['dbprefix']="";
 $dbprefix=$config['dbprefix'];
 $config['dateFormat']="M d, Y H:i";
 $config['docsFolder']="/var/www/vwpp/docs/database2";
-$config['crypt_key']="1A30FA887BF404DA8B8477B1";
+$config['crypt_key']="your_hexa_crypt_key";
 $config['folder']="/database2";
 $config['url']="https://data.vwpp.org/database2";
 $config['sessionTimeOut']=1800;

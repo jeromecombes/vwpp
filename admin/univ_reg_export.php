@@ -1,4 +1,5 @@
 <?php
+// update : 2015-10-14
 require_once "../inc/config.php";
 require_once "../inc/class.univ_reg.inc";
 
@@ -8,7 +9,7 @@ $u=new univ_reg();
 $u->fetchAll($_SESSION['vwpp']['login_univ']);
 $tab=$u->elements;
 
-usort($tab,cmp_lastname);
+usort($tab,"cmp_lastname");
 $tab=array_map("entity_decode",$tab);
 $tab=array_map("delete_rnt",$tab);
 

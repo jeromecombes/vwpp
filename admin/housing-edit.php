@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-22
+// Last update : 2015-10-14
 
 require_once "../header.php";
 require_once "../inc/class.housing.inc";
@@ -39,7 +39,7 @@ foreach($fields as $elem){
   echo "<td style='width:300px;'><input type='text' name='logement[{$elem[0]}]' value='{$logement[$elem[0]]}' style='display:none;' tabindex='1$i'/>\n";
   echo "<font id='form_1_$i'>{$logement[$elem[0]]}</font></td>\n";
   $i++;
-  if($elem[2]){
+  if(array_key_exists(2,$elem)){
     echo "<td>{$elem[3]}</td>\n";
     echo "<td style='width:300px;'><input type='text' name='logement[{$elem[2]}]' value='{$logement[$elem[2]]}' style='display:none;' tabindex='100$i'/>\n";
     echo "<font id='form_1_$i'>{$logement[$elem[2]]}</font></td>\n";

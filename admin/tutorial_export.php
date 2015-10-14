@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-14
 // ini_set('display_errors',1);
 // ini_set('error_reporting',E_ALL);
 
@@ -16,7 +17,7 @@ foreach($_POST['students'] as $elem){
     $tab[$elem]=$t[$elem];
 }
 
-usort($tab,cmp_lastname);
+usort($tab,"cmp_lastname");
 $tab=array_map("entity_decode",$tab);
 $tab=array_map("delete_rnt",$tab);
 

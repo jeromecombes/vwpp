@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-24, Jérôme Combes
+// Last update : 2015-10-14, Jérôme Combes
 
 require_once "../header.php";
 require_once "../inc/class.ciph.inc";
@@ -13,7 +13,7 @@ $s=new student();
 $s->fetchAll($_SESSION['vwpp']['login_univ']);
 $students=$s->elements;
 
-usort($students,cmp_lastname);
+usort($students,"cmp_lastname");
 
 $e=new evaluation();
 $e->fetchStudents();

@@ -1,7 +1,8 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-10-14
 
-$semester=($_SESSION['vwpp']['semestre'] or $_REQUEST['semestre'])?true:false;
+$semester=filter_input(INPUT_GET,"semestre",FILTER_SANITIZE_STRING);
+$semester=(array_key_exists("semestre",$_SESSION["vwpp"]) or $semester)?true:false;
 
 echo <<<EOD
 <div id='title'>VWPP Database - Admin</div>
