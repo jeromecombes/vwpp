@@ -20,7 +20,7 @@ $u[4]=$university=="IEP"?"selected='selected'":null;
 
 
 $selected=array();
-for($i=0;$i<16;$i++){
+for($i=0;$i<25;$i++){
   $selected[$i]=null;
 }
 
@@ -69,7 +69,6 @@ $textarea[9]=str_replace("\n","<br/>",$data[9]);
 $textarea[11]=str_replace("\n","<br/>",$data[11]);
 
 echo <<<EOD
-<div id='div$id' style='display:$display;'>
 <h3><b>University Registration</b></h3>
 <fieldset>
 <div style='text-align:center;margin-bottom:40px;'>
@@ -280,7 +279,5 @@ elseif($university){
   <td class='response'>$university</td></tr></table>
 EOD;
 }
-
-
 echo "</fieldset>\n";
 ?>

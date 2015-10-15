@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2015-03-22, Jérôme Combes
+// Last Update : 2015-10-15, Jérôme Combes
 
 require_once "class.tutorat.inc";
 

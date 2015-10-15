@@ -1,17 +1,23 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-10-15
 
-if(count($_SESSION['vwpp']['semesters'])==1)
+$post['semester']=filter_input(INPUT_POST,"semester",FILTER_SANITIZE_STRING);
+$get['semester']=filter_input(INPUT_GET,"semester",FILTER_SANITIZE_STRING);
+$request['semester']=$post['semester']?$post['semester']:$get['semester'];
+$semester_session=isset($_SESSION['vwpp']['semestre'])?$_SESSION['vwpp']['semestre']:null;
+
+if(count($_SESSION['vwpp']['semesters'])==1){
   $semester=str_replace(" ","_",$_SESSION['vwpp']['semesters'][0]);
-else
-  $semester=isset($_REQUEST['semester'])?str_replace(" ","_",$_REQUEST['semester']):$_SESSION['vwpp']['semestre'];
+}else{
+  $semester=$request['semester']?str_replace(" ","_",$request['semester']):$semester_session;
+}
 
 $db=new db();
 $db->select("eval_enabled","*","semester='$semester' AND semester<>''");
 $displayEval=$db->result?null:"style='display:none;'";
 
 echo <<<EOD
-<div id='title'>VWPP Database - Admin</div>
+<div id='title'>VWPP Database</div>
 <div id='loginName'><span>{$_SESSION['vwpp']['login_name']}</span>
   <span class='ui-icon ui-icon-triangle-1-s' id='myMenuTriangle'></span><br/>
   <div id='myMenu'>
@@ -26,7 +32,7 @@ echo <<<EOD
 <li id='li0' class='ui-state-default ui-corner-top'><a href='index.php'>Home</a></li>
 EOD;
 
-if(array_key_exists("semester",$_SESSION['vwpp']) or $_POST['semester'] or count($_SESSION['vwpp']['semesters'])==1){
+if(array_key_exists("semester",$_SESSION['vwpp']) or $post['semester'] or count($_SESSION['vwpp']['semesters'])==1){
   echo <<<EOD
   <li id='li7' class='ui-state-default ui-corner-top'><a href='general.php'>General Info.</a></li>
   <li id='li2' class='ui-state-default ui-corner-top'><a href='housing.php'>Housing</a></li>

@@ -8,7 +8,10 @@ $student=$_SESSION['vwpp']['std-id'];
 //	Get student choices for RH courses
 $db=new db();
 $db->select("courses_choices","*","semester='$semester' AND student='$student'");
-$choices=$db->result[0];
+if($db->result){
+  $choices=$db->result[0];
+}
+
 
 //	Get list of RH courses
 $rh=new reidhall();

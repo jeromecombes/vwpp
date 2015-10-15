@@ -1,7 +1,11 @@
 <?php
+// Update : 2015-10-15
+
 require_once "header.php";
 require_once "menu.php";
 require_once "inc/class.dates.inc";
+
+$semester=filter_input(INPUT_POST,"semester",FILTER_SANITIZE_STRING);
 
 $db=new db();
 $db->select("eval_enabled","*","semester='$semester' AND semester<>''");
@@ -13,7 +17,7 @@ if(count($_SESSION['vwpp']['semesters'])==1){
   $_SESSION['vwpp']['semestre']=str_replace(" ","_",$_SESSION['vwpp']['semesters'][0]);
 }
 elseif(!array_key_exists("semester",$_SESSION['vwpp'])){
-  if($_POST['semester']){
+  if($semester){
     $_SESSION['vwpp']['semester']=$_POST['semester'];
     $_SESSION['vwpp']['semestre']=str_replace(" ","_",$_POST['semester']);
   }

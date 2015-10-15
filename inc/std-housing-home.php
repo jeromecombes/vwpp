@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-24
+// Last update : 2015-10-15
 
 require_once "class.housing.inc";
 require_once "class.student.inc";
@@ -19,8 +19,9 @@ $h->getLogementsDispo();
 $logements=$h->logements;
 
 //	Student housing
+$logement=isset($student['logement'])?$student['logement']:null;
 $l=new housing();
-$l->getLogement($student['logement']);
+$l->getLogement($logement);
 $logement=$l->logement;
 
 
@@ -48,7 +49,7 @@ if(in_array(7,$_SESSION['vwpp']['access'])){
 }
 
 
-if($student['logement']){
+if(isset($student['logement'])){
   echo <<<EOD
   <div style='margin-top:40px;'>
   <b>Logement actuellement affecté</b>

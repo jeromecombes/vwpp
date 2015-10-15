@@ -1,7 +1,7 @@
 <?php
 /*
 VWPP Database V 3.0
-Last update 2015-10-14, Jérôme Combes
+Last update 2015-10-15, Jérôme Combes
 */
 
 require_once "class.mails.inc";
@@ -126,6 +126,10 @@ class student{
       }
 
       //	Add DOB
+      $this->elements['dob_text']=null;
+      $this->elements['dob']=null;
+      $this->elements['mob']=null;
+      $this->elements['yob']=null;
       if($this->elements['dob']){
 	$tmp=explode("-",$this->elements['dob']);
 	$dob=strToTime($this->elements['dob']);
@@ -142,7 +146,9 @@ class student{
       //	Add logement
       $db=new db();
       $db->select("housing_affect","*","student='{$this->id}' AND semester LIKE '{$this->semester}'");
-      $this->elements['logement']=$db->result[0]['logement'];
+      if($db->result){
+	$this->elements['logement']=$db->result[0]['logement'];
+      }
 
       //	Add French University
       $u=new univ_reg();

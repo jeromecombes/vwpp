@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-24
+// Last update : 2015-10-15
 
 require_once "class.courses.inc";
 
@@ -14,6 +14,7 @@ EOD;
 
 echo "<table class='myTab2' cellspacing='0'>\n";
 echo "<tr class='th'><th>Jour</th><th>Début</th><th>Fin</th><th>Type</th><th>Cours</th><th>Professeur</th></tr>\n";
+$class="tr2";
 foreach($tab as $elem){
   $class=$class=="tr1"?"tr2":"tr1";
   echo "<tr class='$class'><td>{$elem['jour']}</td><td>{$elem['debut']}</td><td>{$elem['fin']}</td>

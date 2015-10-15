@@ -1,9 +1,9 @@
 <?php
 // Last update : 2015-10-13
 
-ini_set('display_errors',1);
-//ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
-ini_set('error_reporting',E_ALL);
+ini_set('display_errors',0);
+ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
+//ini_set('error_reporting',E_ALL);
 
 require_once "inc/config.php";
 require_once "inc/lang.main.inc";

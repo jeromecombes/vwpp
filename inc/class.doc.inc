@@ -1,5 +1,5 @@
 <?php
-// Update : 2015-10-14
+// Update : 2015-10-15
 require_once "class.student.inc";
 
 class doc{
@@ -121,6 +121,7 @@ class doc{
   }
 
   public function getPhoto($student){
+    $this->photo=null;
     $db=new db();
     $db->select("documents","*","student='$student'","order by id");
     if($db->result){
@@ -128,7 +129,6 @@ class doc{
 	$rel=decrypt($elem['rel'],$student);
 	if($rel=='Photo'){
 	  $doc=decrypt($elem['document'],$student);
-	  $tmp=explode(".",$realname);
 	  if($_SESSION['vwpp']['category']=="admin")
 	    $Fnm = "../data/photo_$student.jpg";
 	  else

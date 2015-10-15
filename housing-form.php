@@ -1,4 +1,6 @@
 <?php
+// Update : 2015-10-15
+
 require_once "header.php";
 require_once "menu.php";
 require_once "inc/class.housing.inc";
@@ -9,6 +11,8 @@ $tmp=$tmp[1].($tmp[0]=="Spring"?1:2);
 $h=new housing;
 $h->student=$_SESSION['vwpp']['student'];
 $h->charte_accepted();
+
+$id=1;
 
 if(!$h->accepted){
   echo "<h3>Housing</h3>\n";

@@ -1,5 +1,5 @@
 <?php
-// Update : 2015-10-14
+// Update : 2015-10-15
 require_once "class.student.inc";
 
 class housing{
@@ -144,12 +144,20 @@ class housing{
 
 
   public function getLogement($id){
-    if(!$id)
+    $logement=array("lastname"=>null, "firstname"=>null, "address"=>null, "zipcode"=>null, "city"=>null,
+      "email"=>null, "phonenumber"=>null, "cellphone"=>null, "lastname2"=>null, "firstname2"=>null, 
+      "email2"=>null, "cellphone2"=>null);
+
+    if(!$id){
+      $this->logement=$logement;
       return;
+    }
     $db=new db();		// Select housing's info
     $db->select("logements","*","id=$id");
-    if(!$db->result)
+    if(!$db->result){
+      $this->logement=$logement;
       return;
+    }
 
     $logement=array();
     $this->getStudent($db->result[0]['id']);

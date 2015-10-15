@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-14
+// Last update : 2015-10-15
 
 require_once "class.student.inc";
 require_once "class.users.inc";
@@ -852,7 +852,7 @@ function get_menu2($menu,$id,$required){
     return false;
 
   $class=$id==$GLOBALS['current_id']?"ui-tabs-active ui-state-active":null;
-  echo "<li id='$lid' class='ui-state-default ui-corner-top $class'><a href='students-view2.php?menu_id=$id'>$menu</a></li>\n";
+  echo "<li class='ui-state-default ui-corner-top $class'><a href='students-view2.php?menu_id=$id'>$menu</a></li>\n";
   echo "<script type='text/JavaScript'>li_ids.push($id);</script>\n";
 }
 

@@ -1,5 +1,5 @@
 <?php
-// Update : 2015-10-14
+// Update : 2015-10-15
 require_once "class.student.inc";
 
 class univ_reg{
@@ -9,10 +9,11 @@ class univ_reg{
   public $university;
 
   public function univ_reg(){
-    $student=array_key_exists("student",$_SESSION['vwpp'])?$_SESSION['vwpp']['student']:null;
-    $std_id=array_key_exists("std-id",$_SESSION['vwpp'])?$_SESSION['vwpp']['std-id']:null;
+    $student=isset($_SESSION['vwpp']['student'])?$_SESSION['vwpp']['student']:null;
+    $std_id=isset($_SESSION['vwpp']['std-id'])?$_SESSION['vwpp']['std-id']:null;
     $this->student=$student?$student:$std_id;
-    $this->semester=str_replace("_"," ",$_SESSION['vwpp']['semester']);
+    $semester=isset($_SESSION['vwpp']['semester'])?$_SESSION['vwpp']['semester']:null;
+    $this->semester=$semester;
   }
 
 
@@ -43,8 +44,11 @@ class univ_reg{
   public function fetch(){
     $db=new db();
     $db->select("univ_reg2","*","semester='{$this->semester}' AND student='{$this->student}'");
-    if(!$db->result)
+    if(!$db->result){
+      $data=array(null,null,null,null,null,null,null,null,null,null,null,null);
+      $this->elements=$data;
       return;
+    }
 
     foreach($db->result as $elem){
       $this->elements[$elem['question']]=decrypt($elem['response'],$this->student);

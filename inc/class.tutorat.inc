@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-15
 require_once "class.student.inc";
 
 class tutorat{
@@ -8,7 +9,9 @@ class tutorat{
 
   public function tutorat(){
     $this->semester=$_SESSION['vwpp']['semester'];
-    $this->student=$_SESSION['vwpp']['std-id']?$_SESSION['vwpp']['std-id']:$_SESSION['vwpp']['student'];
+    $student=isset($_SESSION['vwpp']['student'])?$_SESSION['vwpp']['student']:null;
+    $std_id=isset($_SESSION['vwpp']['std-id'])?$_SESSION['vwpp']['std-id']:null;
+    $this->student=$std_id?$std_id:$student;
   }
 
   public function fetch(){
@@ -19,7 +22,7 @@ class tutorat{
     $db->select("tutorat","*","student='$student' AND semester='$semester'");
     $data=$db->result[0];
     $data=array("tuteur"=>decrypt($data['tuteur']),"day"=>decrypt($data['day']),
-	"start"=>decrypt($data['start']),"end"=>decrypt($data['end']));
+	"start"=>decrypt($data['start']),"end"=>decrypt($data['end']), "lock"=>$data['lock']);
     $this->elements=$data;
   }
 

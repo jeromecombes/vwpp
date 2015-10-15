@@ -1,4 +1,4 @@
-// Last update : 2015-03-24, Jérôme Combes
+// Last update : 2015-10-15, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -951,7 +951,7 @@ $(document).ready(function(){
   }
   
   href=href.replace("users-edit.php","users.php");
-  href=href.replace(/(courses.*)/,"courses4.php");
+  href=href.replace(/(courses.*)/,"courses.php");
   href=href.replace(/(eval.*)/,"eval_index.php");
   href=href.replace(/(grades.*)/,"grades3-1.php");
   href=href.replace(/(housing.*)/,"housing.php");

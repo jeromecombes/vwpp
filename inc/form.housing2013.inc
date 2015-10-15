@@ -1,4 +1,6 @@
 <?php
+// Update : 2015-10-15
+
 require_once "class.student.inc";
 
 $semestre=$_SESSION['vwpp']['semestre'];
@@ -13,7 +15,11 @@ $std=$std->elements;
 
 
 //	Get data from table 'housing'
+// On peuple le tableau housing pour éviter les "undefined index"
 $housing=array();
+for($i=1; $i<33; $i++){
+  $housing[$i]=null;
+}
 $db=new db();
 $db->select("housing","*","student='$std_id' AND semestre='$semestre'");
 if($db->result){

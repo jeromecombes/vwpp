@@ -1,8 +1,8 @@
 <?php
-// 2013-03-22
+// Update : 2015-10-15
 
-for($i=0;$i<count($housing);$i++){
-  $housing[$i]=str_replace("<br/>",null,$housing[$i]);
+for($i=1;$i<count($housing)+1;$i++){
+  $housing[$i]=isset($housing[$i])?str_replace("<br/>",null,$housing[$i]):null;
 }
 
 $checked[1]=$housing[1]=="Yes"?"checked='checked'":null;

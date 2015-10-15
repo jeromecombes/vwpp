@@ -1,9 +1,10 @@
 <?php
+// Update : 2015-10-15
+
 $semestre=$_SESSION['vwpp']['semestre'];
 $std_id=isset($_SESSION['vwpp']['student'])?$_SESSION['vwpp']['student']:$GLOBALS['std_id'];
 
 //	Get data from table 'students'
-$data=array();
 $db=new db();
 $db->select("students","*","id='$std_id'");
 if($db->result){
@@ -14,6 +15,11 @@ if($db->result){
 
 //	Get data from table 'univ_reg'
 $data=array();
+// On peuple pour éviter les "undefined index"
+for($i=1;$i<25;$i++){
+  $data[$i]=null;
+}
+
 $db=new db();
 $db->select("univ_reg","*","student='$std_id' AND semestre='$semestre'");
 if($db->result){

@@ -1,4 +1,6 @@
 <?php
+// Update : 2015-10-15
+
 class stage{
   public $semester;
   public $student=null;
@@ -6,7 +8,9 @@ class stage{
   
   public function stage(){
     $this->semester=$_SESSION['vwpp']['semester'];
-    $this->student=$_SESSION['vwpp']['std-id']?$_SESSION['vwpp']['std-id']:$_SESSION['vwpp']['student'];
+    $student=isset($_SESSION['vwpp']['student'])?$_SESSION['vwpp']['student']:null;
+    $std_id=isset($_SESSION['vwpp']['std-id'])?$_SESSION['vwpp']['std-id']:null;
+    $this->student=$std_id?$std_id:$student;
   }
 
   public function fetch(){
@@ -19,8 +23,9 @@ class stage{
       $this->elements=array("Oui",$stage,"id"=>$db->result[0]['id'],"lock"=>$db->result[0]['lock'],
       "notes"=>$notes,"notes2"=>$notes2);
     }
-    else
-      $this->elements=array("Non");
+    else{
+      $this->elements=array("Non",null, "id"=>null, "lock"=>null, "notes"=>null, "notes2"=>null);
+    }
   }
 
   public function fetchAll($univ=null){

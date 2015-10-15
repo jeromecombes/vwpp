@@ -1,4 +1,7 @@
 <?php
+// Update : 2015-10-15
+
+$housing[1]=isset($housing[1])?$housing[1]:null;
 $housing[2]=$housing[1]=="Yes"?"No":($housing[1]=="No"?"Yes":null);
 $displayBack=$_SESSION['vwpp']['category']=="admin"?null:"style='display:none;'";
 
@@ -245,7 +248,7 @@ foreach($customForm as $elem){
 echo "</table>\n";
 echo "<h3>Thank you for submitting your Housing questionnaire online.</h3>\n";
 
-get_button("Edit",$id,7,"right");	// text, div id, acl, align
+get_button("Edit","$id",7,"right");	// text, div id, acl, align
 echo "<!-- </fieldset> --> </div></div>\n";	
 
 ?>

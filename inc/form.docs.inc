@@ -1,9 +1,9 @@
 <?php
-// Last update : 2015-10-14
+// Last update : 2015-10-15
 
 require_once "class.doc.inc";
 //	Get data
-$std_id=$GLOBALS['std_id'];
+$std_id=isset($GLOBALS['std_id'])?$GLOBALS['std_id']:null;
 
 $d=new doc();
 $d->fetchAll();
@@ -20,7 +20,7 @@ Note that only pdf, jpg and word documents (with extensions .pdf, jpg our .jpeg 
 <br/>
 </p>
 
-<div id='div$id' style='display:$display;'>
+<div id='div$id'>
 <fieldset>
 EOD;
 

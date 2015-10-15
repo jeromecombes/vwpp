@@ -22,7 +22,7 @@ echo <<<EOD
 <br/><br/><fieldset>
 <form method='post' action='univ_reg_update.php' name='univreg_1' onsubmit='return ctrl_form_univreg();'>
 <input type='hidden' id='category' value='{$_SESSION['vwpp']['category']}' />
-<table style='width:1170px;'>
+<table>
 
 <tr><td>1. Diplôme de fin d'études (High school diploma, etc.)</td>
 <td>
@@ -143,7 +143,7 @@ if($_SESSION['vwpp']['category']=="admin" or !$lock){
   echo "<input id='univreg_1_12' type='button' value='Edit' onclick='displayForm(\"univreg\",1);' class='myUI-button'/>\n";
 }
 echo <<<EOD
-<input type='submit' value='Valider' id='univreg_1_done' style='display:none;'/></td></tr>
+<input type='submit' value='Valider' id='univreg_1_done' style='display:none;' class='myUI-button' /></td></tr>
 
 
 </table>

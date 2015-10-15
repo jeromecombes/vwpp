@@ -1,5 +1,5 @@
 <?php
-// Last Update 2015-03-24, Jérôme Combes
+// Last Update 2015-10-15, Jérôme Combes
 
 require_once "class.univ.inc";
 require_once "class.univ4.inc";
@@ -11,6 +11,7 @@ $isForm (boolean)
 
 //		faire CtrlAddTD		pour empecher validation par la touche ENTER lors de la recherche du TD
 
+$isForm=isset($isForm)?$isForm:null;
 $displayForm=$isForm?null:"style='display:none;'";
 $displayText=$isForm?"style='display:none;'":null;
 $displayEdit=$isForm?"style='display:none;'":null;

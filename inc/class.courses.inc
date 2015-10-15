@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-14, Jérôme Combes
+// Last update : 2015-10-15, Jérôme Combes
 
 require_once "class.student.inc";
 require_once "class.tutorat.inc";
@@ -18,19 +18,21 @@ class courses{
 
   public function courses(){
     $this->semester=str_replace(array(" ","_"),"%",$_SESSION['vwpp']['semester']);
-    $this->defaultStudent=$_SESSION['vwpp']['std-id']?$_SESSION['vwpp']['std-id']:$_SESSION['vwpp']['student'];
+    $std_id=isset($_SESSION['vwpp']['std-id'])?$_SESSION['vwpp']['std-id']:null;
+    $student=isset($_SESSION['vwpp']['student'])?$_SESSION['vwpp']['student']:null;
+    $this->defaultStudent=$std_id?$std_id:$student;
   }
 
   public function fetch($student){
     //			VWPP Courses
     $db=new db();
     $db->select("courses_attrib_rh","*","semester LIKE '{$this->semester}' AND student=$student");
-    $this->writing1=$db->result[0]['writing1']?$db->result[0]['writing1']:null;
-    $this->writing2=$db->result[0]['writing2']?$db->result[0]['writing2']:null;
-    $this->writing3=$db->result[0]['writing3']?$db->result[0]['writing3']:null;
-    $this->seminar1=$db->result[0]['seminar1']?$db->result[0]['seminar1']:null;
-    $this->seminar2=$db->result[0]['seminar2']?$db->result[0]['seminar2']:null;
-    $this->seminar3=$db->result[0]['seminar3']?$db->result[0]['seminar3']:null;
+    $this->writing1=isset($db->result[0]['writing1'])?$db->result[0]['writing1']:null;
+    $this->writing2=isset($db->result[0]['writing2'])?$db->result[0]['writing2']:null;
+    $this->writing3=isset($db->result[0]['writing3'])?$db->result[0]['writing3']:null;
+    $this->seminar1=isset($db->result[0]['seminar1'])?$db->result[0]['seminar1']:null;
+    $this->seminar2=isset($db->result[0]['seminar2'])?$db->result[0]['seminar2']:null;
+    $this->seminar3=isset($db->result[0]['seminar3'])?$db->result[0]['seminar3']:null;
 
     $this->coursesName();
 
@@ -132,12 +134,12 @@ class courses{
       }
     }
     
-    $this->writing1=$courses[$this->writing1];
-    $this->writing2=$courses[$this->writing2];
-    $this->writing3=$courses[$this->writing3];
-    $this->seminar1=$courses[$this->seminar1];
-    $this->seminar2=$courses[$this->seminar2];
-    $this->seminar3=$courses[$this->seminar3];
+    $this->writing1=$this->writing1?$courses[$this->writing1]:null;
+    $this->writing2=$this->writing2?$courses[$this->writing2]:null;
+    $this->writing3=$this->writing3?$courses[$this->writing3]:null;
+    $this->seminar1=$this->seminar1?$courses[$this->seminar1]:null;
+    $this->seminar2=$this->seminar2?$courses[$this->seminar2]:null;
+    $this->seminar3=$this->seminar3?$courses[$this->seminar3]:null;
   }
 
 
@@ -203,7 +205,7 @@ class courses{
     if($this->univ_courses){
       foreach($this->univ_courses as $elem){
 	for($i=1;$i<3;$i++){
-	  if($elem["jour$i"] and $elem["debut$i"] and $elem["fin$i"]){
+	  if(isset($elem["jour$i"]) and $elem["jour$i"] and $elem["debut$i"] and $elem["fin$i"]){
 	    $jour=str_replace(array(1,2,3,4,5,6,7),array("Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi","Dimanche"),$elem["jour$i"]);
 	    $tab[]=array("type"=>$elem['type'], "prof"=>$elem['prof'], "nom"=>$elem["nom"], 
 	      "jour"=>$jour, "debut"=>$elem["debut$i"], "fin"=>$elem["fin$i"], "day"=>$elem["jour$i"]);

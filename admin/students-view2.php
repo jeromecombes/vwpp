@@ -1,10 +1,15 @@
 <?php
+// Update : 2015-10-15
+
 $title="studentName";
 require_once "../header.php";
 require_once "../inc/class.student.inc";
 
-$menu_id=isset($_GET['menu_id'])?$_GET['menu_id']:$_SESSION['vwpp']['menu_id'];
+$menu_id=filter_input(INPUT_GET,"menu_id",FILTER_SANITIZE_STRING);
+$menu_id_session=isset($_SESSION['vwpp']['menu_id'])?$_SESSION['vwpp']['menu_id']:null;
+$menu_id=$menu_id?$menu_id:$menu_id_session;
 $menu_id=$menu_id?$menu_id:1;
+
 $_SESSION['vwpp']['menu_id']=$menu_id;
 
 if(!$_SESSION['vwpp']['menu_id'])

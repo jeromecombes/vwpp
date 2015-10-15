@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2015-08-26
+// Last Update : 2015-10-15
 
 require_once "class.housing.inc";
 require_once "class.doc.inc";
@@ -8,6 +8,7 @@ $selected[0]=$std['gender']=="Female"?"selected='selected'":null;
 $selected[1]=$std['gender']=="Male"?"selected='selected'":null;
 
 //	Student housing
+$std['logement']=isset($std['logement'])?$std['logement']:null;
 $l=new housing();
 $l->getLogement($std['logement']);
 $logement=$l->logement;
@@ -244,7 +245,7 @@ if(substr($std['semesters'][0],0,4)=="Fall"){
 EOD;
   if($_SESSION['vwpp']['category']=="admin")
     echo "<li>{$std['newSemester']} ? <input type='checkbox' name='std[semesters][]' value='{$std['newSemester']}' {$std['checkedSemester']}/></li>\n";
-  elseif(substr($std['semesters'][1],0,6)=="Spring")
+  elseif(isset($std['semesters'][1]) and substr($std['semesters'][1],0,6)=="Spring")
     echo "<li>{$std['newSemester']}<input type='hidden' name='std[semesters][]' value='{$std['newSemester']}' {$std['checkedSemester']}/></li>\n";
 }
 else{

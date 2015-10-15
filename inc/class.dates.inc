@@ -1,4 +1,5 @@
 <?php
+// Update : 2015-10-15
 
 class dates{
   public $elements=array();
@@ -11,7 +12,12 @@ class dates{
   public function fetch(){
     $db=new db();
     $db->select("dates","*","semester='{$this->semester}'");
-    $this->elements=$db->result[0];
+    if($db->result){
+      $this->elements=$db->result[0];
+    }else{
+      $this->elements=array("date1"=>null, "date2"=>null, "date3"=>null, "date4"=>null, 
+	"date5"=>null, "date6"=>null, "date7"=>null);
+    }
   }
 
   public function update($post){
