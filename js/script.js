@@ -1,4 +1,4 @@
-// Last update : 2015-10-15, Jérôme Combes
+// Last update : 2015-10-16, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -962,6 +962,25 @@ $(document).ready(function(){
       $(this).addClass("ui-tabs-active");
       $(this).addClass("ui-state-active");
     }
+  });
+
+  // Positionne l'onglet "Back to list" à droite
+  $(".back-to-list").each(function(){
+    $(this).css("position","absolute");
+    var ulLeft=$(this).closest("ul").position().left;
+    var ulWidth=$(this).closest("ul").width();
+    var liWidth=$(this).width();
+    var liLeft=ulLeft+ulWidth-liWidth-3;
+    $(this).css("left",liLeft);
+    
+    var ulTop=$(this).closest("ul").position().top;
+    var ulHeight=$(this).closest("ul").height();
+    var ulPadding=$(this).closest("ul").css("padding");
+    var tmp=ulPadding.split("px");
+    ulPadding=parseFloat(tmp[0]);
+    var liHeight=$(this).height();
+    var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
+    $(this).css("top",liTop);
   });
 });
 

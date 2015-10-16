@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-20
+// Last update : 2015-10-16
 
 // menu id
 $current_id=array_key_exists("menu_id",$_SESSION['vwpp'])?$_SESSION['vwpp']['menu_id']:1;
@@ -33,7 +33,7 @@ get_menu2("Upload Docs",3,3);
 get_menu2("Schedule",8,1);
 
 echo <<<EOD
-<li  class='ui-state-default ui-corner-top'><a href='students-list.php'>Back to list</a></li>
+<li  class='ui-state-default ui-corner-top back-to-list'><a href='students-list.php'>Back to list</a></li>
 </ul>
 EOD;
 ?>
