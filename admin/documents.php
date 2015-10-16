@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-14
+// Last update : 2015-10-16
 
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
@@ -78,7 +78,7 @@ EOD;
       echo "<td>&nbsp;</td>\n";
       echo "<td>{$doc['lastname']}</td>\n";
       echo "<td>{$doc['firstname']}</td>\n";
-      echo "<td><a href='docs.php?id={$doc['id']}'>{$doc['name2']}</a></td>\n";
+      echo "<td><a href='../preview.php?id={$doc['id']}' target='_blank'>{$doc['name2']}</a></td>\n";
       echo "<td>{$doc['rel']}</td>\n";
       echo "<td style='text-align:right;'>{$doc['size']}</td>\n";
       echo "<td>".date($GLOBALS['config']['dateFormat'],$doc['timestamp'])."</td>\n";

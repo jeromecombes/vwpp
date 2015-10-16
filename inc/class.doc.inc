@@ -1,5 +1,6 @@
 <?php
-// Update : 2015-10-15
+// Update : 2015-10-16
+
 require_once "class.student.inc";
 
 class doc{
@@ -30,13 +31,19 @@ class doc{
   }
 
   public function fetch($id){
-    $db=new db();
-    if($_SESSION['vwpp']['category']=="admin"){
+    $category=isset($_SESSION['vwpp']['category'])?$_SESSION['vwpp']['category']:null;
+
+    if(!$category){
+      return;
+    }
+    elseif($category=="admin"){
       $query="id=$id";
     }
     else{
       $query="id=$id AND student={$this->student} AND adminOnly<>'1'";	// student added for security
     }
+    
+    $db=new db();
     $db->select("documents","*",$query);
     if(!$db->result){
       $this->error=1;
@@ -140,8 +147,11 @@ class doc{
 	}
       }
     }
-
-
+  }
+  
+  public function preview($id){
+    $path=$GLOBALS['config']['url'];
+    echo "<script type='text/JavaScript'>window.open('$path/test.php?id=$id');</script>\n";
   }
 
   public function update($files,$docs){
