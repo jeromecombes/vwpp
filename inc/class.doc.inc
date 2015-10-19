@@ -1,5 +1,5 @@
 <?php
-// Update : 2015-10-16
+// Update : 2015-10-19
 
 require_once "class.student.inc";
 
@@ -33,12 +33,20 @@ class doc{
   public function fetch($id){
     $category=isset($_SESSION['vwpp']['category'])?$_SESSION['vwpp']['category']:null;
 
+    // Si pas de session, return
     if(!$category){
       return;
     }
+    // Si admin
     elseif($category=="admin"){
+      // Verif droits d'accès aux documents
+      if(!in_array(3,$_SESSION['vwpp']['access'])){
+	return;
+      }
+      // Requête pour admin
       $query="id=$id";
     }
+    // Si étudiant, requête pour étudiant
     else{
       $query="id=$id AND student={$this->student} AND adminOnly<>'1'";	// student added for security
     }
@@ -135,25 +143,29 @@ class doc{
       foreach($db->result as $elem){
 	$rel=decrypt($elem['rel'],$student);
 	if($rel=='Photo'){
-	  $doc=decrypt($elem['document'],$student);
-	  if($_SESSION['vwpp']['category']=="admin")
-	    $Fnm = "../data/photo_$student.jpg";
-	  else
-	    $Fnm = "data/photo_$student.jpg";
-	  $inF = fopen($Fnm,"w");
-	  fputs($inF,$doc);
-	  fclose($inF);
-	  $this->photo="<img src='$Fnm' alt='$student' style='width:200px;'/>\n";
+	  $type2=decrypt($elem['type2'],$student);
+	  $Fnm = $GLOBALS['config']['docsFolder']."/data/photo_$student.$type2";
+	  // Vérifie si le fichier existe dans /data et s'il n'existe pas une nouvelle version dans la BDD
+	  $age=null;
+ 	  if(file_exists($Fnm)){
+	    $age=filemtime($Fnm);
+	  }
+	  // Si fichier n'existe pas dans /data ou si version plus récente dans la base de données
+	  // On le créé à partir de la BDD
+ 	  if($elem['timestamp']>$age){
+	    $doc=decrypt($elem['document'],$student);
+	    $inF = fopen($Fnm,"w");
+	    fputs($inF,$doc);
+	    fclose($inF);
+ 	  }
+	  $url = $GLOBALS['config']['url']."/data/photo_$student.$type2";
+	  $this->photo="<img src='$url' alt='$student' style='width:200px;'/>\n";
+	  return;
 	}
       }
     }
   }
   
-  public function preview($id){
-    $path=$GLOBALS['config']['url'];
-    echo "<script type='text/JavaScript'>window.open('$path/test.php?id=$id');</script>\n";
-  }
-
   public function update($files,$docs){
     $student=$this->student;
     $timestamp=mktime();

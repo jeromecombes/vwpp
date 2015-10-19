@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-15
+// Last update : 2015-10-19
 
 require_once "class.doc.inc";
 //	Get data
@@ -9,8 +9,9 @@ $d=new doc();
 $d->fetchAll();
 $docs=$d->docs;
 
-if(is_array($docs))
+if(is_array($docs)){
   usort($docs,"cmp_name");
+}
 
 echo <<<EOD
 <h3>Documents</h3>
@@ -38,7 +39,7 @@ if($docs){
       $class=$class=="tr1"?"tr2":"tr1";
       $visibility=$doc['adminOnly']?"Admin only":null;
       echo "<tr class='$class'>\n";
-      echo "<td><a href='docs.php?id={$doc['id']}'>{$doc['name2']}</a></td>\n";
+      echo "<td><a href='{$GLOBALS['config']['url']}/preview.php?id={$doc['id']}' target='_blank'>{$doc['name2']}</a></td>\n";
       echo "<td>{$doc['rel']}</td>\n";
       echo "<td style='text-align:right;'>{$doc['size']}</td>\n";
       echo "<td>".date($GLOBALS['config']['dateFormat'],$doc['timestamp'])."</td>\n";
@@ -79,7 +80,7 @@ if($docs){
       echo <<<EOD
       <tr>
       <td><input type='hidden' name='docs[$i][]' value='{$doc['id']}' />
-      <a href='docs.php?id={$doc['id']}'>{$doc['name2']}</a></td>
+      <a href='{$GLOBALS['config']['url']}/preview.php?id={$doc['id']}' target='_blank'>{$doc['name2']}</a></td>
       <td><select name='docs[$i][]'>
 	<option value='Other'>&nbsp;</option>
 EOD;
@@ -97,7 +98,6 @@ EOD;
       echo "<td><input type='file' name='files[$i]' />\n";
       echo "<a href='javascript:delete_doc({$doc['id']})'>";
       echo "Delete File";
-//       echo "<img src='{$GLOBALS['config']['folder']}/img/delete.png' alt='delete' border='0' />";
       echo "</a></td>\n";
       echo "</tr>\n";
       }
