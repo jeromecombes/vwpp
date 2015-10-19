@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-14
+// Last update : 2015-10-19
 
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
@@ -101,7 +101,7 @@ if($semestre){
     </div>
 
     <form name='form2' method='post' action='students-delete.php'>
-    <table class='datatable'>
+    <table class='datatable' id='dataTableStudents'>
     <thead>
       <tr><th class='dataTableNoSort'><input type='checkbox' name='all' onclick='checkall("form2",this);' /></th>
       <th>Lastname</th>
@@ -117,10 +117,9 @@ EOD;
     foreach($students as $elem){
       echo <<<EOD
       <tr><td class='nowrap'>
-      <input type='checkbox' name='students[]' value='{$elem['id']}' onclick='setTimeout("select_action(\"form2\")",5);'/>
+      <input type='checkbox' name='students[]' class='studentsCheckbox' value='{$elem['id']}' onclick='setTimeout("select_action(\"form2\")",5);'/>
       <input type='hidden' id='mail_{$elem['id']}' value='{$elem['email']}' />
-      <a href='students-view2.php?id={$elem['id']}'><img src='../img/edit.png' alt='view' border='0'/></a>
-      <!-- <a href='students-edit.php?id={$elem['id']}'><img src='../img/edit.png' alt='edit' /></a> -->
+      <a href='students-view2.php?id={$elem['id']}' class='studentsEdit' ><img src='../img/edit.png' alt='view' border='0'/></a>
       </td>
       <td>{$elem['lastname']}</td><td>{$elem['firstname']}</td><td>{$elem['gender']}</td><td>{$elem['frenchUniv']}</td>
       <td><a href='mailto:{$elem['email']}'>{$elem['email']}</a></td>

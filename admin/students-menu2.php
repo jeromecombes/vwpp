@@ -3,6 +3,7 @@
 
 // menu id
 $current_id=array_key_exists("menu_id",$_SESSION['vwpp'])?$_SESSION['vwpp']['menu_id']:1;
+$student=$_SESSION['vwpp']['std-id'];
 
 $db=new db();
 $db->select("students","*","id='{$_SESSION['vwpp']['std-id']}'");
@@ -32,8 +33,20 @@ get_menu2("Grades",7,array(18,19,20));
 get_menu2("Documents",3,3);
 get_menu2("Schedule",8,1);
 
-echo <<<EOD
-<li  class='ui-state-default ui-corner-top back-to-list'><a href='students-list.php'>Back to list</a></li>
-</ul>
-EOD;
+echo "<li  class='ui-state-default ui-corner-top back-to-list'><a href='students-list.php'>Back to list</a></li>\n";
+
+$studentsList=$_SESSION["vwpp"]["studentsList"];
+$key=array_search($student,$studentsList);
+if(array_key_exists($key-1,$studentsList)){
+  $previousId=$studentsList[$key-1];
+  echo "<li class='ui-state-default ui-corner-top li-previous'><a href='students-view2.php?id=$previousId'>Previous</a></li>\n";
+}
+if(array_key_exists($key+1,$studentsList)){
+  $nextId=$studentsList[$key+1];
+  echo "<li class='ui-state-default ui-corner-top li-next'><a href='students-view2.php?id=$nextId'>Next</a></li>\n";
+}
+
+echo "</ul>\n";
+
+
 ?>

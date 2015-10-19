@@ -1,4 +1,4 @@
-// Last update : 2015-10-16, Jérôme Combes
+// Last update : 2015-10-19, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -982,6 +982,51 @@ $(document).ready(function(){
     var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
     $(this).css("top",liTop);
   });
+
+  
+  // Positionne l'onglet "Next" à droite
+  $(".li-next").each(function(){
+    $(this).css("position","absolute");
+    var BTLLeft=$(".back-to-list").position().left;
+    var liWidth=$(this).width();
+    var liLeft=BTLLeft-liWidth-4;
+    $(this).css("left",liLeft);
+    
+    var ulTop=$(this).closest("ul").position().top;
+    var ulHeight=$(this).closest("ul").height();
+    var ulPadding=$(this).closest("ul").css("padding");
+    var tmp=ulPadding.split("px");
+    ulPadding=parseFloat(tmp[0]);
+    var liHeight=$(this).height();
+    var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
+    $(this).css("top",liTop);
+  });
+
+  // Positionne l'onglet "Previous" à droite
+  $(".li-previous").each(function(){
+    $(this).css("position","absolute");
+    if($(".li-next").length){
+      var NLeft=$(".li-next").position().left;
+    }else{
+      var NLeft=$(".back-to-list").position().left;
+    }
+    var liWidth=$(this).width();
+    var liLeft=NLeft-liWidth-4;
+    $(this).css("left",liLeft);
+    
+    var ulTop=$(this).closest("ul").position().top;
+    var ulHeight=$(this).closest("ul").height();
+    var ulPadding=$(this).closest("ul").css("padding");
+    var tmp=ulPadding.split("px");
+    ulPadding=parseFloat(tmp[0]);
+    var liHeight=$(this).height();
+    var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
+    $(this).css("top",liTop);
+  });
+
+  
+  
+  
 });
 
 $(function(){
@@ -1004,6 +1049,20 @@ $(function(){
       }
     });
   });
-  
+
+  // Création de la liste des étudiants pour la navigation précédent suivant
+  // Lors du click sur une icône "Edit" du tableau
+  $(".studentsEdit").click(function(){
+    var tab=new Array();
+    $(".studentsCheckbox").each(function(){
+      tab.push($(this).val());
+    });
+    $.ajax({
+      url: "ajax.studentsList.php",
+      dataType: "json",
+      type: "post",
+      data: {list: JSON.stringify(tab)},
+    });
+  });
   
 });
