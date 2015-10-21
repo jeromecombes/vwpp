@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-19
+// Last update : 2015-10-20
 
 // menu id
 $current_id=array_key_exists("menu_id",$_SESSION['vwpp'])?$_SESSION['vwpp']['menu_id']:1;
@@ -28,7 +28,7 @@ EOD;
 get_menu2("General info",1,1);		//	menu name, page, menu id, required access
 get_menu2("Housing",2,2);
 get_menu2("Univ. Reg.",5,17);
-get_menu2("Courses",4,16);
+get_menu2("Courses",4,23);
 get_menu2("Grades",7,array(18,19,20));
 get_menu2("Documents",3,3);
 get_menu2("Schedule",8,1);

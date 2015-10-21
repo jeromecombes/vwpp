@@ -1,17 +1,21 @@
 <?php
-// Last Update : 2015-10-15, Jérôme Combes
+// Last Update : 2015-10-21, Jérôme Combes
 
 require_once "class.tutorat.inc";
 
 if($_SESSION['vwpp']['category']=="admin"){
   $student=$_SESSION['vwpp']['std-id'];
   $action="../tutorat-update.php";
+  $admin=true;						// Admin, droit en lecture
+  $admin2=in_array(16,$_SESSION['vwpp']['access']);	// Admin, droits lecture et modification
   $afterSubmit="admin/students-view2.php";
   $cancel="students-view2.php";
   $displayLock=null;
 }
 else{
   $student=$_SESSION['vwpp']['student'];
+  $admin=false;
+  $admin2=false;
   $action="tutorat-update.php";
   $afterSubmit="courses.php";
   $cancel="courses.php";
@@ -21,10 +25,8 @@ else{
 $t=new tutorat();
 $t->fetch();
 $tutorat=$t->elements;
-$lock_msg=$tutorat['lock']?"Déverrouiller":"Vérouiller";
+$lock_msg=$tutorat['lock']?"Déverrouiller":"Vérrouiller";
 $lock=$tutorat['lock']?0:1;
-
-$displayEdit=$_SESSION['vwpp']['category']=="student"?"display:none;":null;
 
 echo <<<EOD
 <h3 style='margin-top:50px;'>Tutorat</h3>
@@ -80,18 +82,21 @@ echo <<<EOD
 </select>
 <div $displayText id='formTutorat_1_1'>{$tutorat['day']} {$tutorat['start']} {$tutorat['end']}</div>
 </td></tr>
-
-
-
-<tr><td colspan='2' style='text-align:right;' id='formTutorat_1_2' >
-<input type='button' id='formTutorat_1_3' onclick='displayForm("formTutorat",1);' style='margin-left:30px;$displayEdit'  value='Modifier' class='myUI-button-right' />
-<input type='button' id='formTutorat_1_4' onclick='lock_registration("tutorats",{$tutorat['id']},$lock);' $displayLock id='lock_tutorat_1'  style='margin-left:30px;' value='$lock_msg' class='myUI-button-right' />
-</td></tr>
-<tr style='display:none;' id='formTutorat_1_done'><td colspan='2' style='text-align:right;'>
-<br/><input type='button' onclick='location.href="$cancel";' style='margin-left:30px;' value='Annuler' class='myUI-button-right' />
-<input type='submit' style='margin-left:30px;' value='Valider' class='myUI-button-right' /></td></tr>
-</table>
-</form>
-</fieldset>
 EOD;
+
+if(!$admin or $admin2){
+  echo <<<EOD
+  <tr><td colspan='2' style='text-align:right;' id='formTutorat_1_2' >
+  <input type='button' id='formTutorat_1_3' onclick='displayForm("formTutorat",1);' style='margin-left:30px;'  value='Modifier' class='myUI-button-right' />
+  <input type='button' id='formTutorat_1_4' onclick='lock_registration("tutorats",{$tutorat['id']},$lock);' $displayLock id='lock_tutorat_1'  style='margin-left:30px;' value='$lock_msg' class='myUI-button-right' />
+  </td></tr>
+  <tr style='display:none;' id='formTutorat_1_done'><td colspan='2' style='text-align:right;'>
+  <br/><input type='button' onclick='location.href="$cancel";' style='margin-left:30px;' value='Annuler' class='myUI-button-right' />
+  <input type='submit' style='margin-left:30px;' value='Valider' class='myUI-button-right' /></td></tr>
+EOD;
+}
+
+echo "</table>\n";
+echo "</form>\n";
+echo "</fieldset>\n";
 ?>

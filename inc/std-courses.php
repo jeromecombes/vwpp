@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-06-16
+// Last update : 2015-06-21
 
 require_once "class.reidhall.inc";
 $semester=$_SESSION['vwpp']['semestre'];
@@ -94,7 +94,11 @@ echo <<<EOD
 
 <table class='myTab'>
 <tr><td colspan='4' style='padding:0 0 10px 0;'><b><u>1.) Student's choices</u></b>
-<div style='text-align:right;'><input type='button' value='$lock1' onclick='lockRH(this,$student);' class='myUI-button-right' /></div>
+EOD;
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<div style='text-align:right;'><input type='button' value='$lock1' onclick='lockRH(this,$student);' class='myUI-button-right' /></div>\n";
+}
+echo <<<EOD
 </td></tr>
 <tr><td colspan='2'><b>Writing-Intensive Course</b></td></tr>
 
@@ -165,85 +169,121 @@ echo <<<EOD
 <tr><td colspan='3' style='font-weight:bold;padding-top:30px;'><u>3.) Final registration</u></td></tr>
 <tr><td style='padding-left:15px;font-weight:bold;' colspan='3'>Writing-Intensive Courses</td></tr>
 <tr><td style='text-align:right;'>N°1</td>
-<td colspan='2'>
-<select name='writing1'>
-<option value=''>&nbsp;</option>
 EOD;
-foreach($rh->writings as $elem){
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<td colspan='2'>\n";
+  echo "<select name='writing1'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+
+  foreach($rh->writings as $elem){
     $selected=$writing1==$elem['id']?"selected='selected'":null;
     echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['title']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td>\n";
+  echo "<td style='text-align:right;padding-right:0px;'><input type='submit' value='Submit' class='myUI-button-right' /></td>\n";
+}else{
+  echo "<td colspan='2'>\n";
+  foreach($rh->writings as $elem){
+    if($writing1==$elem['id']){
+      echo "{$elem['code']} {$elem['title']}, {$elem['professor']}\n";
+      continue;
+    }
+  }
+  echo "</td>\n";
 }
-echo <<<EOD
-</select></td>
-<td style='text-align:right;padding-right:0px;'><input type='submit' value='Submit' class='myUI-button-right' /></td></tr>
+echo "</tr>\n";
 
-<tr><td style='text-align:right;'>N°2</td>
-<td colspan='2'>
-<select name='writing2'>
-<option value=''>&nbsp;</option>
-EOD;
-foreach($rh->writings as $elem){
+echo "<tr><td style='text-align:right;'>N°2</td>\n";
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<td colspan='2'>\n";
+  echo "<select name='writing2'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+
+  foreach($rh->writings as $elem){
     $selected=$writing2==$elem['id']?"selected='selected'":null;
     echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['title']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select></td>\n";
+  echo "<td style='text-align:right;padding-right:0px;'><input type='button' value='$lock2' onclick='lockRH2(this,$student);' class='myUI-button-right' /></td>\n";
+}else{
+  echo "<td colspan='2'>\n";
+  foreach($rh->writings as $elem){
+    if($writing2==$elem['id']){
+      echo "{$elem['code']} {$elem['title']}, {$elem['professor']}\n";
+      continue;
+    }
+  }
+  echo "</td>\n";
 }
+echo "</tr>\n";
+
 echo <<<EOD
-</select>
-</td>
-<td style='text-align:right;padding-right:0px;'><input type='button' value='$lock2' onclick='lockRH2(this,$student);' class='myUI-button-right' /></td>
-</tr>
-<!--
-<tr><td style='text-align:right;'>N°3</td>
-<td colspan='2'>
-<select name='writing3'>
-<option value=''>&nbsp;</option>
-EOD;
-foreach($rh->writings as $elem){
-    $selected=$writing3==$elem['id']?"selected='selected'":null;
-    echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['title']}, {$elem['professor']}</option>\n";
-}
-echo <<<EOD
-</select>
-</td></tr>
--->
 <tr><td style='padding-left:15px;font-weight:bold;' colspan='3'>Seminars</td>
 </tr>
 
 <tr><td style='text-align:right;'>N°1</td>
 <td colspan='2'>
-<select name='seminar1'>
-<option value=''>&nbsp;</option>
 EOD;
-foreach($rh->seminars as $elem){
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<select name='seminar1'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->seminars as $elem){
     $selected=$seminar1==$elem['id']?"selected='selected'":null;
     echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['title']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select>\n";
+}else{
+  foreach($rh->seminars as $elem){
+    if($seminar1==$elem['id']){
+      echo "{$elem['code']} {$elem['title']}, {$elem['professor']}\n";
+      continue;
+    }
+  }
 }
-echo <<<EOD
-</select>
-</td></tr>
-<tr><td style='text-align:right;'>N°2</td>
-<td colspan='2'>
-<select name='seminar2'>
-<option value=''>&nbsp;</option>
-EOD;
-foreach($rh->seminars as $elem){
+echo "</td></tr>\n";
+
+echo "<tr><td style='text-align:right;'>N°2</td>\n";
+echo "<td colspan='2'>\n";
+
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<select name='seminar2'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->seminars as $elem){
     $selected=$seminar2==$elem['id']?"selected='selected'":null;
     echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['title']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select>\n";
+}else{
+  foreach($rh->seminars as $elem){
+    if($seminar2==$elem['id']){
+      echo "{$elem['code']} {$elem['title']}, {$elem['professor']}\n";
+      continue;
+    }
+  }
 }
-echo <<<EOD
-</select>
-</td></tr>
-<tr><td style='text-align:right;'>N°3</td>
-<td colspan='2'>
-<select name='seminar3'>
-<option value=''>&nbsp;</option>
-EOD;
-foreach($rh->seminars as $elem){
+echo "</td></tr>\n";
+
+echo "<tr><td style='text-align:right;'>N°3</td>\n";
+echo "<td colspan='2'>\n";
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<select name='seminar3'>\n";
+  echo "<option value=''>&nbsp;</option>\n";
+  foreach($rh->seminars as $elem){
     $selected=$seminar3==$elem['id']?"selected='selected'":null;
     echo "<option value='{$elem['id']}' $selected>{$elem['code']} {$elem['title']}, {$elem['professor']}</option>\n";
+  }
+  echo "</select>\n";
+}else{
+  foreach($rh->seminars as $elem){
+    if($seminar3==$elem['id']){
+      echo "{$elem['code']} {$elem['title']}, {$elem['professor']}\n";
+      continue;
+    }
+  }
 }
+echo "</td></tr>\n";
+
 echo <<<EOD
-</select>
-</td></tr>
 </table>
 </form>
 </fieldset>
@@ -254,20 +294,12 @@ echo <<<EOD
 <h3 style='margin-top:50px;'>University Courses</h3>
 <div>
 EOD;
-// include("courses_univ.php");
-
 
 include("courses_univ4.php");	//	Nouvelles tables (courses_cm, courses_td courses_univ3)
 
 echo "</div>\n";
-// echo <<<EOD
-// 
-// <h3 style='margin-top:50px;'>Independent study, or courses at CIPh or other institutions</h3>
-// <div>
-// EOD;
 
 $isForm=false;
-// include("courses_ciph.php");
 
 include("form.tutorat.inc");
 

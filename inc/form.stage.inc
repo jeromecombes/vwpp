@@ -1,11 +1,13 @@
 <?php
-// Last update 2015-10-15
+// Last update 2015-10-21
 
 require_once "class.stage.inc";
 
 if($_SESSION['vwpp']['category']=="admin"){
   $student=$_SESSION['vwpp']['std-id'];
   $action="../stage-update.php";
+  $admin=true;						// Admin, droit en lecture
+  $admin2=in_array(16,$_SESSION['vwpp']['access']);	// Admin, droits lecture et modification
   $afterSubmit="admin/students-view2.php";
   $cancel="students-view2.php";
   $displayLock=null;
@@ -13,6 +15,8 @@ if($_SESSION['vwpp']['category']=="admin"){
 else{
   $student=$_SESSION['vwpp']['student'];
   $action="stage-update.php";
+  $admin=false;
+  $admin2=false;
   $afterSubmit="courses.php";
   $cancel="courses.php";
   $displayLock="style='display:none;'";
@@ -24,7 +28,7 @@ $s->fetch();
 $stage=$s->elements;
 $chk1=$stage[0]=="Oui"?"checked='checked'":null;
 $chk2=$stage[0]=="Non"?"checked='checked'":null;
-$lock_msg=$stage['lock']?"Déverrouiller":"Vérouiller";
+$lock_msg=$stage['lock']?"Déverrouiller":"Vérrouiller";
 $lock=$stage['lock']?0:1;
 
 $displayEdit=($_SESSION['vwpp']['category']=="student" and $stage['lock'])?"display:none;":null;
@@ -56,15 +60,20 @@ echo <<<EOD
 <tr><td><b>Lequel ?</b></td>
 <td><input type='text' name='stage[1]' value='{$stage[1]}' style='display:none;'/>
 <font id='formStage_1_1'>{$stage[1]}</td></tr>
-<tr><td colspan='2' style='text-align:right;' id='formStage_1_2' >
-<input type='button' id='formStage_1_3' onclick='displayForm("formStage",1);' style='margin-left:30px;$displayEdit'  value='Modifier' class='myUI-button-right' />
-<input type='button' id='formStage_1_4' onclick='lock_registration("stages",{$stage['id']},$lock);' $displayLock id='lock_stage_1'  style='margin-left:30px;' value='$lock_msg' class='myUI-button-right' />
-</td></tr>
-<tr style='display:none;' id='formStage_1_done'><td colspan='2' style='text-align:right;'>
-<br/><input type='button' onclick='location.href="$cancel";' style='margin-left:30px;' value='Annuler' class='myUI-button-right' />
-<input type='submit' style='margin-left:30px;' value='Valider' class='myUI-button-right' /></td></tr>
-</table>
-</form>
-</fieldset>
 EOD;
+if(!$admin or $admin2){
+  echo <<<EOD
+  <tr><td colspan='2' style='text-align:right;' id='formStage_1_2' >
+  <input type='button' id='formStage_1_3' onclick='displayForm("formStage",1);' style='margin-left:30px;$displayEdit'  value='Modifier' class='myUI-button-right' />
+  <input type='button' id='formStage_1_4' onclick='lock_registration("stages",{$stage['id']},$lock);' $displayLock id='lock_stage_1'  style='margin-left:30px;' value='$lock_msg' class='myUI-button-right' />
+  </td></tr>
+  <tr style='display:none;' id='formStage_1_done'><td colspan='2' style='text-align:right;'>
+  <br/><input type='button' onclick='location.href="$cancel";' style='margin-left:30px;' value='Annuler' class='myUI-button-right' />
+  <input type='submit' style='margin-left:30px;' value='Valider' class='myUI-button-right' /></td></tr>
+EOD;
+}
+
+echo "</table>\n";
+echo "</form>\n";
+echo "</fieldset>\n";
 ?>

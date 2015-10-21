@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-23
+// Last update : 2015-10-21
 
 require_once "../header.php";
 require_once "menu.php";
@@ -7,7 +7,8 @@ require_once "../inc/class.univ4.inc";
 
 access_ctrl(23);
 
-$admin=$_SESSION['vwpp']['category']=="admin"?1:0;
+$admin=$_SESSION['vwpp']['category']=="admin"?1:0;	// Droit en lecture
+$admin2=in_array(16,$_SESSION['vwpp']['access']);	// Droits lecture et modification
 $action="courses4-univ-update.php";
 $displayLock=$admin?null:"style='display:none;'";
 $deleteURL="courses4-univ-delete.php";
@@ -127,12 +128,14 @@ EOD;
     if($admin or !$course['lock']){
       echo "<tr><td colspan='2' style='padding-top:20px;text-align:right;'>\n";
       echo "<input type='button' value='Retour' onclick='location.href=\"courses4.php\";' class='myUI-button-right' />\n";
-      echo "<input type='button' value='Modifier' onclick='editCourse({$course['id']},true);' class='myUI-button-right' />\n";
+      if($admin2){
+	echo "<input type='button' value='Modifier' onclick='editCourse({$course['id']},true);' class='myUI-button-right' />\n";
+      }
 
-      if(!$course['liaison']){
+      if(!$course['liaison'] and $admin2){
 	echo "<input type='button' value='Supprimer' onclick='dropCourse2({$course['id']},$admin);' class='myUI-button-right' />\n";
       }
-      if($admin){
+      if($admin2){
 	$lockButton=$course['lock']?"D&eacute;verrouiller":"Verrouiller";
 	echo "<input type='button' value='$lockButton' id='lock{$course['id']}' onclick='lockCourse4({$course['id']});' class='myUI-button-right' />\n";
       }

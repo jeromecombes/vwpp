@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-23
+// Last update : 2015-10-21
 
 require_once "../header.php";
 require_once "../inc/class.reidhall.inc";
@@ -28,7 +28,6 @@ $hoursStart=8;
 $hoursEnd=22;
 
 $submit=$id?"Change":"Add";
-$submitDisabled=in_array(16,$_SESSION['vwpp']['access'])?null:"disabled='disabled'";
 $delete=null;
 $deleteAlert=null;
 
@@ -133,8 +132,13 @@ echo <<<EOD
 <tr><td colspan='2' style='text-align:right;padding-top:30px;'>
 <input type='button' value='Cancel' onclick='history.back();' class='myUI-button-right'/>
 $delete
-<input type='submit' value='$submit' $submitDisabled class='myUI-button-right'/></td></tr>
+EOD;
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<input type='submit' value='$submit' class='myUI-button-right'/>\n";
+}
 
+echo <<<EOD
+</td></tr>
 </table>
 </form>
 </fieldset>

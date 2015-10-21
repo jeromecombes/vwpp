@@ -1,4 +1,4 @@
-// Last update : 2015-10-19, Jérôme Combes
+// Last update : 2015-10-21, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -550,7 +550,7 @@ function js_autocomplete(me){			// supprimer les éléments ne contenant pas à 
 }
 function lock_registration(form,id,lock){
   table="courses_"+form;
-  if(form=="stages")
+  if(form=="stages" || form=="tutorat")
      table=form;
   file("lock.php?table="+table+"&id="+id+"&lock="+lock);
   document.location.reload(false);
@@ -1024,7 +1024,10 @@ $(document).ready(function(){
     $(this).css("top",liTop);
   });
 
-  
+  $(".tableUnivCourse").each(function(){
+    var width=$(this).width()-$(this).css("margin-left").replace("px","");
+    $(this).css("width",width);
+  });
   
   
 });

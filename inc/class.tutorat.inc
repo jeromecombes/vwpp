@@ -1,5 +1,5 @@
 <?php
-// Update : 2015-10-15
+// Update : 2015-10-21
 require_once "class.student.inc";
 
 class tutorat{
@@ -22,7 +22,7 @@ class tutorat{
     $db->select("tutorat","*","student='$student' AND semester='$semester'");
     $data=$db->result[0];
     $data=array("tuteur"=>decrypt($data['tuteur']),"day"=>decrypt($data['day']),
-	"start"=>decrypt($data['start']),"end"=>decrypt($data['end']), "lock"=>$data['lock']);
+	"start"=>decrypt($data['start']),"end"=>decrypt($data['end']), "lock"=>$data['lock'], "id"=>$data['id']);
     $this->elements=$data;
   }
 

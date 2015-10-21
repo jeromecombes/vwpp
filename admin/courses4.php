@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-23
+// Last update : 2015-10-21
 
 require_once "../header.php";
 require_once "../inc/class.reidhall.inc";
@@ -67,7 +67,9 @@ foreach($reidhall as $elem){
 echo "</tbody>\n";
 echo "</table>\n";
 echo "<div style='margin-top:20px; text-align:right;'>\n";
-echo "<input type='button' onclick='location.href=\"courses-edit.php?univ=rh\";' value='Add a VWPP Course'  class='myUI-button-right'/>\n";
+if(in_array(16,$_SESSION['vwpp']['access'])){
+  echo "<input type='button' onclick='location.href=\"courses-edit.php?univ=rh\";' value='Add a VWPP Course'  class='myUI-button-right'/>\n";
+}
 echo "<input type='button' onclick='location.href=\"courses_excel_vwpp.php\";' value='Export Final Reg. to Excel' class='myUI-button-right'/>\n";
 echo "<input type='button' onclick='location.href=\"courses_excel_vwpp2.php\";' value='Export Students choices to Excel' class='myUI-button-right'/>\n";
 echo "</div>\n";
