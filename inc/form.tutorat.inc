@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2015-10-21, Jérôme Combes
+// Last Update : 2015-10-29, Jérôme Combes
 
 require_once "class.tutorat.inc";
 
@@ -80,7 +80,7 @@ for($i=$hoursStart;$i<$hoursEnd+1;$i++){
 }
 echo <<<EOD
 </select>
-<div $displayText id='formTutorat_1_1'>{$tutorat['day']} {$tutorat['start']} {$tutorat['end']}</div>
+<div $displayText id='formTutorat_1_1'>{$tutorat['day']} de {$tutorat['start']} à {$tutorat['end']}</div>
 </td></tr>
 EOD;
 
