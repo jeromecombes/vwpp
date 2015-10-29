@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-20
+// Last update : 2015-10-29
 
 // menu id
 $current_id=array_key_exists("menu_id",$_SESSION['vwpp'])?$_SESSION['vwpp']['menu_id']:1;
@@ -21,7 +21,7 @@ echo <<<EOD
   </div>
 </div>
 
-<div class='ui-tabs ui-widget ui-widget-content ui-corner-all'>
+<div class='ui-tabs ui-widget ui-widget-content ui-corner-all' id='student-menu'>
 <nav>
 <ul class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>
 EOD;

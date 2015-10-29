@@ -1,4 +1,4 @@
-// Last update : 2015-10-21, Jérôme Combes
+// Last update : 2015-10-29, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -973,13 +973,7 @@ $(document).ready(function(){
     var liLeft=ulLeft+ulWidth-liWidth-3;
     $(this).css("left",liLeft);
     
-    var ulTop=$(this).closest("ul").position().top;
-    var ulHeight=$(this).closest("ul").height();
-    var ulPadding=$(this).closest("ul").css("padding");
-    var tmp=ulPadding.split("px");
-    ulPadding=parseFloat(tmp[0]);
-    var liHeight=$(this).height();
-    var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
+    var liTop=$("#student-menu li").position().top;
     $(this).css("top",liTop);
   });
 
@@ -991,14 +985,8 @@ $(document).ready(function(){
     var liWidth=$(this).width();
     var liLeft=BTLLeft-liWidth-4;
     $(this).css("left",liLeft);
-    
-    var ulTop=$(this).closest("ul").position().top;
-    var ulHeight=$(this).closest("ul").height();
-    var ulPadding=$(this).closest("ul").css("padding");
-    var tmp=ulPadding.split("px");
-    ulPadding=parseFloat(tmp[0]);
-    var liHeight=$(this).height();
-    var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
+
+    var liTop=$("#student-menu li").position().top;
     $(this).css("top",liTop);
   });
 
@@ -1014,13 +1002,7 @@ $(document).ready(function(){
     var liLeft=NLeft-liWidth-4;
     $(this).css("left",liLeft);
     
-    var ulTop=$(this).closest("ul").position().top;
-    var ulHeight=$(this).closest("ul").height();
-    var ulPadding=$(this).closest("ul").css("padding");
-    var tmp=ulPadding.split("px");
-    ulPadding=parseFloat(tmp[0]);
-    var liHeight=$(this).height();
-    var liTop=ulTop+ulHeight+ulPadding-liHeight-1;
+    var liTop=$("#student-menu li").position().top;
     $(this).css("top",liTop);
   });
 
