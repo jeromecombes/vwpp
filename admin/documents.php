@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-16
+// Last update : 2015-10-30
 
 require_once "../inc/config.php";
 require_once "../inc/class.student.inc";
@@ -74,6 +74,7 @@ EOD;
     if($doc['rel']==$_SESSION['vwpp']['type'] or !$_SESSION['vwpp']['type']){
       $doc['size']=$doc['size']?$doc['size']:null;
       $visibility=$doc['adminOnly']?"Admin only":null;
+      $doc['name2']=str_replace("_"," ",$doc['name2']);
       echo "<tr>\n";
       echo "<td>&nbsp;</td>\n";
       echo "<td>{$doc['lastname']}</td>\n";
