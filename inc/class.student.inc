@@ -1,7 +1,7 @@
 <?php
 /*
 VWPP Database V 3.0
-Last update 2015-10-15, Jérôme Combes
+Last update 2015-11-13, Jérôme Combes
 */
 
 require_once "class.mails.inc";
@@ -126,11 +126,7 @@ class student{
       }
 
       //	Add DOB
-      $this->elements['dob_text']=null;
-      $this->elements['dob']=null;
-      $this->elements['mob']=null;
-      $this->elements['yob']=null;
-      if($this->elements['dob']){
+      if(isset($this->elements['dob']) and $this->elements['dob']!=null){
 	$tmp=explode("-",$this->elements['dob']);
 	$dob=strToTime($this->elements['dob']);
 	$dob=date("M d, Y",$dob);
@@ -138,6 +134,11 @@ class student{
 	$this->elements['dob']=$tmp[2];
 	$this->elements['mob']=$tmp[1];
 	$this->elements['yob']=$tmp[0];
+      }else{
+	$this->elements['dob_text']=null;
+	$this->elements['dob']=null;
+	$this->elements['mob']=null;
+	$this->elements['yob']=null;
       }
 
       //	Add login_name
