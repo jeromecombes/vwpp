@@ -79,6 +79,32 @@ class student{
     $message=str_replace(array("[FIRSTNAME]","[LASTNAME]","[EMAIL]","[PASSWORD]"),array($firstname,$lastname,$email,$password),$message);
     $this->welcomeMessage[$id]=$message;
   }
+  
+  public function deleteTIN(){
+    if(!in_array(6,$_SESSION['vwpp']['access'])){
+      $this->error=true;
+      return;
+    }
+    
+    $students=$this->list;
+
+    if(!is_array($students)){
+      $this->error=true;
+      return;
+    }
+
+    $db=new dbh();
+    $db->prepare("INSERT INTO {$GLOBALS['config']['dbprefix']}log (message) VALUES (:message);");
+    $insert=array(":message"=>"User #{$_SESSION['vwpp']['login_id']}, {$_SESSION['vwpp']['semestre']} : delete TIN for students ".join("; ",$students));
+    $db->execute($insert);
+    
+    $db=new dbh();
+    $db->prepare("UPDATE {$GLOBALS['config']['dbprefix']}students SET tin=:tin WHERE id=:id;");
+
+    foreach($students as $elem){
+      $db->execute(array(":tin"=>encrypt("",$elem),":id"=>$elem));
+    }
+  }
 
   public function fetch(){
     $univReq=null;

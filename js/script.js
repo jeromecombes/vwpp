@@ -1,4 +1,4 @@
-// Last update : 2015-10-29, Jérôme Combes
+// Last update : 2015-11-14, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -684,7 +684,15 @@ function select_action(form){
 function submit_action(form,form2){		// a finir
   switch(document.forms[form].action.value){
     case "Delete" : delete_check(form2);	break;
-    
+
+    case "DeleteTIN" :
+      if(confirm("Do you really want to delete TIN for selected items ?")){
+	document.forms[form2].action="deleteTIN.php";
+	document.forms[form2].submit();
+      }
+    break;
+
+
     case "CreatePassword" :
 	if(confirm("The password of selected students will be changed.\nContinue ?")){
 	  document.forms[form2].action="students-password.php";

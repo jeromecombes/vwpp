@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-19
+// Last update : 2015-11-14
 
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
@@ -144,6 +144,8 @@ EOD;
     echo "<option value='Email2'>Send email (with Web Browser)</option>\n";
     if(in_array(4,$_SESSION['vwpp']['access']))
       echo "<option value='CreatePassword'>Send emails with passwords</option>\n";
+    if(in_array(6,$_SESSION['vwpp']['access']))
+      echo "<option value='DeleteTIN'>Delete TIN</option>\n";
     if(in_array(5,$_SESSION['vwpp']['access']))
       echo "<option value='Delete'>Delete</option>\n";
     if(in_array(7,$_SESSION['vwpp']['access'])){
