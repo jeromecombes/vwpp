@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-29
+// Last update : 2015-11-14
 
 // menu id
 $current_id=array_key_exists("menu_id",$_SESSION['vwpp'])?$_SESSION['vwpp']['menu_id']:1;
@@ -23,7 +23,7 @@ echo <<<EOD
 
 <div class='ui-tabs ui-widget ui-widget-content ui-corner-all' id='student-menu'>
 <nav>
-<ul class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>
+<ul class='ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all' id='student-menu'>
 EOD;
 get_menu2("General info",1,1);		//	menu name, page, menu id, required access
 get_menu2("Housing",2,2);
