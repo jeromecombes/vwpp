@@ -1,5 +1,6 @@
 <?php
-// Last update : 2015-10-14
+// Last update : 2015-12-10
+session_start();
 
 if(in_array(22,$_SESSION['vwpp']['access'])){		// voir qui a rempli les évaluations
   header("Location: eval_index3.php");
