@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-23
+// Last update : 2016-01-07
 
 require_once("../inc/config.php");
 require_once("../inc/class.ciph.inc");
@@ -116,7 +116,7 @@ EOD;
       echo "<td><font id='form_1_$j'>{$elem['grade']}</font>\n";
       $j++;
       echo "<select name='grade_{$elem['id']}' style='display:none;'>\n";
-      echo "<option value='null_us'>&nbsp;</option>\n";
+      echo "<option value=''>&nbsp;</option>\n";
       foreach($grades_tab as $grade){
 	$selected=$grade==$elem['grade']?"selected='selected'":null;
 	echo "<option value='$grade' $selected >$grade</option>\n";

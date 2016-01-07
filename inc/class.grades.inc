@@ -1,9 +1,10 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update : 2016-01-07, Jérôme Combes
 
 class grades{
   public $semester=null;
   public $grades=array();
+  public $data=array();
 
   public function grades(){
     $this->semester=$_SESSION['vwpp']['semester'];
@@ -52,45 +53,46 @@ class grades{
     }
   }
 
-  function update($student,$course,$course_id,$grade,$field=null){
-    if(!is_numeric($student))
-      return false;
 
-    $db=new db();					//	Check if grade exists
-    $db->select("grades","*","semester='{$this->semester}' AND student=$student AND course='$course' AND course_id=$course_id");
-    $id=$db->result?$db->result[0]['id']:null;
-
-    if($grade=="" and $id){				//	Set note=null
-      $db=new db();
-      $db->update("grades","note='', date1=''","id=$id");
-      return;
-    }
-    elseif($grade=="null_us" and $id){				//	Set grade=null;
-      $db=new db();
-      $db->update("grades","grade='', date2=''","id=$id");
+  function update(){
+    // Return if data isn't set
+    if(empty($this->data)){
       return;
     }
 
-    if(!$field){
-      $field=is_numeric($grade)?"note":"grade";		//	Grade FR or US
-    }							//	Or date1 or date2 if specified
-					    
-    $grade=encrypt($grade,$student);
+    // For each line
+    foreach($this->data as $key => $value){
+      // Prepare data to insert or to update
+      $student=$value['student'];
+      
+      $data=array(":semester"=>$this->semester, ":student"=>$student, ":course"=>$value['course'], ":course_id"=>$value['course_id'], 
+	":note"=> encrypt($value['note'],$student), ":date1"=> encrypt($value['date1'],$student), 
+	":grade"=> encrypt($value['grade'],$student), ":date2"=> encrypt($value['date2'],$student));
+    
+      // Check if grade exists in the database
+      $db=new db();
+      $db->select("grades","*","semester='{$this->semester}' AND student=$student AND course='{$value['course']}' AND course_id={$value['course_id']}");
 
-    if($id){						//	Update note or grade
-      $sql="UPDATE `{$GLOBALS['dbprefix']}grades` set $field=:grade WHERE id=:id";
-      $data=array(":grade"=>$grade, ":id"=>$db->result[0]['id']);
-    }
-    else{						//	Or insert
-      $sql="INSERT INTO `{$GLOBALS['dbprefix']}grades` (semester,student,course,course_id,$field) 
-	VALUES (:semester,:student,:course,:course_id,:grade)";
-      $data=array(":semester"=>$this->semester, ":student"=>$student, ":course"=>$course, 
-	":course_id"=>$course_id, ":grade"=>$grade);
-    }
+      // If grade exists, then update
+      if($db->result){
+	$data[":id"]=$db->result[0]['id'];
+	unset($data[':semester']);
+	unset($data[':student']);
+	unset($data[':course']);
+	unset($data[':course_id']);
 
-    $db=new dbh();					//	Execute the request
-    $db->prepare($sql);
-    $db->execute($data);
+	$sql="UPDATE `{$GLOBALS['dbprefix']}grades` set note=:note, date1=:date1, grade=:grade, date2=:date2 WHERE id=:id;";
+      }
+      // If grade doesn't exist, then add
+      else{
+	$sql="INSERT INTO `{$GLOBALS['dbprefix']}grades` (semester,student,course,course_id,note,date1,grade,date2) 
+	  VALUES (:semester,:student,:course,:course_id,:note,:date1,:grade,:date2)";
+      }
+      
+      $db=new dbh();
+      $db->prepare($sql);
+      $db->execute($data);
+    }
   }
 
 }

@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update 2016-01-07
 
 require_once "class.courses.inc";
 require_once "class.grades.inc";
@@ -69,7 +69,7 @@ EOD;
     echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['grade']}</font>\n";
     $i++;
     echo "<select style='display:none;' name='VWPP_US_{$course['id']}'>\n";
-    echo "<option value='null_us'>&nbsp;</option>\n";
+    echo "<option value=''>&nbsp;</option>\n";
    foreach($grades_tab as $grade){
       $selected=$grades['VWPP'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";
@@ -129,7 +129,7 @@ EOD;
     echo "<td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['grade']}</font>\n";
     $i++;
     echo "<select style='display:none;' name='UNIV_US_{$course['id']}'>\n";
-    echo "<option value='null_us'>&nbsp;</option>\n";
+    echo "<option value=''>&nbsp;</option>\n";
     foreach($grades_tab as $grade){
       $selected=$grades['UNIV'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";
@@ -189,7 +189,7 @@ foreach($td_courses as $course){
     echo "<td><font id='form_1_$i'>{$grades['TD'][$course['id']]['grade']}</font>\n";
     $i++;
     echo "<select style='display:none;' name='TD_US_{$course['id']}'>\n";
-    echo "<option value='null_us'>&nbsp;</option>\n";
+    echo "<option value=''>&nbsp;</option>\n";
     foreach($grades_tab as $grade){
       $selected=$grades['TD'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";
@@ -251,7 +251,7 @@ foreach($ciph_courses as $course){
     echo "<td><font id='form_1_$i'>{$grades['CIPH'][$course['id']]['grade']}</font>\n";
     $i++;
     echo "<select style='display:none;'name='CIPH_US_{$course['id']}'>\n";
-    echo "<option style='display:none;' value='null_us'>&nbsp;</option>\n";
+    echo "<option style='display:none;' value=''>&nbsp;</option>\n";
     foreach($grades_tab as $grade){
       $selected=$grades['CIPH'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";

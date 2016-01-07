@@ -1,4 +1,6 @@
 <?php
+// Last update 2016-01-07
+
 require_once "class.courses.inc";
 require_once "class.grades.inc";
 
@@ -53,7 +55,7 @@ foreach($vwpp_courses as $course){
 
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
     echo "<td><select name='VWPP_US_{$course['id']}'>\n";
-    echo "<option value='null_us'>&nbsp;</option>\n";
+    echo "<option value=''>&nbsp;</option>\n";
    foreach($grades_tab as $grade){
       $selected=$grades['VWPP'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";
@@ -105,7 +107,7 @@ foreach($univ_courses as $course){
   }
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
     echo "<td><select name='UNIV_US_{$course['id']}'>\n";
-    echo "<option value='null_us'>&nbsp;</option>\n";
+    echo "<option value=''>&nbsp;</option>\n";
     foreach($grades_tab as $grade){
       $selected=$grades['UNIV'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";
@@ -160,7 +162,7 @@ foreach($ciph_courses as $course){
 
   if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
     echo "<td><select name='CIPH_US_{$course['id']}'>\n";
-    echo "<option value='null_us'>&nbsp;</option>\n";
+    echo "<option value=''>&nbsp;</option>\n";
     foreach($grades_tab as $grade){
       $selected=$grades['CIPH'][$course['id']]['grade']==$grade?"selected='selected'":null;
       echo "<option value='$grade' $selected >$grade</option>\n";
