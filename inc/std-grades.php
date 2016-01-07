@@ -43,7 +43,6 @@ if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['ac
 echo "</tr>\n";
 
 $i=0;
-$j=0;
 foreach($vwpp_courses as $course){
   echo "<tr><td>{$course['title']}, {$course['professor']}</td>\n";
   if(in_array(18,$_SESSION['vwpp']['access'])){
@@ -52,12 +51,10 @@ foreach($vwpp_courses as $course){
     $i++;
     echo <<<EOD
     <td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['date1']}</font>
-      <input style='display:none;width:130px;' type='text' name='VWPP_FRDATE_{$course['id']}' value='{$grades['VWPP'][$course['id']]['date1']}' />
-      <a id='form_1_radio_$j' style='display:none;' href='javascript:calendar("form_1","VWPP_FRDATE_{$course['id']}",true);' >
-      <img src='../img/calendar.gif' alt='Calendar' /></a></td>
+      <input style='display:none;width:130px;' type='text' name='VWPP_FRDATE_{$course['id']}' value='{$grades['VWPP'][$course['id']]['date1']}' class='myUI-datepicker-string' />
+    </td>
 EOD;
     $i++;
-    $j++;
   }
   elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['VWPP'][$course['id']]['note']}</td>\n";
@@ -77,10 +74,8 @@ EOD;
     echo "</select></td>\n";
   echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['date2']}</font>\n";
   $i++;
-  echo "<input style='display:none;width:130px;' type='text' name='VWPP_USDATE_{$course['id']}' value='{$grades['VWPP'][$course['id']]['date2']}' />\n";
-  echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"VWPP_USDATE_{$course['id']}\",true);' >\n";
-  $j++;
-  echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
+  echo "<input style='display:none;width:130px;' type='text' name='VWPP_USDATE_{$course['id']}' value='{$grades['VWPP'][$course['id']]['date2']}' class='myUI-datepicker-string' />\n";
+  echo "</td>\n";
   }
   elseif(in_array(20,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['VWPP'][$course['id']]['grade']}</td>\n";
@@ -113,12 +108,10 @@ foreach($univ_courses as $course){
     $i++;
     echo <<<EOD
     <td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['date1']}</font>
-      <input style='display:none;width:130px;' type='text' name='UNIV_FRDATE_{$course['id']}' value='{$grades['UNIV'][$course['id']]['date1']}' />
-      <a id='form_1_radio_$j' style='display:none;' href='javascript:calendar("form_1","UNIV_FRDATE_{$course['id']}",true);' >
-      <img src='../img/calendar.gif' alt='Calendar' /></a></td>
+      <input style='display:none;width:130px;' type='text' name='UNIV_FRDATE_{$course['id']}' value='{$grades['UNIV'][$course['id']]['date1']}' class='myUI-datepicker-string' />
+      </td>
 EOD;
     $i++;
-    $j++;
   }
   elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['UNIV'][$course['id']]['note']}</td>\n";
@@ -137,10 +130,8 @@ EOD;
     echo "</select></td>\n";
     echo "<td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['date2']}</font>\n";
     $i++;
-    echo "<input style='display:none;width:130px;' type='text' name='UNIV_USDATE_{$course['id']}' value='{$grades['UNIV'][$course['id']]['date2']}' />\n";
-    echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"UNIV_USDATE_{$course['id']}\",true);' >\n";
-    $j++;
-    echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
+    echo "<input style='display:none;width:130px;' type='text' name='UNIV_USDATE_{$course['id']}' value='{$grades['UNIV'][$course['id']]['date2']}' class='myUI-datepicker-string' />\n";
+    echo "</td>\n";
   }
   elseif(in_array(20,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['UNIV'][$course['id']]['grade']}</td>\n";
@@ -175,10 +166,8 @@ foreach($td_courses as $course){
     echo "<input style='display:none;' type='text' name='TD_FR_{$course['id']}' value='{$grades['TD'][$course['id']]['note']}' onkeyup='verifNote(\"form_1\",this);'></td>\n";
     echo "<td><font id='form_1_$i'>{$grades['TD'][$course['id']]['date1']}</font>\n";
     $i++;
-    echo "<input style='display:none;width:130px;' type='text' name='TD_FRDATE_{$course['id']}' value='{$grades['TD'][$course['id']]['date1']}' />\n";
-    echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"TD_FRDATE_{$course['id']}\",true);' >\n";
-    echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
-    $j++;
+    echo "<input style='display:none;width:130px;' type='text' name='TD_FRDATE_{$course['id']}' value='{$grades['TD'][$course['id']]['date1']}' class='myUI-datepicker-string' />\n";
+    echo "</td>\n";
   }
   elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['TD'][$course['id']]['note']}</td>\n";
@@ -197,10 +186,8 @@ foreach($td_courses as $course){
     echo "</select></td>\n";
     echo "<td><font id='form_1_$i'>{$grades['TD'][$course['id']]['date2']}</font>\n";
     $i++;
-    echo "<input style='display:none;width:130px;' type='text' name='TD_USDATE_{$course['id']}' value='{$grades['TD'][$course['id']]['date2']}' />\n";
-    echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"TD_USDATE_{$course['id']}\",true);' >\n";
-    echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
-    $j++;
+    echo "<input style='display:none;width:130px;' type='text' name='TD_USDATE_{$course['id']}' value='{$grades['TD'][$course['id']]['date2']}' class='myUI-datepicker-string' />\n";
+    echo "</td>\n";
   }
   elseif(in_array(20,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['TD'][$course['id']]['grade']}</td>\n";
@@ -237,10 +224,8 @@ foreach($ciph_courses as $course){
     echo "<input style='display:none;' type='text' name='CIPH_FR_{$course['id']}' value='{$grades['CIPH'][$course['id']]['note']}' style='width:90px;'/>\n";
     echo "<td><font id='form_1_$i'>{$grades['CIPH'][$course['id']]['date1']}</font>\n";
     $i++;
-    echo "<input style='display:none;width:130px;' type='text' name='CIPH_FRDATE_{$course['id']}' value='{$grades['CIPH'][$course['id']]['date1']}' />\n";
-    echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"CIPH_FRDATE_{$course['id']}\",true);' >\n";
-    echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
-    $j++;
+    echo "<input style='display:none;width:130px;' type='text' name='CIPH_FRDATE_{$course['id']}' value='{$grades['CIPH'][$course['id']]['date1']}' class='myUI-datepicker-string' />\n";
+    echo "</td>\n";
   }
   elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['CIPH'][$course['id']]['note']}</td>\n";
@@ -259,10 +244,8 @@ foreach($ciph_courses as $course){
     echo "</select></td>\n";
     echo "<td><font id='form_1_$i'>{$grades['CIPH'][$course['id']]['date2']}</font>\n";
     $i++;
-    echo "<input style='display:none;width:130px;' type='text' name='CIPH_USDATE_{$course['id']}' value='{$grades['CIPH'][$course['id']]['date2']}' />\n";
-    echo "<a id='form_1_radio_$j' style='display:none;' href='javascript:calendar(\"form_1\",\"CIPH_USDATE_{$course['id']}\",true);' >\n";
-    echo "<img src='../img/calendar.gif' alt='Calendar' /></a></td>\n";
-    $j++;
+    echo "<input style='display:none;width:130px;' type='text' name='CIPH_USDATE_{$course['id']}' value='{$grades['CIPH'][$course['id']]['date2']}' class='myUI-datepicker-string' />\n";
+    echo "</td>\n";
   }
   elseif(in_array(20,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['CIPH'][$course['id']]['grade']}</td>\n";
@@ -281,10 +264,10 @@ echo <<<EOD
 EOD;
 
 if(in_array(18,$_SESSION["vwpp"]["access"]) or in_array(19,$_SESSION["vwpp"]["access"])){
-  echo "<div style='text-align:right;width:1200px;'>\n";
-  echo "<input id='form_1_radio_$j' style='display:none;' type='button' value='Cancel' onclick='location.href=\"students-view2.php\";'/>\n";
-  echo "<input id='form_1_done' style='display:none;' type='submit' value='Submit'/>\n";
-  echo "<input type='button' value='Change' id='form_1_$i' onclick='displayForm(\"form\",1);' />\n";
+  echo "<div style='text-align:right; margin-bottom:20px;'>\n";
+  echo "<input id='form_1_radio_0' style='display:none;' type='button' value='Cancel' onclick='location.href=\"students-view2.php\";' class='myUI-button-right' />\n";
+  echo "<input id='form_1_done' style='display:none;' type='submit' value='Submit' class='myUI-button-right' />\n";
+  echo "<input type='button' value='Change' id='form_1_$i' onclick='displayForm(\"form\",1);' class='myUI-button-right' />\n";
   echo "</div>\n";
 }
 
