@@ -1,4 +1,6 @@
 <?php
+// Last update : 2016-01-07
+
 require_once "class.student.inc";
 $s=new student();
 $s->id=$_SESSION['vwpp']['student'];
@@ -6,7 +8,7 @@ $s->fetch();
 //	ajouter hidden, lastname, firstname, email, téléphone portable
 echo <<<EOD
 <h3>Formulaire de voyage</h3>
-<p style='font-weight:bold;text-align:justify;width:1170px;'>Veuillez remplir le formulaire ci-dessous au moins 24h avant votre départ et il vous sera envoyé une confirmation de réception de la part du programme avant votre départ :</p>
+<p style='font-weight:bold;text-align:justify;'>Veuillez remplir le formulaire ci-dessous au moins 24h avant votre départ et il vous sera envoyé une confirmation de réception de la part du programme avant votre départ :</p>
 
 <div class='fieldset'>
 <form name='form_1' action='trip_submit.php' method='post'>
@@ -24,14 +26,12 @@ echo <<<EOD
 <td colspan='2' class='response'>{$s->elements['email']}, {$s->elements['cellphone']}</td></tr>
 
 <tr><td style='padding-top:20px;'><b>Date de départ :</b> (Obligatoire)</td>
-<td colspan='2' style='padding-top:20px;'><input type='text' name='data[0]' value='{$data[0]}' style='width:690px;'/>
-<a href='javascript:calendar("form_1","data[0]",false);' id='form_1_radio_0'>
-<img src='img/calendar.gif' border='0' alt='calendar'></a></td></tr>
+<td colspan='2' style='padding-top:20px;'><input type='text' name='data[0]' value='{$data[0]}' style='width:690px;' class='myUI-datepicker-string' />
+</td></tr>
 
 <tr><td style='padding-top:20px;'><b>Date de retour :</b> (Obligatoire)</td>
-<td colspan='2' style='padding-top:20px;'><input type='text' name='data[1]' value='{$data[1]}' style='width:690px;'/>
-<a href='javascript:calendar("form_1","data[1]",false);' id='form_1_radio_1'>
-<img src='img/calendar.gif' border='0' alt='calendar'></a></td></tr>
+<td colspan='2' style='padding-top:20px;'><input type='text' name='data[1]' value='{$data[1]}' style='width:690px;' class='myUI-datepicker-string' />
+</td></tr>
 
 <tr><td style='padding-top:20px;'><b>Destination(s) :</b> (Obligatoire)</td>
 <td colspan='2' style='padding-top:20px;'><textarea name='data[2]'>{$data[2]}</textarea></td></tr>
@@ -75,7 +75,7 @@ Assurez-vous que vous avez le N°  de téléphone portable du directeur avec vou
 06-40-15-51-71</b></td></tr>
 
 <tr><td colspan='3' style='padding-top:20px;text-align:center;'>
-<input type='submit' value='Envoyer' /></td></tr>
+<input type='submit' value='Envoyer' class='myUI-button' /></td></tr>
 
 </table>
 </form>
