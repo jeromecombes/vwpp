@@ -183,6 +183,36 @@ class courses{
 	}
       }
     }
+    $where="(c1=$id or c2=$id)";
+    $db=new db();
+    $db->select("courses_choices","student",$where);
+    if($db->result){
+      foreach($db->result as $elem){
+	if(!in_array($elem["student"],$students_choices) and array_key_exists($elem["student"],$students)){
+	  $students_choices[]=array_merge($students[$elem["student"]],array("choice"=>"3<sup>rd</sup>"));
+	}
+      }
+    }
+    $where="(d1=$id or d2=$id)";
+    $db=new db();
+    $db->select("courses_choices","student",$where);
+    if($db->result){
+      foreach($db->result as $elem){
+	if(!in_array($elem["student"],$students_choices) and array_key_exists($elem["student"],$students)){
+	  $students_choices[]=array_merge($students[$elem["student"]],array("choice"=>"4<sup>th</sup>"));
+	}
+      }
+    }
+    $where="(e2=$id)";
+    $db=new db();
+    $db->select("courses_choices","student",$where);
+    if($db->result){
+      foreach($db->result as $elem){
+	if(!in_array($elem["student"],$students_choices) and array_key_exists($elem["student"],$students)){
+	  $students_choices[]=array_merge($students[$elem["student"]],array("choice"=>"5<sup>th</sup>"));
+	}
+      }
+    }
 
     usort($students_choices,"cmp_lastname");
     $this->students_choices=$students_choices;
