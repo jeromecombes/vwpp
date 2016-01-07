@@ -27,7 +27,7 @@ $config['sessionTimeOut']=1800;
 $config['documentType']=array("Passport","Health insurance id","French Essay","Pledge","Risk and release waiver",
 	"Student medical release and parental statement form","Health form","Immunization records","Flight information",
 	"Transcript","Language recommendation","Recommendation","Carte de séjour","Photo",
-        "French Univ. Student Card","Visa","TCP certificate");
+        "French Univ. Student Card","Visa","TCP certificate","Early departure");
 sort($config['documentType']);
 $config['documentType'][]="Other";
 

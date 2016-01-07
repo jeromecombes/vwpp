@@ -1,5 +1,5 @@
 <?php
-// Last update : 2014-04-04, Jérôme Combes
+// Last update : 2015-12-15, Jérôme Combes
 
 require_once "inc/class.eval.inc";
 require_once "inc/class.tutorat.inc";
@@ -38,7 +38,7 @@ $courses=array();
 $db=new db();
 $db->select("courses_attrib_rh","*","student='$std_id' AND semester='$semester'");
 if($db->result){
-  $fields=array("writing1","writing2","writing3","seminar1","seminar2");
+  $fields=array("writing1","writing2","writing3","seminar1","seminar2","seminar3");
   foreach($fields as $field){
     if($db->result[0][$field]){
       $courses[]=$db->result[0][$field];
