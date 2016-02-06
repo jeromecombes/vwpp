@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-14
+// Last update : 2016-02-06
 
 require_once "../header.php";
 require_once "../inc/class.univ_reg.inc";
@@ -41,6 +41,8 @@ foreach($tab as $elem){
   echo "<td>$div</td>\n";
   $nb++;
   foreach($elem[1] as $elem2){  	//	Univ. Reg 2
+		// Si le nombre de cellules par ligne est différent du nombre de cellule dans l'entête : erreur dataTable.
+		// Les 3 lignes suivantes permettent d'éviter ceci
     if($nb==$max){
       continue 2;
     }
@@ -48,6 +50,13 @@ foreach($tab as $elem){
     echo "<td>$div</td>\n";
     $nb++;
   }
+	// Si le nombre de cellules par ligne est différent du nombre de cellule dans l'entête : erreur dataTable.
+	// Les 4 lignes suivantes permettent d'éviter ceci
+	while($nb<$max){
+		echo "<td>&nbsp;</td>\n";
+		$nb++;
+	}
+
   echo "</tr>\n";
 }
 echo "</tbody>\n";

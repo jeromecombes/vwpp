@@ -1,5 +1,5 @@
 <?php
-// Last Update : 2015-10-15
+// Last Update : 2016-02-06
 
 require_once "class.housing.inc";
 require_once "class.doc.inc";
@@ -56,7 +56,7 @@ echo <<<EOD
 <tr><td>Cellphone</td><td>{$logement['cellphone']}</td></tr>
 
 </table>
-</td><td style='width:350px;'>
+</td><td style='width:40%'>
 <table style='width:100%;'>
 <tr><td colspan='2'><br/><b><u>Contact Information for Parent/Guardian</u></b></td></tr>		<!-- Contact information -->
 <tr><td style='width:40%;'>Lastname</td><td style='width:60%;'>{$std['contactlast']}</td></tr>
@@ -84,7 +84,7 @@ echo "<tr><td>French Univ. Student number</td><td>{$std['frenchNumber']}</td></t
 echo <<<EOD
 </table>
 </td>
-<td style='padding-top:20px;'>{$d->photo}</td>
+<td style='padding-top:20px;'><div style='position:absolute; right:20px;'>{$d->photo}</div></td>
 </tr></table>
 EOD;
 

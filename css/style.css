@@ -1,4 +1,4 @@
-/* Last update : 2015-10-30, Jérôme Combes */
+/* Last update : 2016-02-06, Jérôme Combes */
 
 body{
   background: #EEEEEE;
@@ -287,7 +287,6 @@ select{
 /*	Footer	*/
 footer,
 #footer {
-  display: none;
   margin:15px;
   text-align:center;
 }
@@ -387,3 +386,14 @@ label{
   min-height: 500px;
   padding:10px;
 }
+
+@media screen and (min-width:1200px) {
+	#body{
+	  width: 1200px;
+	}
+
+	#loginName {
+		width:1186px;
+	}
+}
+
