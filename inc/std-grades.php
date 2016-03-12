@@ -1,5 +1,5 @@
 <?php
-// Last update 2016-01-07
+// Last update 2016-03-12
 
 require_once "class.courses.inc";
 require_once "class.grades.inc";
@@ -38,13 +38,19 @@ EOD;
 if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
   echo "<td style='width:50px;'>Note</td><td style='width:150px;'>Date received</td>";
 }
-if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access']))
-  echo "<td style='width:75px;'>US Grade</td><td style='width:150px;'>Date Recorded</td>";
+if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
+  echo "<td style='width:75px;'>Pass/Fail NRO</td>";
+  echo "<td style='width:75px;'>Actual Grade</td>";
+  echo "<td style='width:75px;'>Reported Grade</td>";
+  echo "<td style='width:150px;'>Date Recorded</td>";
+}
 echo "</tr>\n";
 
 $i=0;
 foreach($vwpp_courses as $course){
   echo "<tr><td>{$course['title']}, {$course['professor']}</td>\n";
+  // VWPP Courses Notes Française
+  // Modification
   if(in_array(18,$_SESSION['vwpp']['access'])){
     echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['note']}</font>\n";
     echo "<input style='display:none;' type='text' name='VWPP_FR_{$course['id']}' value='{$grades['VWPP'][$course['id']]['note']}' onkeyup='verifNote(\"form_1\",this);'></td>\n";
@@ -56,13 +62,40 @@ foreach($vwpp_courses as $course){
 EOD;
     $i++;
   }
+  // Affichage si pas le droit de modifier
   elseif(in_array(20,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['VWPP'][$course['id']]['note']}</td>\n";
     echo "<td>{$grades['VWPP'][$course['id']]['date1']}</td>\n";
   }
 
-
-  if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
+  // Grades US
+  // Modification
+  // reported grade : $grades['VWPP'][$course['id']]['grade']
+  // pass / fail / NRO :$grades['VWPP'][$course['id']]['grade1']
+  // actual grade :$grades['VWPP'][$course['id']]['grade2']
+  
+  if(in_array(19,$_SESSION['vwpp']['access'])){
+    // Reported grade
+    echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['grade1']}</font>\n";
+    $i++;
+    echo "<select style='display:none;' name='VWPP_US1_{$course['id']}'>\n";
+    echo "<option value=''>&nbsp;</option>\n";
+   foreach($grades_tab as $grade){
+      $selected=$grades['VWPP'][$course['id']]['grade1']==$grade?"selected='selected'":null;
+      echo "<option value='$grade' $selected >$grade</option>\n";
+    }
+    echo "</select></td>\n";
+    // Reported grade
+    echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['grade2']}</font>\n";
+    $i++;
+    echo "<select style='display:none;' name='VWPP_US2_{$course['id']}'>\n";
+    echo "<option value=''>&nbsp;</option>\n";
+   foreach($grades_tab as $grade){
+      $selected=$grades['VWPP'][$course['id']]['grade2']==$grade?"selected='selected'":null;
+      echo "<option value='$grade' $selected >$grade</option>\n";
+    }
+    echo "</select></td>\n";
+    // Reported grade
     echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['grade']}</font>\n";
     $i++;
     echo "<select style='display:none;' name='VWPP_US_{$course['id']}'>\n";
@@ -72,13 +105,21 @@ EOD;
       echo "<option value='$grade' $selected >$grade</option>\n";
     }
     echo "</select></td>\n";
+  // Recorded Grade
   echo "<td><font id='form_1_$i'>{$grades['VWPP'][$course['id']]['date2']}</font>\n";
   $i++;
   echo "<input style='display:none;width:130px;' type='text' name='VWPP_USDATE_{$course['id']}' value='{$grades['VWPP'][$course['id']]['date2']}' class='myUI-datepicker-string' />\n";
   echo "</td>\n";
   }
+  // Affichage si pas le droit de modifier
   elseif(in_array(20,$_SESSION['vwpp']['access'])){
+    // Reported Grade
+    echo "<td>{$grades['VWPP'][$course['id']]['grade1']}</td>\n";
+    // Reported Grade
+    echo "<td>{$grades['VWPP'][$course['id']]['grade2']}</td>\n";
+    // Reported Grade
     echo "<td>{$grades['VWPP'][$course['id']]['grade']}</td>\n";
+    // Recorded date
     echo "<td>{$grades['VWPP'][$course['id']]['date2']}</td>\n";
   }
   echo "</tr>\n";
@@ -96,8 +137,12 @@ EOD;
 if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
   echo "<td style='width:50px;'>Note</td><td style='width:150px;'>Date received</td>";
 }
-if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access']))
-  echo "<td style='width:75px;'>US Grade</td><td style='width:150px;'>Date Recorded</td>";
+if(in_array(19,$_SESSION['vwpp']['access']) or in_array(20,$_SESSION['vwpp']['access'])){
+  echo "<td style='width:75px;'>Pass/Fail NRO</td>";
+  echo "<td style='width:75px;'>Actual Grade</td>";
+  echo "<td style='width:75px;'>Reported Grade</td>";
+  echo "<td style='width:150px;'>Date Recorded</td>";
+}
 echo "</tr>\n";
 
 foreach($univ_courses as $course){
@@ -118,7 +163,33 @@ EOD;
     echo "<td>{$grades['UNIV'][$course['id']]['date1']}</td>\n";
   }
 
-  if(in_array(19,$_SESSION['vwpp']['access'])){		//	Grade US
+  // Grades US
+  // Modification
+  // reported grade : $grades['VWPP'][$course['id']]['grade']
+  // pass / fail / NRO :$grades['VWPP'][$course['id']]['grade1']
+  // actual grade :$grades['VWPP'][$course['id']]['grade2']
+  if(in_array(19,$_SESSION['vwpp']['access'])){
+    // Pass Fail NRO
+    echo "<td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['grade1']}</font>\n";
+    $i++;
+    echo "<select style='display:none;' name='UNIV_US1_{$course['id']}'>\n";
+    echo "<option value=''>&nbsp;</option>\n";
+    foreach($grades_tab as $grade){
+      $selected=$grades['UNIV'][$course['id']]['grade1']==$grade?"selected='selected'":null;
+      echo "<option value='$grade' $selected >$grade</option>\n";
+    }
+    echo "</select></td>\n";
+    // Actual grade
+    echo "<td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['grade2']}</font>\n";
+    $i++;
+    echo "<select style='display:none;' name='UNIV_US2_{$course['id']}'>\n";
+    echo "<option value=''>&nbsp;</option>\n";
+    foreach($grades_tab as $grade){
+      $selected=$grades['UNIV'][$course['id']]['grade2']==$grade?"selected='selected'":null;
+      echo "<option value='$grade' $selected >$grade</option>\n";
+    }
+    echo "</select></td>\n";
+    // Reported Grade
     echo "<td><font id='form_1_$i'>{$grades['UNIV'][$course['id']]['grade']}</font>\n";
     $i++;
     echo "<select style='display:none;' name='UNIV_US_{$course['id']}'>\n";
@@ -135,6 +206,8 @@ EOD;
   }
   elseif(in_array(20,$_SESSION['vwpp']['access'])){
     echo "<td>{$grades['UNIV'][$course['id']]['grade']}</td>\n";
+    echo "<td>{$grades['UNIV'][$course['id']]['grade1']}</td>\n";
+    echo "<td>{$grades['UNIV'][$course['id']]['grade2']}</td>\n";
     echo "<td>{$grades['UNIV'][$course['id']]['date2']}</td>\n";
   }
   echo "</tr>\n";
@@ -202,7 +275,7 @@ echo <<<EOD
 </fieldset>		<!--	END OF TD		
 -->
 
-
+<!--
 <h3>CIPh or other institutions Courses</h3>
 <fieldset>
 <table>
@@ -257,7 +330,7 @@ foreach($ciph_courses as $course){
 
 echo <<<EOD
 </table>
-</fieldset>		<!--	END OF CIPh 	-->
+</fieldset>	-->	<!--	END OF CIPh 	-->
 
 					
 <br/<br/>

@@ -1,5 +1,5 @@
 <?php
-// Last update : 2016-01-07
+// Last update : 2016-03-12
 
 require_once("../inc/config.php");
 require_once("../inc/class.ciph.inc");
@@ -53,6 +53,8 @@ $g=new grades();
 $g->fetchCourse($univ,$course_id);
 for($i=0;$i<count($students);$i++){
   $students[$i]['note']=$g->grades[$students[$i]['id']]['note'];
+  $students[$i]['grade1']=$g->grades[$students[$i]['id']]['grade1'];
+  $students[$i]['grade2']=$g->grades[$students[$i]['id']]['grade2'];
   $students[$i]['grade']=$g->grades[$students[$i]['id']]['grade'];
   $students[$i]['date1']=$g->grades[$students[$i]['id']]['date1'];
   $students[$i]['date2']=$g->grades[$students[$i]['id']]['date2'];
@@ -61,7 +63,6 @@ $grades_tab=array("A+","A","A-","B+","B","B-","C+","C","C-","D+","D","D-","F","P
 
 echo <<<EOD
 <h3>Grades, {$_SESSION['vwpp']['semester']}</h3>
-<a href='grades3-1.php'>Back</a>
 <p>
 {$course['code']} {$course['title']}, {$course['professor']}
 </p>
@@ -82,7 +83,9 @@ else{
 EOD;
 
   if(in_array(19, $_SESSION['vwpp']['access']) or in_array(20, $_SESSION['vwpp']['access'])){
-    echo "<th>US Grade</th>\n";
+    echo "<th>Pass/Fail NRO</th>\n";
+    echo "<th>Actual Grade</th>\n";
+    echo "<th>Reported Grade</th>\n";
     echo "<th>Date Recorded</th>\n";
   }
 
@@ -113,6 +116,29 @@ EOD;
     }
 
     if(in_array(19, $_SESSION['vwpp']['access'])){		// Voir et modifier les notes US
+      // Pass/Fail NRO
+      echo "<td><font id='form_1_$j'>{$elem['grade1']}</font>\n";
+      $j++;
+      echo "<select name='grade1_{$elem['id']}' style='display:none;'>\n";
+      echo "<option value=''>&nbsp;</option>\n";
+      foreach($grades_tab as $grade){
+	$selected=$grade==$elem['grade1']?"selected='selected'":null;
+	echo "<option value='$grade' $selected >$grade</option>\n";
+      }
+      echo "</select></td>\n";
+
+      // Actual grade
+      echo "<td><font id='form_1_$j'>{$elem['grade2']}</font>\n";
+      $j++;
+      echo "<select name='grade2_{$elem['id']}' style='display:none;'>\n";
+      echo "<option value=''>&nbsp;</option>\n";
+      foreach($grades_tab as $grade){
+	$selected=$grade==$elem['grade2']?"selected='selected'":null;
+	echo "<option value='$grade' $selected >$grade</option>\n";
+      }
+      echo "</select></td>\n";
+
+      // Reported Grade
       echo "<td><font id='form_1_$j'>{$elem['grade']}</font>\n";
       $j++;
       echo "<select name='grade_{$elem['id']}' style='display:none;'>\n";
@@ -131,6 +157,8 @@ EOD;
     }
 								  // Voir les notes US
     if(!in_array(19, $_SESSION['vwpp']['access']) and in_array(20, $_SESSION['vwpp']['access'])){
+      echo "<td><font>{$elem['grade1']}</font></td>\n";
+      echo "<td><font>{$elem['grade2']}</font></td>\n";
       echo "<td><font>{$elem['grade']}</font></td>\n";
       echo "<td><font>{$elem['date2']}</font></td>\n";
     }
@@ -144,14 +172,23 @@ EOD;
   if(in_array(18,$_SESSION['vwpp']['access']) or in_array(19,$_SESSION['vwpp']['access'])){
     echo <<<EOD
     <div style='text-align:right;margin:20px 0 0 0;'>
-    <input type='button' onclick='displayForm("form",1);' id='form_1_$j' value='Edit' class='myUI-button-right' />
+    <div id='form_1_$j' >
+    <a href='grades3-1.php' class='myUI-button-right' >Back to list</a>
+    <input type='button' onclick='displayForm("form",1);' value='Edit' class='myUI-button-right' />
+    </div>
     <div id='form_1_done' style='display:none'>
+    <a href='grades3-1.php' class='myUI-button-right' >Back to list</a>
     <input type='button' onclick='location.href="grades3-2.php"'; value='Cancel' class='myUI-button-right' />
     <input type='submit' value='Submit' id='submit' class='myUI-button-right' />
     </div>
     </div>
     </form>
 EOD;
+  }
+  else{
+    echo "<div style='text-align:right;margin:20px 0 0 0;'>\n";
+    echo "<a href='grades3-1.php' class='myUI-button-right' >Back to list</a>\n";
+    echo "</div>\n";
   }
 }
 

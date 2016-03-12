@@ -1,5 +1,5 @@
 <?php
-// Last update 2016-01-07
+// Last update 2016-03-12
 
 ini_set('display_errors',1);
 ini_set('error_reporting',E_ALL);
@@ -20,6 +20,8 @@ foreach($post as $key => $value){
 
   switch($tmp[1]){
     case "FR" 		: $key="note";		break;
+    case "US1" 		: $key="grade1";	break;
+    case "US2" 		: $key="grade2";	break;
     case "US" 		: $key="grade";		break;
     case "FRDATE" 	: $key="date1";		break;
     case "USDATE" 	: $key="date2";		break;
