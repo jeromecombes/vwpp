@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-15
+// Last update : 2016-03-12
 
 require_once "class.courses.inc";
 
@@ -10,17 +10,17 @@ $tab=$c->schedule;
 echo <<<EOD
 <h3>My Schedule</h3>
 
+<table class='datatable' data-sort='[]'>
+<thead>
+<tr><th class='dataTableNoSort'>Jour</th class='dataTableNoSort'><th class='dataTableNoSort'>Début</th><th class='dataTableNoSort'>Fin</th><th class='dataTableNoSort'>Type</th><th class='dataTableNoSort'>Cours</th><th class='dataTableNoSort'>Professeur</th></tr>
+</thead>
+<tbody>
 EOD;
 
-echo "<table class='myTab2' cellspacing='0'>\n";
-echo "<tr class='th'><th>Jour</th><th>Début</th><th>Fin</th><th>Type</th><th>Cours</th><th>Professeur</th></tr>\n";
-$class="tr2";
 foreach($tab as $elem){
-  $class=$class=="tr1"?"tr2":"tr1";
   echo "<tr class='$class'><td>{$elem['jour']}</td><td>{$elem['debut']}</td><td>{$elem['fin']}</td>
     <td>{$elem['type']}</td><td>{$elem['nom']}</td><td>{$elem['prof']}</td></tr>\n";
 }
+echo "</tbody>\n";
 echo "</table>\n";
-
-
 ?>
