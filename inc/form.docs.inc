@@ -26,7 +26,7 @@ Note that only pdf, jpg and word documents (with extensions .pdf, jpg our .jpeg 
 EOD;
 
 if($docs){
-  echo "<table class='datatable'>\n";
+  echo "<table class='datatable' data-sort='[]'>\n";
   echo "<thead>\n";
   echo "<tr><th>Name</th><th>Type</th><th style='text-align:right;'>Size</th><th>Date</th>";
   if($_SESSION['vwpp']['category']=="admin"){
@@ -45,8 +45,9 @@ if($docs){
       echo "<td style='text-align:right;'>{$doc['size']}</td>\n";
       echo "<td>".date($GLOBALS['config']['dateFormat'],$doc['timestamp'])."</td>\n";
       if($_SESSION['vwpp']['category']=="admin"){
-	echo "<td>$visibility</td></tr>\n";
+	echo "<td>$visibility</td>\n";
       }
+      echo "</tr>\n";
     }
   }
   echo "</tbody>\n";
@@ -69,7 +70,7 @@ echo <<<EOD
 <fieldset>
 EOD;
 
-echo "<table class='datatable'>\n";
+echo "<table class='datatable' data-sort='[]'>\n";
 echo "<thead>\n";
 echo "<tr><th>Name</th><th>Type</th>";
 if($_SESSION['vwpp']['category']=="admin"){
@@ -86,26 +87,32 @@ if($docs){
       <tr>
       <td><input type='hidden' name='docs[$i][]' value='{$doc['id']}' />
       <a href='{$GLOBALS['config']['url']}/preview.php?id={$doc['id']}' target='_blank'>{$doc['name2']}</a></td>
-      <td><select name='docs[$i][]'>
-	<option value='Other'>&nbsp;</option>
 EOD;
-      foreach($GLOBALS['config']['documentType'] as $elem){
-	$elem=htmlentities($elem,ENT_QUOTES|ENT_IGNORE,"utf-8");
-	$selected=$doc['rel']==$elem?"selected='selected'":null;
-	echo "<option $selected value='$elem'>$elem</option>\n";
-      }
-      echo "</select></td>\n";
-
       if($_SESSION['vwpp']['category']=="admin"){
+	echo "<td><select name='docs[$i][]'>\n";
+	echo "<option value='Other'>&nbsp;</option>\n";
+	foreach($GLOBALS['config']['documentType'] as $elem){
+	  $elem=htmlentities($elem,ENT_QUOTES|ENT_IGNORE,"utf-8");
+	  $selected=$doc['rel']==$elem?"selected='selected'":null;
+	  echo "<option $selected value='$elem'>$elem</option>\n";
+	}
+	echo "</select></td>\n";
+
 	$checked=$doc['adminOnly']?"checked='checked'":null;
 	echo "<td><input type='checkbox' name='docs[$i][]' value='1' $checked /> Admin Only</td>\n";
+
+	echo "<td>\n";
+	echo "<input type='file' name='files[$i]' />\n";
+	echo "<a href='javascript:delete_doc({$doc['id']})'>";
+	echo "Delete File";
+	echo "</a>\n";
+	echo "</td>\n";
+      }else{
+	echo "<td><input type='hidden' name='docs[$i][]' value='{$doc['rel']}' /></td>\n";
+	echo "<td>&nbsp;</td>\n";
       }
-      echo "<td><input type='file' name='files[$i]' />\n";
-      echo "<a href='javascript:delete_doc({$doc['id']})'>";
-      echo "Delete File";
-      echo "</a></td>\n";
       echo "</tr>\n";
-      }
+    }
     $i++;
   }
 }

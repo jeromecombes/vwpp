@@ -955,7 +955,7 @@ $(document).ready(function(){
   		$(this).dataTable({
       		"bJQueryUI": true,
       		"sPaginationType": "full_numbers",
-      		"bStateSave": true,
+      		"bStateSave": false,
       		"aLengthMenu" : [[25,50,75,100,-1],[25,50,75,100,"All"]],
       		"iDisplayLength" : -1,
       		"aaSorting" : sort,
