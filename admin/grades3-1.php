@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-23
+// Last update : 2016-03-12
 
 ini_set('display_errors',0);
 ini_set('error_reporting',E_ERROR | E_WARNING | E_PARSE);
@@ -28,6 +28,10 @@ $nbUniv=count($u->elements);
 //	Reid Hall Courses
 echo <<<EOD
 <h3>Grades, {$_SESSION['vwpp']['semester']}</h3>
+<span style='position: absolute; top: 60px; right: 12px; ;text-align:right;'>
+<input type='button' value='Export to Excel' onclick='location.href="grades3_export.php";' class='myUI-button-right' />
+</span>
+
 <b>VWPP Courses</b>
 <table class='datatable'>
 <thead>
@@ -92,10 +96,6 @@ foreach($u->elements as $elem){
 echo <<<EOD
 </tbody>
 </table>
-
-<div style='margin-top:20px;text-align:right;'>
-<input type='button' value='Export to Excel' onclick='location.href="grades3_export.php";' class='myUI-button-right' />
-</div>
 EOD;
 
 require_once("../footer.php");
