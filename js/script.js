@@ -1,4 +1,4 @@
-// Last update : 2015-11-14, Jérôme Combes
+// Last update : 2016-03-12, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -790,6 +790,32 @@ function submit_action(form,form2){		// a finir
 
 
 }
+
+function tripFormValidation(){
+  var myReturn=true;
+  $(".required").each(function(){
+    if(!$(this).val().trim()){
+     myReturn=false; 
+    }
+  });
+  
+  $(".requiredCheckbox").each(function(){
+    if(!$(this).is(":checked")){
+     myReturn=false; 
+    }
+  });
+    
+  if($(".requiredRadio:checked").length<1){
+     myReturn=false; 
+  }
+  
+  if(!myReturn){
+    alert("Veuillez remplir tous les champs obligatoires et accepter les condditions");
+  }
+  
+  return myReturn;
+}
+
 
 function unLockCM(id){
   file("../inc/courses_univ3_lock.php?action=unLockCM&id="+id);
