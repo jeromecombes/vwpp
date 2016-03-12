@@ -1,5 +1,5 @@
 <?php
-// Update : 2015-10-19
+// Update : 2016-03-12
 
 require_once "class.student.inc";
 
@@ -198,7 +198,11 @@ class doc{
       $realname=encrypt($files['name'][$i],$student);
       $type=encrypt($files['type'][$i],$student);
       $size=encrypt($files['size'][$i],$student);
-      $adminOnly=array_key_exists(2,$docs[$i])?1:0;
+
+      $adminOnly=0;
+      if(is_array($docs[$i]) and array_key_exists(2,$docs[$i])){
+	$adminOnly=1;
+      }
 
       //	update database if file exists
       if($docs[$i][0]){

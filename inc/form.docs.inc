@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-10-19
+// Last update : 2016-03-12
 
 require_once "class.doc.inc";
 //	Get data
@@ -25,20 +25,21 @@ Note that only pdf, jpg and word documents (with extensions .pdf, jpg our .jpeg 
 <fieldset>
 EOD;
 
-$class="tr2";
 if($docs){
-  echo "<table cellspacing='0' cellpadding='5'>\n";
-  echo "<tr class='th'><th>Name</th><th>Type</th><th style='text-align:right;'>Size</th><th>Date</th>";
+  echo "<table class='datatable'>\n";
+  echo "<thead>\n";
+  echo "<tr><th>Name</th><th>Type</th><th style='text-align:right;'>Size</th><th>Date</th>";
   if($_SESSION['vwpp']['category']=="admin"){
     echo "<th>Visibility</th>";
   }
   echo "</tr>\n";
+  echo "</thead>\n";
+  echo "<tbody>\n";
   foreach($docs as $doc){
     if($_SESSION['vwpp']['category']=="admin" or !$doc['adminOnly']){
       $doc['size']=$doc['size']?$doc['size']:null;
-      $class=$class=="tr1"?"tr2":"tr1";
       $visibility=$doc['adminOnly']?"Admin only":null;
-      echo "<tr class='$class'>\n";
+      echo "<tr>\n";
       echo "<td><a href='{$GLOBALS['config']['url']}/preview.php?id={$doc['id']}' target='_blank'>{$doc['name2']}</a></td>\n";
       echo "<td>{$doc['rel']}</td>\n";
       echo "<td style='text-align:right;'>{$doc['size']}</td>\n";
@@ -48,6 +49,7 @@ if($docs){
       }
     }
   }
+  echo "</tbody>\n";
   echo "</table>\n";
 }
 
@@ -67,12 +69,15 @@ echo <<<EOD
 <fieldset>
 EOD;
 
-echo "<table cellspacing='0' cellpadding='5'>\n";
-echo "<tr class='th'><th>Name</th><th>Type</th>";
+echo "<table class='datatable'>\n";
+echo "<thead>\n";
+echo "<tr><th>Name</th><th>Type</th>";
 if($_SESSION['vwpp']['category']=="admin"){
   echo "<th>Visibility</th>";
 }
 echo "<th>File</th></tr>\n";
+echo "</thead>\n";
+echo "<tbody>\n";
 $i=0;
 if($docs){
   foreach($docs as $doc){
@@ -126,6 +131,7 @@ EOD;
 }
 
 echo <<<EOD
+</tbody>
 </table>
 <p style='text-align:right'>
 <br/>
