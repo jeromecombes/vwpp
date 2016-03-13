@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-11-14
+// Last update : 2016-03-13
 
 require_once "../inc/class.univ_reg.inc";
 require_once "../inc/class.dates.inc";
@@ -157,6 +157,10 @@ EOD;
       echo "<option value='unlockVWPP'>Unlock VWPP Courses reg.</option>\n";
       echo "<option value='publishVWPP'>Publish VWPP Courses Final reg.</option>\n";
       echo "<option value='hideVWPP'>Hide VWPP Courses Finale reg.</option>\n";
+    }
+    if(in_array(17,$_SESSION['vwpp']['access'])){
+      echo "<option value='publishUnivReg'>Publish Univ. reg.</option>\n";
+      echo "<option value='hideUnivReg'>Hide Univ. reg.</option>\n";
     }
     echo "<input type='button' id='submit_button' value='Go' disabled='disabled' onclick='submit_action(\"form3\",\"form2\");' class='myUI-button marginLeft' />\n";
     echo "</div>\n";

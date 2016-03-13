@@ -1,4 +1,4 @@
-// Last update : 2016-03-12, Jérôme Combes
+// Last update : 2016-03-13, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -771,6 +771,14 @@ function submit_action(form,form2){		// a finir
 
     case "hideVWPP" :
 	  document.forms[form2].action="lockRH6.php";
+	  document.forms[form2].submit();	break;
+
+    case "publishUnivReg" :
+	  document.forms[form2].action="lockRH7.php";
+	  document.forms[form2].submit();	break;
+
+    case "hideUnivReg" :
+	  document.forms[form2].action="lockRH8.php";
 	  document.forms[form2].submit();	break;
 
     case "Univ_reg" :

@@ -1,5 +1,5 @@
 <?php
-// Last Update : Jérôme Combes, 2015-03-24
+// Last Update : Jérôme Combes, 2016-03-13
 
 require_once "class.univ_reg.inc";
 require_once "class.dates.inc";
@@ -11,6 +11,7 @@ $dates=$d->elements;
 $u=new univ_reg();
 $u->getAttrib();
 $university=$u->university;
+$published=$u->published;
 $u=array();
 $u[0]=$university=="Paris 3"?"selected='selected'":null;
 $u[1]=$university=="Paris 4"?"selected='selected'":null;
@@ -255,7 +256,7 @@ if($_SESSION['vwpp']['category']=="admin"){
   <tr><td>University</td>
   <td>
   <input type='hidden' name='action' value='attrib' />
-  <select name='university' style='width:80%;'>
+  <select name='university' style='width:800px;'>
   <option value=''>&nbsp;</option>
   <option value='Paris 3' {$u[0]} >Paris 3</option>
   <option value='Paris 4' {$u[1]} >Paris 4</option>
@@ -265,13 +266,15 @@ if($_SESSION['vwpp']['category']=="admin"){
   <option value='IEP' {$u[4]} >IEP</option>
 -->
   </select>
-  <input type='submit' value='OK' class='myUI-button' />
+  <span style='position: absolute; right: 20px; margin:-10px 0; padding:0; text-align:right;'>
+  <input type='submit' value='Save' class='myUI-button-right' />
+  </span>
   </td></tr>
   </table>
   </form>
 EOD;
 }
-elseif($university){
+elseif($university and $published){
   echo <<<EOD
   <table>
   <tr><td colspan='2'><h3>University Registration</h3></td></tr>

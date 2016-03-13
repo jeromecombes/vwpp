@@ -1,11 +1,12 @@
 <?php
-// Update : 2015-10-15
+// Update : 2016-03-13
 require_once "class.student.inc";
 
 class univ_reg{
   public $semester;
   public $student;
   public $elements=array();
+  public $published=false;
   public $university;
 
   public function univ_reg(){
@@ -39,6 +40,13 @@ class univ_reg{
     if($db->result){
       $this->university=decrypt($db->result[0]['university'],$this->student);
     }
+    
+    $db=new db();
+    $db->select("univ_reg_show","*","semester='{$this->semester}' AND student='{$this->student}'");
+    if($db->result){
+      $this->published=true;
+    }
+    
   }
 
   public function fetch(){
