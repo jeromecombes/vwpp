@@ -1,5 +1,5 @@
 <?php
-// Update : 2016-03-13
+// Update : 2016-04-12
 require_once "class.student.inc";
 
 class univ_reg{
@@ -71,7 +71,8 @@ class univ_reg{
       $tab[$elem['id']]['student']=$elem['id'];
       $tab[$elem['id']]['lastname']=$elem['lastname'];
       $tab[$elem['id']]['firstname']=$elem['firstname'];
-      $tab[$elem['id']][0]=array("1"=>null,"2"=>null,"3"=>null,"4"=>null,"5"=>null,"6"=>null,"7"=>null,"8"=>null,"10"=>null,"9"=>null);	// 10, 9 : IEP, precision
+      $tab[$elem['id']][0]=array("1"=>null,"2"=>null,"3"=>null,"4"=>null,"5"=>null,"6"=>null,"7"=>null,"8"=>null,"9"=>null, "10"=>null,"11"=>null,"12"=>null);	
+     		// 9 = justification, 10 = IEP, 11 = Motivation by calendar, 12 = Paris 12
       $tab[$elem['id']][1]=array(null,null,null,null,null,null,null,null,null,null,null,null);
       $tab[$elem['id']][2]=null;
 

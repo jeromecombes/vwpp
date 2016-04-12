@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-19
+// Last update : 2016-04-12
 
 require_once "../inc/config.php";
 require_once "../inc/class.dates.inc";
@@ -11,7 +11,8 @@ $data=array(
 	"date4"=>$_POST["date4"],
 	"date5"=>$_POST["date5"],
 	"date6"=>$_POST["date6"],
-	"date7"=>$_POST["date7"]);
+	"date7"=>$_POST["date7"],
+	"date8"=>$_POST["date8"]);
 
 $d=new dates();
 $d->update($data);

@@ -1,5 +1,5 @@
 <?php
-// update : 2015-10-14
+// update : 2016-04-12
 require_once "../inc/config.php";
 require_once "../inc/class.univ_reg.inc";
 
@@ -27,16 +27,24 @@ else{
 
 $lines=Array();
 
-$title=array("Lastname","Firstname","Major 1","Minor 1","Major 2","Minor 2","Paris 3","Paris 4","Paris 7",
-  "CIPh","IEP","Justification","Motivated by the calendar","Final Reg.","Diplome","Obtention","Pays","Ville","Etat","Etudes actuelles",
+$title=array("Lastname","Firstname","Major 1","Minor 1","Major 2","Minor 2","Paris 3","Paris 4","Paris 7","Paris 12",
+  "CIPh","Justification","Motivated by the calendar","Final Reg.","Diplome","Obtention","Pays","Ville","Etat","Etudes actuelles",
   "Faculté","Début des études","Domaine","Discipline voulue","Handicap","Handicap, précisez");
 $lines[]=join($title,$separate);
 
 
 foreach($tab as $elem){
   $cells=array($elem['lastname'],$elem['firstname']);
-  foreach($elem[0] as $elem2) 	//	Univ. Reg 1
-    $cells[]=$elem2;
+  
+  for($i=1;$i<8;$i++){
+     $cells[]=$elem[0][$i];
+  }
+  
+  $cells[]=$elem[0][12];
+  $cells[]=$elem[0][8];
+  $cells[]=$elem[0][9];
+  $cells[]=$elem[0][11];
+
   $cells[]=$elem[2]; 		//	Univ. Reg 3 (University)
   foreach($elem[1] as $elem2)  	//	Univ. Reg 2
     $cells[]=$elem2;

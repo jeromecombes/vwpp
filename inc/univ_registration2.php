@@ -1,5 +1,5 @@
 <?php
-// Last Update : Jérôme Combes, 2016-03-13
+// Last Update : Jérôme Combes, 2016-04-12
 
 require_once "class.univ_reg.inc";
 require_once "class.dates.inc";
@@ -18,6 +18,7 @@ $u[1]=$university=="Paris 4"?"selected='selected'":null;
 $u[2]=$university=="Paris 7"?"selected='selected'":null;
 $u[3]=$university=="CIPh"?"selected='selected'":null;
 $u[4]=$university=="IEP"?"selected='selected'":null;
+$u[5]=$university=="Paris 12"?"selected='selected'":null;
 
 
 $selected=array();
@@ -63,6 +64,14 @@ switch($data[10]){
   case "3rd"	:	$selected[22]="selected='selected'";	break;
   case "4th"	:	$selected[23]="selected='selected'";	break;
   case "5th"	:	$selected[24]="selected='selected'";	break;
+}
+
+switch($data[12]){
+  case "1st"	:	$selected[25]="selected='selected'";	break;
+  case "2nd"	:	$selected[26]="selected='selected'";	break;
+  case "3rd"	:	$selected[27]="selected='selected'";	break;
+  case "4th"	:	$selected[28]="selected='selected'";	break;
+  case "5th"	:	$selected[29]="selected='selected'";	break;
 }
 
 $textarea=array();
@@ -114,13 +123,14 @@ University Registration Request Form</h3>
 </td></tr>
 EOD;
 
-if($dates['date5'] or $dates['date6'] or $dates['date7']){
+if($dates['date5'] or $dates['date6'] or $dates['date7'] or $dates['date8']){
     echo <<<EOD
         <tr><td colspan='6' style='padding:20px 0 0 0;'text-align:justify';>
         Please note that each university has a different calendar :<br/>
         Paris 3, end of course <b>{$dates['date5']}</b><br/>
         Paris 4, end of course <b>{$dates['date6']}</b><br/>
         Paris 7, end of course <b>{$dates['date7']}</b><br/>
+        Paris 12, end of course <b>{$dates['date8']}</b><br/>
         </td></tr>
 EOD;
 }
@@ -137,9 +147,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='2nd' {$selected[1]}>2nd Choice</option>
 <option value='3rd' {$selected[2]}>3rd Choice</option>
 <option value='4th' {$selected[3]}>4th Choice</option>
-<!--
-<option value='5th' {$selected[19]}>5th Choice</option>
--->
+<option value='5th' {$selected[4]}>5th Choice</option>
 </select>
 <font class='response' id='stdform_5_4'>{$data[5]}</font>
 </td></tr>
@@ -152,9 +160,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='2nd' {$selected[6]}>2nd Choice</option>
 <option value='3rd' {$selected[7]}>3rd Choice</option>
 <option value='4th' {$selected[8]}>4th Choice</option>
-<!--
-<option value='5th' {$selected[19]}>5th Choice</option>
--->
+<option value='5th' {$selected[9]}>5th Choice</option>
 </select>
 <font class='response' id='stdform_5_5'>{$data[6]}</font>
 </td></tr>
@@ -167,11 +173,22 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='2nd' {$selected[11]}>2nd Choice</option>
 <option value='3rd' {$selected[12]}>3rd Choice</option>
 <option value='4th' {$selected[13]}>4th Choice</option>
-<!--
-<option value='5th' {$selected[19]}>5th Choice</option>
--->
+<option value='5th' {$selected[14]}>5th Choice</option>
 </select>
 <font class='response' id='stdform_5_6'>{$data[7]}</font>
+</td></tr>
+
+<tr><td>Paris 12</td>
+<td colspan='2'>
+<select style='display:none;' name='data[12]' class='inputField'>
+<option value=''>&nbsp;</option>
+<option value='1st' {$selected[25]}>1st Choice</option>
+<option value='2nd' {$selected[26]}>2nd Choice</option>
+<option value='3rd' {$selected[27]}>3rd Choice</option>
+<option value='4th' {$selected[28]}>4th Choice</option>
+<option value='5th' {$selected[29]}>5th Choice</option>
+</select>
+<font class='response inputValue' id='stdform_5_12'>{$data[12]}</font>
 </td></tr>
 
 <tr><td>CIPh</td>
@@ -182,9 +199,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='2nd' {$selected[16]}>2nd Choice</option>
 <option value='3rd' {$selected[17]}>3rd Choice</option>
 <option value='4th' {$selected[18]}>4th Choice</option>
-<!--
 <option value='5th' {$selected[19]}>5th Choice</option>
--->
 </select>
 <font class='response' id='stdform_5_7'>{$data[8]}</font>
 </td></tr>
@@ -261,6 +276,7 @@ if($_SESSION['vwpp']['category']=="admin"){
   <option value='Paris 3' {$u[0]} >Paris 3</option>
   <option value='Paris 4' {$u[1]} >Paris 4</option>
   <option value='Paris 7' {$u[2]} >Paris 7</option>
+  <option value='Paris 12' {$u[5]} >Paris 12</option>
   <option value='CIPh' {$u[3]} >CIPh</option>
 <!--
   <option value='IEP' {$u[4]} >IEP</option>

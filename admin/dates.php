@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-19
+// Last update : 2016-04-12
 
 require_once "../header.php";
 require_once "menu.php";
@@ -61,18 +61,23 @@ echo <<<EOD
 <tr>
 	<td style='display:none';>&nbsp;</td>
 	<td style='display:none';>&nbsp;</td>
-	<td>Paris 3, end of course </td>
+	<td>Paris  3, end of course </td>
   <td><input type='text' name='date5' value='{$dates['date5']}' class='myUI-datepicker-string'/></td></tr>
 <tr>
 	<td style='display:none';>&nbsp;</td>
 	<td style='display:none';>&nbsp;</td>
-	<td>Paris 4, end of course </td>
+	<td>Paris  4, end of course </td>
   <td><input type='text' name='date6' value='{$dates['date6']}' class='myUI-datepicker-string'/></td></tr>
 <tr>
 	<td style='display:none';>&nbsp;</td>
 	<td style='display:none';>&nbsp;</td>
-	<td>Paris 7, end of course </td>
+	<td>Paris  7, end of course </td>
   <td><input type='text' name='date7' value='{$dates['date7']}' class='myUI-datepicker-string'/></td></tr>
+<tr>
+	<td style='display:none';>&nbsp;</td>
+	<td style='display:none';>&nbsp;</td>
+	<td>Paris 12, end of course </td>
+  <td><input type='text' name='date8' value='{$dates['date8']}' class='myUI-datepicker-string'/></td></tr>
 </tbody>
 </table>
 
