@@ -1,4 +1,4 @@
-// Last update : 2016-03-13, Jérôme Combes
+// Last update : 2016-04-12, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -264,6 +264,11 @@ function displayForm(form,id){
   while(inputs[i]){
     inputs[i++].style.display="";
   }
+  /*
+   * While ne fonctionne pas correctement s'il y a des interruptions,
+   * donc remplace progressivement par $(".inputField").hide();
+   */
+  $(".inputField").show();
 
   i=0;
   while(document.getElementById(form+"_"+id+"_radio"+"_"+i)){
@@ -274,7 +279,12 @@ function displayForm(form,id){
   while(document.getElementById(form+"_"+id+"_"+i)){
      document.getElementById(form+"_"+id+"_"+i++).style.display="none";
   }
-  
+  /*
+   * While ne fonctionne pas correctement s'il y a des interruptions,
+   * donc remplace progressivement par $(".inputValue").hide();
+   */
+  $(".inputValue").hide();
+    
   document.getElementById(form+"_"+id+"_done").style.display="";
   
   //	Les étudiants voient mais ne changent pas les infos discipline, UFR et MoveOnLine
@@ -296,12 +306,22 @@ function displayText(form,id){
   while(inputs[i]){
     inputs[i++].style.display="none";
   }
+  /*
+   * While ne fonctionne pas correctement s'il y a des interruptions,
+   * donc remplace progressivement par $(".inputField").hide();
+   */
+  $(".inputField").hide();
 
   i=0;
   while(document.getElementById(form+"_"+id+"_"+i)){
      document.getElementById(form+"_"+id+"_"+i++).style.display="";
   }
-  
+  /*
+   * While ne fonctionne pas correctement s'il y a des interruptions,
+   * donc remplace progressivement par $(".inputValue").show();
+   */
+  $(".inputValue").show();
+
   document.getElementById(form+"_"+id+"_done").style.display="none";
 }
 
