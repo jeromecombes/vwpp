@@ -86,7 +86,7 @@ echo <<<EOD
 University Registration Request Form</h3>
 </div>
 
-<form name='stdform_5' action='update.php' method='post'>
+<form name='stdform_5' id='stdform_5' action='update.php' method='post'>
 <input type='hidden' name='acl' value='17' />
 <input type='hidden' name='page' value='students-view2.php' />
 <input type='hidden' name='std-page' value='univ_registration.php' />
@@ -103,23 +103,23 @@ University Registration Request Form</h3>
 <td colspan='2'><font class='response'>{$std['email']}</font></td></tr>
 <tr><td>Major 1:</td>
 <td colspan='2'>
-<input type='text' style='display:none;' name='data[1]' value='{$data[1]}' />
-<font class='response' id='stdform_5_0'>{$data[1]}</font>
+<input type='text' style='display:none;' name='data[1]' value='{$data[1]}' class='inputField' />
+<font class='response inputValue' id='stdform_5_0'>{$data[1]}</font>
 </td>
 <td>Minor / Correlate 1</td>
 <td colspan='2'>
-<input type='text' style='display:none;' name='data[2]' value='{$data[2]}' />
-<font class='response' id='stdform_5_1'>{$data[2]}</font>
+<input type='text' style='display:none;' name='data[2]' value='{$data[2]}' class='inputField' />
+<font class='response inputValue' id='stdform_5_1'>{$data[2]}</font>
 </td></tr>
 <tr><td>Major 2:</td>
 <td colspan='2'>
-<input type='text' style='display:none;' name='data[3]' value='{$data[3]}' />
-<font class='response' id='stdform_5_2'>{$data[3]}</font>
+<input type='text' style='display:none;' name='data[3]' value='{$data[3]}' class='inputField' />
+<font class='response inputValue' id='stdform_5_2'>{$data[3]}</font>
 </td>
 <td>Minor / Correlate 2</td>
 <td colspan='2'>
-<input type='text' style='display:none;' name='data[4]' value='{$data[4]}' />
-<font class='response' id='stdform_5_3'>{$data[4]}</font>
+<input type='text' style='display:none;' name='data[4]' value='{$data[4]}' class='inputField' />
+<font class='response inputValue' id='stdform_5_3'>{$data[4]}</font>
 </td></tr>
 EOD;
 
@@ -141,7 +141,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 
 <tr><td>Paris 3</td>
 <td colspan='2'>
-<select style='display:none;' name='data[5]'>
+<select style='display:none;' name='data[5]' class='inputField' >
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[0]}>1st Choice</option>
 <option value='2nd' {$selected[1]}>2nd Choice</option>
@@ -149,12 +149,12 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='4th' {$selected[3]}>4th Choice</option>
 <option value='5th' {$selected[4]}>5th Choice</option>
 </select>
-<font class='response' id='stdform_5_4'>{$data[5]}</font>
+<font class='response inputValue' id='stdform_5_4'>{$data[5]}</font>
 </td></tr>
 
 <tr><td>Paris 4</td>
 <td colspan='2'>
-<select style='display:none;' name='data[6]'>
+<select style='display:none;' name='data[6]' class='inputField' >
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[5]}>1st Choice</option>
 <option value='2nd' {$selected[6]}>2nd Choice</option>
@@ -162,12 +162,12 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='4th' {$selected[8]}>4th Choice</option>
 <option value='5th' {$selected[9]}>5th Choice</option>
 </select>
-<font class='response' id='stdform_5_5'>{$data[6]}</font>
+<font class='response inputValue' id='stdform_5_5'>{$data[6]}</font>
 </td></tr>
 
 <tr><td>Paris 7</td>
 <td colspan='2'>
-<select style='display:none;' name='data[7]'>
+<select style='display:none;' name='data[7]' class='inputField' >
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[10]}>1st Choice</option>
 <option value='2nd' {$selected[11]}>2nd Choice</option>
@@ -175,7 +175,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='4th' {$selected[13]}>4th Choice</option>
 <option value='5th' {$selected[14]}>5th Choice</option>
 </select>
-<font class='response' id='stdform_5_6'>{$data[7]}</font>
+<font class='response inputValue' id='stdform_5_6'>{$data[7]}</font>
 </td></tr>
 
 <tr><td>Paris 12</td>
@@ -193,7 +193,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 
 <tr><td>CIPh</td>
 <td colspan='2'>
-<select style='display:none;' name='data[8]'>
+<select style='display:none;' name='data[8]' class='inputField' >
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[15]}>1st Choice</option>
 <option value='2nd' {$selected[16]}>2nd Choice</option>
@@ -201,13 +201,13 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='4th' {$selected[18]}>4th Choice</option>
 <option value='5th' {$selected[19]}>5th Choice</option>
 </select>
-<font class='response' id='stdform_5_7'>{$data[8]}</font>
+<font class='response inputValue' id='stdform_5_7'>{$data[8]}</font>
 </td></tr>
 
 <!--
 <tr><td>IEP</td>
 <td colspan='2'>
-<select style='display:none;' name='data[10]'>
+<select style='display:none;' name='data[10]' class='inputField' >
 <option value=''>&nbsp;</option>
 <option value='1st' {$selected[20]}>1st Choice</option>
 <option value='2nd' {$selected[21]}>2nd Choice</option>
@@ -215,7 +215,7 @@ Please rank your choices (fill in 1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>
 <option value='4th' {$selected[23]}>4th Choice</option>
 <option value='5th' {$selected[24]}>5th Choice</option>
 </select>
-<font class='response' id='stdform_5_10'>{$data[10]}</font>
+<font class='response inputValue' id='stdform_5_10'>{$data[10]}</font>
 </td></tr>
 -->
 
@@ -224,8 +224,8 @@ Please provide an academic justification for your 1<sup>st</sup> and 2<sup>nd</s
 in the text box below (Maximum 1200 characters with spaces) :</td></tr>
 
 <tr><td colspan='6'>
-<textarea name='data[9]' style='display:none;'>{$data[9]}</textarea>
-<font class='response' id='stdform_5_8'>{$textarea[9]}</font>
+<textarea name='data[9]' style='display:none;' class='inputField' >{$data[9]}</textarea>
+<font class='response inputValue' id='stdform_5_8'>{$textarea[9]}</font>
 </td></tr>
 
 EOD;
@@ -236,8 +236,8 @@ if($dates['date5'] or $dates['date6'] or $dates['date7']){
         job, intership, graduation ...</td></tr>
 
         <tr><td colspan='6'>
-        <textarea style='display:none;' name='data[11]'>{$data[11]}</textarea>
-        <font class='response' id='stdform_5_11'>{$textarea[11]}</font>
+        <textarea style='display:none;' name='data[11]' class='inputField' >{$data[11]}</textarea>
+        <font class='response inputValue' id='stdform_5_11'>{$textarea[11]}</font>
         </td></tr>
 EOD;
 }

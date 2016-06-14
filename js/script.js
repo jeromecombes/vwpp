@@ -1,4 +1,4 @@
-// Last update : 2016-04-12, Jérôme Combes
+// Last update : 2016-06-14, Jérôme Combes
 
 var li_ids=new Array();
 var logins=new Array();
@@ -268,8 +268,8 @@ function displayForm(form,id){
    * While ne fonctionne pas correctement s'il y a des interruptions,
    * donc remplace progressivement par $(".inputField").hide();
    */
-  $(".inputField").show();
-
+  $("#"+form+"_"+id+" .inputField").show();
+  
   i=0;
   while(document.getElementById(form+"_"+id+"_radio"+"_"+i)){
     document.getElementById(form+"_"+id+"_radio"+"_"+i++).style.display="";
@@ -277,13 +277,16 @@ function displayForm(form,id){
 
   i=0;
   while(document.getElementById(form+"_"+id+"_"+i)){
-     document.getElementById(form+"_"+id+"_"+i++).style.display="none";
+  	 if(!$("#"+form+"_"+id+"_"+i).hasClass("inputField")){
+    	document.getElementById(form+"_"+id+"_"+i).style.display="none";
+     }
+     i++;
   }
   /*
    * While ne fonctionne pas correctement s'il y a des interruptions,
    * donc remplace progressivement par $(".inputValue").hide();
    */
-  $(".inputValue").hide();
+  $("#"+form+"_"+id+" .inputValue").hide();
     
   document.getElementById(form+"_"+id+"_done").style.display="";
   
@@ -310,7 +313,7 @@ function displayText(form,id){
    * While ne fonctionne pas correctement s'il y a des interruptions,
    * donc remplace progressivement par $(".inputField").hide();
    */
-  $(".inputField").hide();
+  $("#"+form+"_"+id+" .inputField").hide();
 
   i=0;
   while(document.getElementById(form+"_"+id+"_"+i)){
@@ -320,7 +323,7 @@ function displayText(form,id){
    * While ne fonctionne pas correctement s'il y a des interruptions,
    * donc remplace progressivement par $(".inputValue").show();
    */
-  $(".inputValue").show();
+  $("#"+form+"_"+id+" .inputValue").show();
 
   document.getElementById(form+"_"+id+"_done").style.display="none";
 }

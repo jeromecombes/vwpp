@@ -1,5 +1,5 @@
 <?php
-// Last update : 2015-03-22
+// Last update : 2016-06-14
 
 require_once "class.univ_reg.inc";
 
